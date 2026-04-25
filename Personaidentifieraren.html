@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareOn – Personaidentifieraren</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; background: #F5F6F8; color: #1A1A1A; min-height: 100vh; }
+
+.header { background: #1A3C5E; padding: 1.25rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+.header-logo { color: #fff; font-size: 18px; font-weight: 600; letter-spacing: 0.02em; }
+.header-sub { color: #8AAFC8; font-size: 13px; }
+
+.container { max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+.progress-wrap { margin-bottom: 2rem; }
+.progress-label { display: flex; justify-content: space-between; font-size: 12px; color: #888; margin-bottom: 8px; }
+.progress-bar { height: 4px; background: #E0E0E0; border-radius: 2px; }
+.progress-fill { height: 4px; background: #185FA5; border-radius: 2px; transition: width 0.4s ease; }
+
+.card { background: #fff; border-radius: 12px; border: 1px solid #E8E8E8; padding: 2rem; margin-bottom: 1rem; }
+
+.q-num { font-size: 11px; color: #999; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.q-text { font-size: 18px; font-weight: 600; color: #1A3C5E; line-height: 1.45; margin-bottom: 1.75rem; }
+
+.options { display: flex; flex-direction: column; gap: 10px; }
+.opt { display: flex; align-items: flex-start; gap: 14px; padding: 1rem 1.1rem; border: 1.5px solid #E8E8E8; border-radius: 10px; cursor: pointer; transition: all 0.15s; background: #fff; text-align: left; width: 100%; }
+.opt:hover { border-color: #185FA5; background: #F0F6FF; }
+.opt.selected { border-color: #185FA5; background: #EBF3FB; }
+.opt-letter { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #D0D0D0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #888; flex-shrink: 0; margin-top: 1px; transition: all 0.15s; }
+.opt.selected .opt-letter { background: #185FA5; border-color: #185FA5; color: #fff; }
+.opt-text { font-size: 14px; color: #333; line-height: 1.55; text-align: left; }
+
+.hint { font-size: 12px; color: #185FA5; background: #EBF3FB; border-left: 3px solid #185FA5; border-radius: 0 6px 6px 0; padding: 0.6rem 0.9rem; margin-top: 1rem; line-height: 1.5; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; }
+.btn { font-size: 14px; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 8px; border: 1.5px solid #D0D0D0; background: #fff; color: #555; cursor: pointer; transition: all 0.15s; }
+.btn:hover { border-color: #999; background: #F5F5F5; }
+.btn.primary { background: #1A3C5E; color: #fff; border-color: #1A3C5E; }
+.btn.primary:hover { background: #153055; }
+.btn:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+
+.step { display: none; }
+.step.active { display: block; }
+
+.result { display: none; }
+.result.active { display: block; }
+
+.result-title { font-size: 22px; font-weight: 700; color: #1A3C5E; margin-bottom: 0.4rem; }
+.result-sub { font-size: 14px; color: #666; margin-bottom: 1.75rem; line-height: 1.5; }
+
+.persona-card { border-radius: 10px; border: 1px solid #E8E8E8; background: #fff; margin-bottom: 10px; overflow: hidden; }
+.persona-top { display: flex; align-items: center; gap: 12px; padding: 1rem 1.25rem 0.75rem; }
+.persona-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+.persona-name { font-size: 15px; font-weight: 600; color: #1A3C5E; }
+.persona-tag { font-size: 12px; color: #888; margin-left: auto; }
+.persona-bar { padding: 0 1.25rem 1rem; }
+.bar-row { display: flex; align-items: center; gap: 10px; }
+.bar-track { flex: 1; height: 7px; background: #EFEFEF; border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s cubic-bezier(.4,0,.2,1); }
+.bar-pct { font-size: 13px; font-weight: 600; color: #555; width: 36px; text-align: right; }
+
+.action-note { background: #F4F8FC; border-radius: 10px; padding: 1.1rem 1.25rem; margin: 1.25rem 0; font-size: 14px; color: #333; line-height: 1.65; border-left: 3px solid #185FA5; }
+.action-note strong { color: #1A3C5E; display: block; margin-bottom: 0.3rem; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.reset-btn { width: 100%; font-size: 14px; font-weight: 500; padding: 0.75rem; border-radius: 8px; border: 1.5px solid #D0D0D0; background: #fff; color: #555; cursor: pointer; margin-top: 0.5rem; transition: all 0.15s; }
+.reset-btn:hover { border-color: #1A3C5E; color: #1A3C5E; background: #F0F6FF; }
+
+.footer { text-align: center; padding: 2rem; font-size: 12px; color: #AAA; }
+
+@media (max-width: 480px) {
+  .container { padding: 1rem; }
+  .card { padding: 1.25rem; }
+  .q-text { font-size: 16px; }
+  .opt-text { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="header-logo">CareOn</div>
+    <div class="header-sub">Personaidentifieraren</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="prog-label">Fråga 1 av 8</span>
+      <span id="prog-pct">0%</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="prog" style="width:0%"></div></div>
+  </div>
+
+  <div id="steps">
+
+    <div class="card">
+      <div class="step active" data-q="0">
+        <div class="q-num">Fråga 1 av 8</div>
+        <div class="q-text">Hur länge har personen arbetat som konsult (inte socionom generellt)?</div>
+        <div class="options">
+          <button class="opt" data-scores="maya:2,anna:1,birgitta:1,margareta:1,veteran:0" onclick="pick(this)"><div class="opt-letter">A</div><div class="opt-text">Aldrig tidigare – detta är första gången</div></button>
+          <button class="opt" data-scores="maya:1,anna:2,birgitta:1,margareta:1,veteran:0" onclick="pick(this)"><div class="opt-letter">B</div><div class="opt-text">Upp till 2 år</div></button>
+          <button class="opt" data-scores="maya:1,anna:1,birgitta:0,margareta:1,veteran:1" onclick="pick(this)"><div class="opt-letter">C</div><div class="opt-text">2 till 5 år</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:1,veteran:2" onclick="pick(this)"><div class="opt-letter">D</div><div class="opt-text">5 år eller mer</div></button>
+        </div>
+        <div class="hint">Observera: frågan gäller tid som konsult – inte total yrkeserfarenhet som socionom.</div>
+      </div>
+
+      <div class="step" data-q="1">
+        <div class="q-num">Fråga 2 av 8</div>
+        <div class="q-text">Vad var det primära skälet till att hen vill bli konsult?</div>
+        <div class="options">
+          <button class="opt" data-scores="maya:2,anna:0,birgitta:0,margareta:0,veteran:1" onclick="pick(this)"><div class="opt-letter">A</div><div class="opt-text">Högre lön – det var det tydligaste skälet</div></button>
+          <button class="opt" data-scores="maya:0,anna:2,birgitta:1,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">B</div><div class="opt-text">Nyfikenhet och variation – vill prova nya kommuner och uppdrag</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:1,margareta:2,veteran:1" onclick="pick(this)"><div class="opt-letter">C</div><div class="opt-text">Frihet och självständighet – vill styra sin tid och sina villkor</div></button>
+          <button class="opt" data-scores="maya:0,anna:1,birgitta:2,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">D</div><div class="opt-text">Tröttnat – söker förändring utan att veta exakt vad</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:0,veteran:2" onclick="pick(this)"><div class="opt-letter">E</div><div class="opt-text">Konsultrollen är redan etablerad – hen vet precis vad hen vill</div></button>
+        </div>
+      </div>
+
+      <div class="step" data-q="2">
+        <div class="q-num">Fråga 3 av 8</div>
+        <div class="q-text">Hur ställer hen sig till att ta uppdrag på annan ort?</div>
+        <div class="options">
+          <button class="opt" data-scores="maya:2,anna:0,birgitta:0,margareta:2,veteran:1" onclick="pick(this)"><div class="opt-letter">A</div><div class="opt-text">Flexibel – kan pendla eller flytta tillfälligt</div></button>
+          <button class="opt" data-scores="maya:1,anna:1,birgitta:0,margareta:1,veteran:1" onclick="pick(this)"><div class="opt-letter">B</div><div class="opt-text">Vill helst arbeta nära hemmet men kan vara flexibel ibland</div></button>
+          <button class="opt" data-scores="maya:0,anna:2,birgitta:1,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">C</div><div class="opt-text">Behöver distansmöjlighet – familjesituation gör det svårt att resa</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:2,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">D</div><div class="opt-text">Vill helst vara nära hemorten – resor känns som ett hinder</div></button>
+        </div>
+        <div class="hint">Fråga aktivt om detta om det inte kommit upp spontant – det är ofta ett dolt krav.</div>
+      </div>
+
+      <div class="step" data-q="3">
+        <div class="q-num">Fråga 4 av 8</div>
+        <div class="q-text">Hur reagerar hen på frågor om kollektivavtal och pension?</div>
+        <div class="options">
+          <button class="opt" data-scores="maya:2,anna:0,birgitta:0,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">A</div><div class="opt-text">Bryr sig inte – frågar inte och verkar ointresserad</div></button>
+          <button class="opt" data-scores="maya:0,anna:2,birgitta:0,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">B</div><div class="opt-text">Kollektivavtalet känns viktigt – det signalerar trygghet</div></button>
+          <button class="opt" data-scores="maya:0,anna:1,birgitta:2,margareta:2,veteran:0" onclick="pick(this)"><div class="opt-letter">C</div><div class="opt-text">Frågar om pension – vill förstå vad som gäller långsiktigt</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:0,veteran:2" onclick="pick(this)"><div class="opt-letter">D</div><div class="opt-text">Vet redan hur det fungerar och har tydliga krav eller jämförelsepunkter</div></button>
+        </div>
+      </div>
+
+      <div class="step" data-q="4">
+        <div class="q-num">Fråga 5 av 8</div>
+        <div class="q-text">Hur verkar hen se på konsultrollen – självbild och inställning?</div>
+        <div class="options">
+          <button class="opt" data-scores="maya:2,anna:0,birgitta:0,margareta:0,veteran:1" onclick="pick(this)"><div class="opt-letter">A</div><div class="opt-text">Självklar och positiv – inga större tveksamheter</div></button>
+          <button class="opt" data-scores="maya:0,anna:2,birgitta:0,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">B</div><div class="opt-text">Intresserad men tveksam – okänd mark, identitetsfråga</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:2,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">C</div><div class="opt-text">Osäker – konsult är något andra gör, inte hen</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:2,veteran:0" onclick="pick(this)"><div class="opt-letter">D</div><div class="opt-text">Bestämd och medveten – ser det som ett naturligt karriärsteg</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:0,veteran:2" onclick="pick(this)"><div class="opt-letter">E</div><div class="opt-text">Erfaren och genomskådande – vet vad som funkar och inte</div></button>
+        </div>
+      </div>
+
+      <div class="step" data-q="5">
+        <div class="q-num">Fråga 6 av 8</div>
+        <div class="q-text">Hur reagerar hen på att vi pratar om stöd, uppföljning och relation?</div>
+        <div class="options">
+          <button class="opt" data-scores="maya:2,anna:0,birgitta:0,margareta:0,veteran:1" onclick="pick(this)"><div class="opt-letter">A</div><div class="opt-text">Verkar ointresserad – vill ha uppdrag, inte relationer</div></button>
+          <button class="opt" data-scores="maya:0,anna:2,birgitta:1,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">B</div><div class="opt-text">Lyssnar och uppskattar det – trygghet spelar roll</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:2,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">C</div><div class="opt-text">Reagerar starkt positivt – bekräftelse och kontakt är viktigt</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:2,veteran:0" onclick="pick(this)"><div class="opt-letter">D</div><div class="opt-text">Uppskattar det men vill ha frihet – stöd i rätt dos</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:0,veteran:2" onclick="pick(this)"><div class="opt-letter">E</div><div class="opt-text">Reserverad – vill se om vi levererar innan hen litar på oss</div></button>
+        </div>
+      </div>
+
+      <div class="step" data-q="6">
+        <div class="q-num">Fråga 7 av 8</div>
+        <div class="q-text">Hur reagerar hen på ersättningsdiskussionen?</div>
+        <div class="options">
+          <button class="opt" data-scores="maya:2,anna:0,birgitta:0,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">A</div><div class="opt-text">Jämför direkt med konkreta siffror – bruttolön är allt</div></button>
+          <button class="opt" data-scores="maya:0,anna:2,birgitta:0,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">B</div><div class="opt-text">Frågar om kollektivavtal och vad som ingår – vill förstå helheten</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:1,margareta:2,veteran:0" onclick="pick(this)"><div class="opt-letter">C</div><div class="opt-text">Frågar specifikt om pension och totalvärde</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:0,veteran:2" onclick="pick(this)"><div class="opt-letter">D</div><div class="opt-text">Vet redan hur marginalerna fungerar – ställer precisa frågor</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:2,margareta:0,veteran:0" onclick="pick(this)"><div class="opt-letter">E</div><div class="opt-text">Verkar osäker – ställer inga direkta frågor men är ändå fundersam</div></button>
+        </div>
+        <div class="hint">Vid tveksamhet: specificera alltid totalvärdet (lön + pension + semester + försäkringar) – inte bara bruttolön.</div>
+      </div>
+
+      <div class="step" data-q="7">
+        <div class="q-num">Fråga 8 av 8</div>
+        <div class="q-text">Hur kom hen i kontakt med oss – och vad verkar ha triggat intresset?</div>
+        <div class="options">
+          <button class="opt" data-scores="maya:2,anna:1,birgitta:0,margareta:0,veteran:1" onclick="pick(this)"><div class="opt-letter">A</div><div class="opt-text">Hittade oss via LinkedIn eller sökte aktivt</div></button>
+          <button class="opt" data-scores="maya:0,anna:2,birgitta:1,margareta:2,veteran:2" onclick="pick(this)"><div class="opt-letter">B</div><div class="opt-text">Fick tips av en kollega som arbetar eller har arbetat via oss</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:2,margareta:1,veteran:0" onclick="pick(this)"><div class="opt-letter">C</div><div class="opt-text">Vi tog direktkontakt – hen hade inte sökt aktivt</div></button>
+          <button class="opt" data-scores="maya:0,anna:0,birgitta:0,margareta:0,veteran:2" onclick="pick(this)"><div class="opt-letter">D</div><div class="opt-text">Hen kontaktade oss direkt utan att vi initierade</div></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <button class="btn" id="back-btn" onclick="back()" disabled>← Tillbaka</button>
+      <button class="btn primary" id="next-btn" onclick="next()" disabled>Nästa →</button>
+    </div>
+  </div>
+
+  <div class="result" id="result">
+    <div class="card">
+      <div class="result-title" id="result-title"></div>
+      <div class="result-sub" id="result-sub"></div>
+      <div id="result-bars"></div>
+    </div>
+
+    <div class="action-note" id="action-note"></div>
+
+    <div class="card" id="no-match-card" style="display:none; border-left: 3px solid #185FA5;">
+      <div style="font-size:13px; font-weight:600; color:#1A3C5E; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.5rem;">Ingen tydlig persona</div>
+      <div style="font-size:14px; color:#444; line-height:1.65;">Personen passar inte tydligt in i en enda kategori – det kan vara ett tecken på att hen befinner sig i en övergångsfas eller är ovanligt komplex. Använd de två starkaste matchningarna som vägledning och anpassa utifrån vad du observerar i samtalet.</div>
+    </div>
+
+    <button class="reset-btn" onclick="resetTool()">↺ Börja om med en ny person</button>
+  </div>
+
+</div>
+
+<div class="footer">CareOn &nbsp;|&nbsp; Personaidentifieraren &nbsp;|&nbsp; Internt verktyg &nbsp;|&nbsp; 2026</div>
+
+<script>
+const PERSONAS = [
+  { id: 'maya', name: 'Maya', tag: 'Den karriärfokuserade', color: '#185FA5' },
+  { id: 'anna', name: 'Anna', tag: 'Den erfarna tvekaren', color: '#0F6E56' },
+  { id: 'margareta', name: 'Margareta', tag: 'Den seniora med valmöjligheter', color: '#534AB7' },
+  { id: 'birgitta', name: 'Birgitta', tag: 'Den seniora tvekaren', color: '#993C1D' },
+  { id: 'veteran', name: 'Veteranen', tag: 'Den som har sett allt', color: '#3C3C3A' },
+];
+
+const NOTES = {
+  maya: 'Fokusera på rätt uppdrag snabbt. Var snabb med kontakt när uppdrag kommer in. Relation är sekundärt. Förvänta dig avgång när marknaden erbjuder bättre – det är inte personligt.',
+  anna: 'Ge trygghet, inte säljargument. Lyft kollektivavtalet och hur ni följer upp. Fråga om distans och geografi tidigt – det är ofta ett dolt krav. Finnas tillgänglig och lyssna in.',
+  margareta: 'Behandla som senior professionell, inte som kandidat. Specificera totalvärdet (lön + pension + semester + försäkringar). Förhandla aktivt om uppdragsupplägg och distansmöjligheter.',
+  birgitta: 'Visa att det är möjligt för någon som henne – lyft konkreta exempel från liknande konsulter. Tätare kontakt än andra. Förklara pensionslogiken tidigt och konkret utan att det låter som sälj.',
+  veteran: 'Var konkret och transparent från start. Specificera totalvärdet och ställ motfrågan om konkurrentens erbjudande. Bygg förtroende innan du säljer. Ta reda på om hen vill bli lämnad ifred eller vill ha nära relation.',
+};
+
+let scores = { maya: 0, anna: 0, birgitta: 0, margareta: 0, veteran: 0 };
+let current = 0;
+const totalQ = 8;
+
+function pick(el) {
+  el.closest('.step').querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('next-btn').disabled = false;
+}
+
+function next() {
+  const step = document.querySelector('.step.active');
+  const selected = step.querySelector('.opt.selected');
+  if (!selected) return;
+  selected.dataset.scores.split(',').forEach(pair => {
+    const [k, v] = pair.split(':');
+    scores[k] = (scores[k] || 0) + parseInt(v);
+  });
+  current++;
+  updateProgress();
+  if (current >= totalQ) { showResult(); return; }
+  step.classList.remove('active');
+  document.querySelectorAll('.step')[current].classList.add('active');
+  document.getElementById('back-btn').disabled = false;
+  document.getElementById('next-btn').disabled = true;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function back() {
+  if (current === 0) return;
+  document.querySelector('.step.active').classList.remove('active');
+  current--;
+  const prev = document.querySelectorAll('.step')[current];
+  prev.classList.add('active');
+  prev.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+  Object.keys(scores).forEach(k => scores[k] = 0);
+  document.getElementById('next-btn').disabled = true;
+  if (current === 0) document.getElementById('back-btn').disabled = true;
+  updateProgress();
+}
+
+function updateProgress() {
+  const pct = Math.round(current / totalQ * 100);
+  document.getElementById('prog').style.width = pct + '%';
+  document.getElementById('prog-pct').textContent = pct + '%';
+  document.getElementById('prog-label').textContent = current < totalQ ? `Fråga ${current + 1} av ${totalQ}` : 'Klar';
+}
+
+function showResult() {
+  document.getElementById('steps').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+
+  const total = Object.values(scores).reduce((a, b) => a + b, 0) || 1;
+  const sorted = PERSONAS.map(p => ({ ...p, score: scores[p.id] || 0, pct: Math.round((scores[p.id] || 0) / total * 100) }))
+    .sort((a, b) => b.score - a.score);
+
+  const top = sorted[0];
+  const second = sorted[1];
+  const spread = top.pct - second.pct;
+
+  let title, sub;
+  if (spread >= 25) {
+    title = 'Tydlig matchning: ' + top.name;
+    sub = top.tag;
+  } else if (spread >= 10) {
+    title = 'Liknar mest: ' + top.name;
+    sub = 'Med tydliga drag av ' + second.name + ' – använd båda porträtten som vägledning.';
+  } else {
+    title = 'Blandat mönster';
+    sub = 'Ingen tydlig matchning. Se detaljer nedan.';
+    document.getElementById('no-match-card').style.display = 'block';
+  }
+
+  document.getElementById('result-title').textContent = title;
+  document.getElementById('result-sub').textContent = sub;
+
+  const bars = sorted.filter(p => p.pct >= 5).map(p => `
+    <div style="margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:5px;">
+        <div style="width:12px;height:12px;border-radius:50%;background:${p.color};flex-shrink:0;"></div>
+        <div style="font-size:14px;font-weight:600;color:#1A3C5E;">${p.name}</div>
+        <div style="font-size:12px;color:#888;margin-left:4px;">${p.tag}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="flex:1;height:7px;background:#EFEFEF;border-radius:4px;overflow:hidden;">
+          <div style="height:100%;border-radius:4px;background:${p.color};width:${p.pct}%;transition:width 0.8s;"></div>
+        </div>
+        <div style="font-size:13px;font-weight:600;color:#555;width:36px;text-align:right;">${p.pct}%</div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('result-bars').innerHTML = bars;
+
+  const noteKey = spread >= 10 ? top.id : null;
+  const noteEl = document.getElementById('action-note');
+  if (noteKey) {
+    noteEl.innerHTML = `<strong>Vad du gör nu</strong>${NOTES[noteKey]}`;
+  } else {
+    noteEl.style.display = 'none';
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function resetTool() {
+  scores = { maya: 0, anna: 0, birgitta: 0, margareta: 0, veteran: 0 };
+  current = 0;
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('no-match-card').style.display = 'none';
+  document.getElementById('action-note').style.display = 'block';
+  document.getElementById('steps').style.display = 'block';
+  document.querySelectorAll('.step').forEach((s, i) => {
+    s.classList.toggle('active', i === 0);
+    s.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+  });
+  document.getElementById('back-btn').disabled = true;
+  document.getElementById('next-btn').disabled = true;
+  document.getElementById('prog').style.width = '0%';
+  document.getElementById('prog-pct').textContent = '0%';
+  document.getElementById('prog-label').textContent = 'Fråga 1 av 8';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
