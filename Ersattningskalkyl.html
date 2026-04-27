@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareOn – Ersättningskalkyl</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f3; color: #1a1a1a; min-height: 100vh; display: flex; justify-content: center; padding: 2rem 1rem; }
+    .container { width: 100%; max-width: 720px; }
+    .header { margin-bottom: 2rem; }
+    .header h1 { font-size: 18px; font-weight: 500; color: #1a1a1a; margin-bottom: 4px; }
+    .header p { font-size: 13px; color: #888; }
+
+    .tabs { display: flex; border-bottom: 0.5px solid #ddd; margin-bottom: 2rem; }
+    .tab { padding: 0.5rem 1.25rem; font-size: 14px; color: #888; cursor: pointer; border: none; border-bottom: 2px solid transparent; background: none; font-family: inherit; }
+    .tab.active { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; font-weight: 500; }
+
+    .view { display: none; }
+    .view.active { display: block; }
+
+    .input-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    .input-label { font-size: 14px; color: #666; white-space: nowrap; }
+    .input-field { display: flex; align-items: center; gap: 8px; }
+    .input-field input { width: 150px; font-size: 16px; font-weight: 500; padding: 8px 10px; border: 0.5px solid #ccc; border-radius: 8px; font-family: inherit; color: #1a1a1a; background: #fff; }
+    .input-field input:focus { outline: none; border-color: #999; }
+    .input-field span { font-size: 14px; color: #888; }
+
+    .cards-top { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px; }
+    .cards-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
+    .card { background: #efefed; border-radius: 8px; padding: 1rem; }
+    .card.highlight { background: #fff; border: 0.5px solid #bbb; }
+    .card-label { font-size: 12px; color: #888; margin-bottom: 4px; }
+    .card-value { font-size: 20px; font-weight: 500; color: #1a1a1a; }
+    .card-sub { font-size: 11px; color: #aaa; margin-top: 2px; }
+
+    .section-title { font-size: 13px; font-weight: 500; color: #888; margin: 1.5rem 0 0.75rem; }
+    .ingress { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 1.25rem; }
+
+    .breakdown { border: 0.5px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 0.75rem; background: #fff; }
+    .row { display: flex; justify-content: space-between; align-items: center; padding: 10px 1rem; border-bottom: 0.5px solid #eee; font-size: 14px; }
+    .row:last-child { border-bottom: none; }
+    .row-label { color: #888; }
+    .row-value { font-weight: 500; color: #1a1a1a; }
+    .row.total { background: #f5f5f3; }
+    .row.total .row-label { font-weight: 500; color: #1a1a1a; }
+    .row.total .row-value { font-size: 16px; }
+
+    .note { font-size: 12px; color: #aaa; margin-top: 0.5rem; padding-left: 2px; line-height: 1.5; }
+
+    .pension-intro { background: #efefed; border-radius: 8px; padding: 0.875rem 1rem; margin-bottom: 1.25rem; font-size: 13px; color: #666; display: flex; justify-content: space-between; align-items: center; }
+    .pension-intro span:last-child { font-weight: 500; color: #1a1a1a; font-size: 15px; }
+
+    .pension-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1rem; }
+    .pension-card { background: #efefed; border-radius: 10px; padding: 1.25rem; }
+    .pension-card.better { background: #fff; border: 0.5px solid #bbb; }
+    .pension-card h3 { font-size: 12px; font-weight: 500; color: #888; margin-bottom: 4px; }
+    .pension-card .context { font-size: 11px; color: #aaa; margin-bottom: 0.875rem; line-height: 1.5; }
+    .pension-card .big-label { font-size: 11px; color: #aaa; margin-bottom: 2px; }
+    .pension-card .big { font-size: 24px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.875rem; }
+    .pension-card .prow { display: flex; justify-content: space-between; font-size: 12px; color: #888; margin-top: 5px; border-top: 0.5px solid #ddd; padding-top: 5px; }
+    .pension-card .prow:first-of-type { border-top: none; padding-top: 0; }
+    .pension-card .prow span:last-child { color: #1a1a1a; font-weight: 500; }
+
+    .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; background: #e6f4ec; color: #2a7a4b; margin-top: 8px; }
+
+    .diff-box { background: #efefed; border-radius: 8px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .diff-label { font-size: 14px; color: #666; }
+    .diff-value { font-size: 18px; font-weight: 500; color: #2a7a4b; }
+
+    @media (max-width: 520px) {
+      .cards-top { grid-template-columns: repeat(2, 1fr); }
+      .pension-compare { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Ersättningskalkyl</h1>
+      <p>CareOn – internt verktyg för lönedialogen</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('v1')">Ersättningsöversikt</button>
+      <button class="tab" onclick="switchTab('v2')">Pensionskalkylen</button>
+    </div>
+
+    <div id="v1" class="view active">
+      <div class="input-row">
+        <span class="input-label">Månadslön vi erbjuder</span>
+        <div class="input-field">
+          <input type="number" id="salary" value="56000" min="20000" max="120000" step="500" oninput="syncAndCalc()" />
+          <span>kr/mån</span>
+        </div>
+      </div>
+
+      <div class="cards-top">
+        <div class="card">
+          <p class="card-label">Månadslön</p>
+          <p class="card-value" id="c-salary">–</p>
+          <p class="card-sub">kr/mån</p>
+        </div>
+        <div class="card">
+          <p class="card-label">Pension (ITP1)</p>
+          <p class="card-value" id="c-pension">–</p>
+          <p class="card-sub">kr/mån</p>
+        </div>
+        <div class="card">
+          <p class="card-label">Semester</p>
+          <p class="card-value" id="c-semester">–</p>
+          <p class="card-sub">kr/mån</p>
+        </div>
+        <div class="card">
+          <p class="card-label">Flexpension</p>
+          <p class="card-value" id="c-flex">–</p>
+          <p class="card-sub">kr/mån</p>
+        </div>
+      </div>
+
+      <div class="cards-bottom">
+        <div class="card highlight">
+          <p class="card-label">Total ersättning</p>
+          <p class="card-value" id="c-total">–</p>
+          <p class="card-sub">kr/mån</p>
+        </div>
+        <div class="card highlight">
+          <p class="card-label">Ersättning per timme</p>
+          <p class="card-value" id="c-hourly">–</p>
+          <p class="card-sub">kr/tim (167 tim/mån)</p>
+        </div>
+      </div>
+
+      <p class="section-title">Specifikation</p>
+      <div class="breakdown">
+        <div class="row"><span class="row-label">Månadslön</span><span class="row-value" id="r-salary">–</span></div>
+        <div class="row"><span class="row-label">Semesterersättning 12,5%</span><span class="row-value" id="r-semester">–</span></div>
+        <div class="row"><span class="row-label">ITP1 pension (≤52 125 kr) 4,5%</span><span class="row-value" id="r-itp-low">–</span></div>
+        <div class="row"><span class="row-label">ITP1 pension (>52 125 kr) 30%</span><span class="row-value" id="r-itp-high">–</span></div>
+        <div class="row"><span class="row-label">Flexpension 1,7%</span><span class="row-value" id="r-flex">–</span></div>
+        <div class="row total"><span class="row-label">Total ersättning</span><span class="row-value" id="r-total">–</span></div>
+      </div>
+      <p class="note">Därutöver ingår försäkringsskydd via TGL och ITP sjuk utan extra kostnad för konsulten. Timersättning beräknad på 167 timmar per månad.</p>
+    </div>
+
+    <div id="v2" class="view">
+      <div class="input-row">
+        <span class="input-label">Månadslön</span>
+        <div class="input-field">
+          <input type="number" id="salary2" value="56000" min="20000" max="120000" step="500" oninput="syncAndCalc2()" />
+          <span>kr/mån</span>
+        </div>
+      </div>
+
+      <p class="section-title">Skatteeffekten av pensionsavsättning</p>
+      <p class="ingress">CareOn avsätter din pension direkt – du betalar 30% skatt när du tar ut den. Om pensionen istället betalas ut som lön betalar du ca 50% skatt, och gör en egen avsättning på det som blir kvar.</p>
+
+      <div class="pension-intro">
+        <span>CareOn avsätter varje månad i pension</span>
+        <span id="p-total-intro">–</span>
+      </div>
+
+      <div class="pension-compare">
+        <div class="pension-card better">
+          <h3>Om pensionen avsätts och tas ut vid pension</h3>
+          <p class="context">Samma belopp – beskattas som pension (ca 30%)</p>
+          <p class="big-label">Du får ut efter skatt</p>
+          <div class="big" id="p-net-pension">–</div>
+          <div class="prow"><span>Pensionsbelopp</span><span id="p-pension-saved">–</span></div>
+          <div class="prow"><span>Skatt (30%)</span><span id="p-tax-pension">–</span></div>
+          <div class="prow"><span>Netto</span><span id="p-netto-pension">–</span></div>
+          <div class="badge">Mer pengar i pension</div>
+        </div>
+        <div class="pension-card">
+          <h3>Om du tar ut pensionen som lön</h3>
+          <p class="context">Samma belopp – men beskattas som inkomst (ca 50%)</p>
+          <p class="big-label">Du får ut efter skatt</p>
+          <div class="big" id="p-net-salary">–</div>
+          <div class="prow"><span>Pensionsbelopp</span><span id="p-pension-gross">–</span></div>
+          <div class="prow"><span>Skatt (50%)</span><span id="p-tax-salary">–</span></div>
+          <div class="prow"><span>Netto</span><span id="p-netto-salary">–</span></div>
+        </div>
+      </div>
+
+      <div class="diff-box">
+        <span class="diff-label">Skillnad per månad till din fördel</span>
+        <span class="diff-value" id="p-diff">–</span>
+      </div>
+
+      <div class="breakdown">
+        <div class="row"><span class="row-label">ITP1 pension (beräknad på angiven lön)</span><span class="row-value" id="p-itp">–</span></div>
+        <div class="row"><span class="row-label">Flexpension 1,7%</span><span class="row-value" id="p-flex">–</span></div>
+        <div class="row total"><span class="row-label">Total pensionsavsättning per månad</span><span class="row-value" id="p-total">–</span></div>
+      </div>
+      <p class="note">Beräkningen visar enbart skatteeffekten. Därutöver växer pensionskapitalet med avkastning på det fulla avsatta beloppet – vilket ytterligare ökar värdet jämfört med att ta ut pension som lön.</p>
+    </div>
+  </div>
+
+  <script>
+    function fmt(n) { return Math.round(n).toLocaleString('sv-SE') + ' kr'; }
+    function set(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
+
+    function getPension(s) {
+      const bp = 52125;
+      const itpLow = Math.min(s, bp) * 0.045;
+      const itpHigh = s > bp ? (s - bp) * 0.30 : 0;
+      return { itpLow, itpHigh, total: itpLow + itpHigh };
+    }
+
+    function calcV1(s) {
+      const p = getPension(s);
+      const semester = s * 0.125;
+      const flex = s * 0.017;
+      const total = s + semester + p.total + flex;
+      const hourly = total / 167;
+      set('c-salary', Math.round(s).toLocaleString('sv-SE'));
+      set('c-pension', Math.round(p.total).toLocaleString('sv-SE'));
+      set('c-semester', Math.round(semester).toLocaleString('sv-SE'));
+      set('c-flex', Math.round(flex).toLocaleString('sv-SE'));
+      set('c-total', Math.round(total).toLocaleString('sv-SE'));
+      set('c-hourly', Math.round(hourly).toLocaleString('sv-SE'));
+      set('r-salary', fmt(s));
+      set('r-semester', fmt(semester));
+      set('r-itp-low', fmt(p.itpLow));
+      set('r-itp-high', p.itpHigh > 0 ? fmt(p.itpHigh) : '—');
+      set('r-flex', fmt(flex));
+      set('r-total', fmt(total));
+    }
+
+    function calcV2(s) {
+      const p = getPension(s);
+      const flex = s * 0.017;
+      const totalPension = p.total + flex;
+      const netSalary = totalPension * 0.50;
+      const netPension = totalPension * 0.70;
+      const diff = netPension - netSalary;
+      set('p-total-intro', fmt(totalPension));
+      set('p-net-pension', fmt(netPension) + '/mån');
+      set('p-pension-saved', fmt(totalPension));
+      set('p-tax-pension', '− ' + fmt(totalPension * 0.30));
+      set('p-netto-pension', fmt(netPension));
+      set('p-net-salary', fmt(netSalary) + '/mån');
+      set('p-pension-gross', fmt(totalPension));
+      set('p-tax-salary', '− ' + fmt(totalPension * 0.50));
+      set('p-netto-salary', fmt(netSalary));
+      set('p-diff', '+' + fmt(diff) + '/mån');
+      set('p-itp', fmt(p.total));
+      set('p-flex', fmt(flex));
+      set('p-total', fmt(totalPension));
+    }
+
+    function syncAndCalc() {
+      const s = parseFloat(document.getElementById('salary').value) || 0;
+      document.getElementById('salary2').value = s;
+      calcV1(s); calcV2(s);
+    }
+
+    function syncAndCalc2() {
+      const s = parseFloat(document.getElementById('salary2').value) || 0;
+      document.getElementById('salary').value = s;
+      calcV1(s); calcV2(s);
+    }
+
+    function switchTab(id) {
+      document.querySelectorAll('.tab').forEach((t, i) => {
+        t.classList.toggle('active', (i === 0 && id === 'v1') || (i === 1 && id === 'v2'));
+      });
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    calcV1(56000); calcV2(56000);
+  </script>
+</body>
+</html>
