@@ -11,51 +11,59 @@
     .header { margin-bottom: 2rem; }
     .header h1 { font-size: 18px; font-weight: 500; color: #1a1a1a; margin-bottom: 4px; }
     .header p { font-size: 13px; color: #888; }
-    .tabs { display: flex; border-bottom: 0.5px solid #ddd; margin-bottom: 2rem; }
-    .tab { padding: 0.5rem 1.25rem; font-size: 14px; color: #888; cursor: pointer; border: none; border-bottom: 2px solid transparent; background: none; font-family: inherit; }
-    .tab.active { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; font-weight: 500; }
+    .tabs { display: flex; border-bottom: 2px solid #006A8E; }
+    .tab { padding: 0.5rem 1.25rem; font-size: 14px; color: #006A8E; cursor: pointer; border: none; border-bottom: 3px solid transparent; background: none; font-family: inherit; font-weight: 500; }
+    .tab.active { background: #006A8E; color: #F59A00; border-bottom: 3px solid #F59A00; }
+    .main { background: #006A8E; border-radius: 0 0 12px 12px; padding: 1.5rem; position: relative; }
+    .logo { position: absolute; top: -1rem; right: -1.2cm; height: 144px; width: auto; }
     .view { display: none; }
     .view.active { display: block; }
-    .input-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-    .input-label { font-size: 14px; color: #666; white-space: nowrap; }
+    .input-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .input-label { font-size: 14px; color: #fff; white-space: nowrap; }
     .input-field { display: flex; align-items: center; gap: 8px; }
-    .input-field input { width: 150px; font-size: 16px; font-weight: 500; padding: 8px 10px; border: 0.5px solid #ccc; border-radius: 8px; font-family: inherit; color: #1a1a1a; background: #fff; }
-    .input-field input:focus { outline: none; border-color: #999; }
-    .input-field span { font-size: 14px; color: #888; }
+    .input-field input { width: 140px; font-size: 16px; font-weight: 500; padding: 7px 10px; border: 1.5px solid #F59A00; border-radius: 8px; font-family: inherit; color: #006A8E; background: #fff; }
+    .input-field input:focus { outline: none; border-color: #fff; }
+    .input-unit { font-size: 14px; color: #F59A00; }
+    .input-sub { font-size: 13px; color: rgba(255,255,255,0.7); white-space: nowrap; }
     .cards-top { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px; }
-    .cards-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
-    .card { background: #efefed; border-radius: 8px; padding: 1rem; }
-    .card.highlight { background: #fff; border: 0.5px solid #bbb; }
-    .card-label { font-size: 12px; color: #888; margin-bottom: 4px; }
-    .card-value { font-size: 20px; font-weight: 500; color: #1a1a1a; }
-    .card-sub { font-size: 11px; color: #aaa; margin-top: 2px; }
-    .section-title { font-size: 13px; font-weight: 500; color: #888; margin: 1.5rem 0 0.5rem; }
-    .ingress { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 1.25rem; }
-    .breakdown { border: 0.5px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 0.75rem; background: #fff; }
-    .row { display: flex; justify-content: space-between; align-items: center; padding: 10px 1rem; border-bottom: 0.5px solid #eee; font-size: 14px; }
+    .cards-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; }
+    .card { background: rgba(255,255,255,0.12); border-radius: 8px; padding: 1rem; }
+    .card.highlight { background: rgba(255,255,255,0.18); border: 1.5px solid #F59A00; }
+    .card-label { font-size: 12px; color: rgba(255,255,255,0.75); margin-bottom: 4px; }
+    .card-value { font-size: 20px; font-weight: 500; color: #fff; }
+    .card.highlight .card-value { color: #F59A00; }
+    .card-sub { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    .section-title { font-size: 13px; font-weight: 500; color: #F59A00; margin-bottom: 0.5rem; }
+    .ingress { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 1.25rem; }
+    .breakdown { border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; overflow: hidden; margin-bottom: 0.75rem; background: rgba(255,255,255,0.08); }
+    .row { display: flex; justify-content: space-between; align-items: center; padding: 10px 1rem; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 14px; }
     .row:last-child { border-bottom: none; }
-    .row-label { color: #888; }
-    .row-value { font-weight: 500; color: #1a1a1a; }
-    .row.total { background: #f5f5f3; }
-    .row.total .row-label { font-weight: 500; color: #1a1a1a; }
-    .row.total .row-value { font-size: 16px; }
-    .note { font-size: 12px; color: #aaa; margin-top: 0.5rem; padding-left: 2px; line-height: 1.5; }
-    .pension-intro { background: #efefed; border-radius: 8px; padding: 0.875rem 1rem; margin-bottom: 1.25rem; font-size: 13px; color: #666; display: flex; justify-content: space-between; align-items: center; }
-    .pension-intro span:last-child { font-weight: 500; color: #1a1a1a; font-size: 15px; }
+    .row-label { color: rgba(255,255,255,0.75); }
+    .row-value { font-weight: 500; color: #fff; }
+    .row.total { background: rgba(255,255,255,0.1); }
+    .row.total .row-label { font-weight: 500; color: #F59A00; }
+    .row.total .row-value { font-size: 16px; color: #F59A00; }
+    .note { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 0.75rem; line-height: 1.6; }
+    .pension-intro { background: rgba(255,255,255,0.12); border-radius: 8px; padding: 0.875rem 1rem; margin-bottom: 1.25rem; font-size: 13px; color: rgba(255,255,255,0.85); display: flex; justify-content: space-between; align-items: center; }
+    .pension-intro span:last-child { font-weight: 500; color: #F59A00; font-size: 15px; }
     .pension-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1rem; }
-    .pension-card { background: #efefed; border-radius: 10px; padding: 1.25rem; }
-    .pension-card.better { background: #fff; border: 0.5px solid #bbb; }
-    .pension-card h3 { font-size: 12px; font-weight: 500; color: #888; margin-bottom: 4px; }
-    .pension-card .context { font-size: 11px; color: #aaa; margin-bottom: 0.875rem; line-height: 1.5; }
-    .pension-card .big-label { font-size: 11px; color: #aaa; margin-bottom: 2px; }
-    .pension-card .big { font-size: 24px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.875rem; }
-    .pension-card .prow { display: flex; justify-content: space-between; font-size: 12px; color: #888; margin-top: 5px; border-top: 0.5px solid #ddd; padding-top: 5px; }
+    .pension-card { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 1.25rem; }
+    .pension-card.better { background: rgba(255,255,255,0.16); border: 1.5px solid #F59A00; }
+    .pension-card h3 { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.8); margin-bottom: 4px; }
+    .pension-card .context { font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 0.875rem; line-height: 1.5; }
+    .pension-card .big-label { font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 2px; }
+    .pension-card .big { font-size: 24px; font-weight: 500; color: #F59A00; margin-bottom: 0.875rem; }
+    .pension-card .prow { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 5px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 5px; }
     .pension-card .prow:first-of-type { border-top: none; padding-top: 0; }
-    .pension-card .prow span:last-child { color: #1a1a1a; font-weight: 500; }
-    .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; background: #e6f4ec; color: #2a7a4b; margin-top: 8px; }
-    .diff-box { background: #efefed; border-radius: 8px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
-    .diff-label { font-size: 14px; color: #666; }
-    .diff-value { font-size: 18px; font-weight: 500; color: #2a7a4b; }
+    .pension-card .prow span:last-child { color: #fff; font-weight: 500; }
+    .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 20px; background: #F59A00; color: #006A8E; font-weight: 600; margin-top: 8px; }
+    .diff-box { background: rgba(245,154,0,0.15); border: 1px solid #F59A00; border-radius: 8px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .diff-label { font-size: 14px; color: rgba(255,255,255,0.85); }
+    .diff-value { font-size: 18px; font-weight: 500; color: #F59A00; }
+    .ins-sub { font-size: 11px; color: rgba(245,154,0,0.85); margin-top: 6px; border-top: 1px solid rgba(245,154,0,0.3); padding-top: 6px; }
+    .insurance-block { background: rgba(255,255,255,0.08); border: 1px dashed rgba(245,154,0,0.5); border-radius: 8px; padding: 0.875rem 1rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+    .insurance-label { font-size: 13px; color: rgba(255,255,255,0.75); }
+    .insurance-value { font-size: 15px; font-weight: 500; color: #F59A00; white-space: nowrap; margin-left: 1rem; }
     @media (max-width: 520px) {
       .cards-top { grid-template-columns: repeat(2, 1fr); }
       .pension-compare { grid-template-columns: 1fr; }
@@ -72,83 +80,90 @@
       <button class="tab active" onclick="switchTab('v1')">Ersättningsöversikt</button>
       <button class="tab" onclick="switchTab('v2')">Pensionskalkylen</button>
     </div>
+    <div class="main">
+      <img class="logo" src="data:image/png;base64,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" alt="CareOn" />
 
-    <div id="v1" class="view active">
-      <div class="input-row">
-        <span class="input-label">Månadslön vi erbjuder</span>
-        <div class="input-field">
-          <input type="number" id="salary" value="56000" min="20000" max="120000" step="500" oninput="syncAndCalc()" />
-          <span>kr/mån</span>
+      <div id="v1" class="view active">
+        <div class="input-row">
+          <span class="input-label">Månadslön vi erbjuder</span>
+          <div class="input-field">
+            <input type="number" id="salary" value="56000" min="20000" max="120000" step="500" oninput="syncAndCalc()" />
+            <span class="input-unit">kr/mån</span>
+          </div>
+          <span class="input-sub">(vid 167 timmars arbete)</span>
         </div>
+        <div class="cards-top">
+          <div class="card"><p class="card-label">Månadslön</p><p class="card-value" id="c-salary">–</p><p class="card-sub">kr/mån</p></div>
+          <div class="card"><p class="card-label">Pension (ITP1)</p><p class="card-value" id="c-pension">–</p><p class="card-sub">kr/mån</p></div>
+          <div class="card"><p class="card-label">Semester</p><p class="card-value" id="c-semester">–</p><p class="card-sub">kr/mån</p></div>
+          <div class="card"><p class="card-label">Flexpension</p><p class="card-value" id="c-flex">–</p><p class="card-sub">kr/mån</p></div>
+        </div>
+        <div class="cards-bottom">
+          <div class="card highlight"><p class="card-label">Total ersättning</p><p class="card-value" id="c-total">–</p><p class="card-sub">kr/mån (167 tim/mån)</p></div>
+          <div class="card highlight"><p class="card-label">Ersättning per timme</p><p class="card-value" id="c-hourly">–</p><p class="card-sub">kr/tim (167 tim/mån)</p></div>
+        </div>
+        <p class="section-title">Specifikation</p>
+        <div class="breakdown">
+          <div class="row"><span class="row-label">Månadslön</span><span class="row-value" id="r-salary">–</span></div>
+          <div class="row"><span class="row-label">Semesterersättning 12,5%</span><span class="row-value" id="r-semester">–</span></div>
+          <div class="row"><span class="row-label">ITP1 pension (≤52 125 kr) 4,5% på lön+semester</span><span class="row-value" id="r-itp-low">–</span></div>
+          <div class="row"><span class="row-label">ITP1 pension (>52 125 kr) 30% på lön+semester</span><span class="row-value" id="r-itp-high">–</span></div>
+          <div class="row"><span class="row-label">Flexpension 1,7% på lön+semester</span><span class="row-value" id="r-flex">–</span></div>
+          <div class="row total"><span class="row-label">Total ersättning</span><span class="row-value" id="r-total">–</span></div>
+        </div>
+        <div class="insurance-block">
+          <div class="insurance-label">Utöver detta får du även ett antal viktiga försäkringar som vi betalar för dig, så som TGL, Sjukpensionsförsäkring, Inkomstbortfallsförsäkring mm</div>
+        </div>
+        <p class="note">Semesterersättning är pensionsgrundande – pension beräknas på lön + semester. I enlighet med kollektivavtalets villkor, ingår i ovanstående att pension betalas in även om du blir sjuk eller dylikt och försäkring mot inkomstbortfall vid sjukdom. Dessutom är du försäkrad via TGL. Se kollektivavtalet för specifika villkor. All ersättning i kalkylen är beräknad på att man arbetar 167 timmar per månad och baseras på de villkor som gäller i aktuellt kollektivavtal. Lönemodellen följer vårt kollektivavtal som följer faktisk arbetstid dvs du får betalt för all tid du arbetar, arbetar du mer så du mer betalt och arbetar du mindre så blir det vice versa. Kollektivavtal förhandlas centralt och kan ändras över tid.</p>
       </div>
-      <div class="cards-top">
-        <div class="card"><p class="card-label">Månadslön</p><p class="card-value" id="c-salary">–</p><p class="card-sub">kr/mån</p></div>
-        <div class="card"><p class="card-label">Pension (ITP1)</p><p class="card-value" id="c-pension">–</p><p class="card-sub">kr/mån</p></div>
-        <div class="card"><p class="card-label">Semester</p><p class="card-value" id="c-semester">–</p><p class="card-sub">kr/mån</p></div>
-        <div class="card"><p class="card-label">Flexpension</p><p class="card-value" id="c-flex">–</p><p class="card-sub">kr/mån</p></div>
-      </div>
-      <div class="cards-bottom">
-        <div class="card highlight"><p class="card-label">Total ersättning</p><p class="card-value" id="c-total">–</p><p class="card-sub">kr/mån</p></div>
-        <div class="card highlight"><p class="card-label">Ersättning per timme</p><p class="card-value" id="c-hourly">–</p><p class="card-sub">kr/tim (167 tim/mån)</p></div>
-      </div>
-      <p class="section-title">Specifikation</p>
-      <div class="breakdown">
-        <div class="row"><span class="row-label">Månadslön</span><span class="row-value" id="r-salary">–</span></div>
-        <div class="row"><span class="row-label">Semesterersättning 12,5%</span><span class="row-value" id="r-semester">–</span></div>
-        <div class="row"><span class="row-label">ITP1 pension (≤52 125 kr) 4,5% på lön+semester</span><span class="row-value" id="r-itp-low">–</span></div>
-        <div class="row"><span class="row-label">ITP1 pension (>52 125 kr) 30% på lön+semester</span><span class="row-value" id="r-itp-high">–</span></div>
-        <div class="row"><span class="row-label">Flexpension 1,7% på lön+semester</span><span class="row-value" id="r-flex">–</span></div>
-        <div class="row total"><span class="row-label">Total ersättning</span><span class="row-value" id="r-total">–</span></div>
-      </div>
-      <p class="note">Semesterersättning är pensionsgrundande – pension beräknas på lön + semester. Därutöver ingår försäkringsskydd via TGL och ITP sjuk utan extra kostnad. Timersättning beräknad på 167 timmar per månad.</p>
-    </div>
 
-    <div id="v2" class="view">
-      <div class="input-row">
-        <span class="input-label">Månadslön</span>
-        <div class="input-field">
-          <input type="number" id="salary2" value="56000" min="20000" max="120000" step="500" oninput="syncAndCalc2()" />
-          <span>kr/mån</span>
+      <div id="v2" class="view">
+        <div class="input-row">
+          <span class="input-label">Månadslön</span>
+          <div class="input-field">
+            <input type="number" id="salary2" value="56000" min="20000" max="120000" step="500" oninput="syncAndCalc2()" />
+            <span class="input-unit">kr/mån</span>
+          </div>
         </div>
-      </div>
-      <p class="section-title">Skatteeffekten av pensionsavsättning</p>
-      <p class="ingress">CareOn avsätter din pension direkt – du betalar 30% skatt när du tar ut den. Om pensionen istället betalas ut som lön betalar du ca 50% skatt, och gör en egen avsättning på det som blir kvar.</p>
-      <div class="pension-intro">
-        <span>CareOn avsätter varje månad i pension</span>
-        <span id="p-total-intro">–</span>
-      </div>
-      <div class="pension-compare">
-        <div class="pension-card better">
-          <h3>Om pensionen avsätts och tas ut vid pension</h3>
-          <p class="context">Samma belopp – beskattas som pension (ca 30%)</p>
-          <p class="big-label">Du får ut efter skatt</p>
-          <div class="big" id="p-net-pension">–</div>
-          <div class="prow"><span>Pensionsbelopp</span><span id="p-pension-saved">–</span></div>
-          <div class="prow"><span>Skatt (30%)</span><span id="p-tax-pension">–</span></div>
-          <div class="prow"><span>Netto</span><span id="p-netto-pension">–</span></div>
-          <div class="badge">Mer pengar i pension</div>
+        <p class="section-title">Skatteeffekten av pensionsavsättning</p>
+        <p class="ingress">CareOn avsätter din pension direkt – du betalar 30% skatt när du tar ut den. Om pensionen istället betalas ut som lön betalar du ca 50% skatt, och gör en egen avsättning på det som blir kvar.</p>
+        <div class="pension-intro">
+          <span>CareOn avsätter varje månad i pension</span>
+          <span id="p-total-intro">–</span>
         </div>
-        <div class="pension-card">
-          <h3>Om du tar ut pensionen som lön</h3>
-          <p class="context">Samma belopp – men beskattas som inkomst (ca 50%)</p>
-          <p class="big-label">Du får ut efter skatt</p>
-          <div class="big" id="p-net-salary">–</div>
-          <div class="prow"><span>Pensionsbelopp</span><span id="p-pension-gross">–</span></div>
-          <div class="prow"><span>Skatt (50%)</span><span id="p-tax-salary">–</span></div>
-          <div class="prow"><span>Netto</span><span id="p-netto-salary">–</span></div>
+        <div class="pension-compare">
+          <div class="pension-card better">
+            <h3>Om pensionen avsätts och tas ut vid pension</h3>
+            <p class="context">Samma belopp – beskattas som pension (ca 30%)</p>
+            <p class="big-label">Du får ut efter skatt</p>
+            <div class="big" id="p-net-pension">–</div>
+            <div class="prow"><span>Pensionsbelopp</span><span id="p-pension-saved">–</span></div>
+            <div class="prow"><span>Skatt (30%)</span><span id="p-tax-pension">–</span></div>
+            <div class="prow"><span>Netto</span><span id="p-netto-pension">–</span></div>
+            <div class="badge">Mer pengar i pension</div>
+          </div>
+          <div class="pension-card">
+            <h3>Om du tar ut pensionen som lön</h3>
+            <p class="context">Samma belopp – men beskattas som inkomst (ca 50%)</p>
+            <p class="big-label">Du får ut efter skatt</p>
+            <div class="big" id="p-net-salary">–</div>
+            <div class="prow"><span>Pensionsbelopp</span><span id="p-pension-gross">–</span></div>
+            <div class="prow"><span>Skatt (50%)</span><span id="p-tax-salary">–</span></div>
+            <div class="prow"><span>Netto</span><span id="p-netto-salary">–</span></div>
+          </div>
         </div>
+        <div class="diff-box">
+          <span class="diff-label">Skillnad per månad till din fördel</span>
+          <span class="diff-value" id="p-diff">–</span>
+        </div>
+        <div class="breakdown">
+          <div class="row"><span class="row-label">Pensionsunderlag (lön + semester)</span><span class="row-value" id="p-underlag">–</span></div>
+          <div class="row"><span class="row-label">ITP1 pension</span><span class="row-value" id="p-itp">–</span></div>
+          <div class="row"><span class="row-label">Flexpension 1,7%</span><span class="row-value" id="p-flex">–</span></div>
+          <div class="row total"><span class="row-label">Total pensionsavsättning per månad</span><span class="row-value" id="p-total">–</span></div>
+        </div>
+        <p class="note">Beräkningen visar enbart skatteeffekten. Därutöver växer pensionskapitalet med avkastning på det fulla avsatta beloppet – vilket ytterligare ökar värdet jämfört med att ta ut pension som lön.</p>
       </div>
-      <div class="diff-box">
-        <span class="diff-label">Skillnad per månad till din fördel</span>
-        <span class="diff-value" id="p-diff">–</span>
-      </div>
-      <div class="breakdown">
-        <div class="row"><span class="row-label">Pensionsunderlag (lön + semester)</span><span class="row-value" id="p-underlag">–</span></div>
-        <div class="row"><span class="row-label">ITP1 pension</span><span class="row-value" id="p-itp">–</span></div>
-        <div class="row"><span class="row-label">Flexpension 1,7%</span><span class="row-value" id="p-flex">–</span></div>
-        <div class="row total"><span class="row-label">Total pensionsavsättning per månad</span><span class="row-value" id="p-total">–</span></div>
-      </div>
-      <p class="note">Beräkningen visar enbart skatteeffekten. Därutöver växer pensionskapitalet med avkastning på det fulla avsatta beloppet – vilket ytterligare ökar värdet jämfört med att ta ut pension som lön.</p>
     </div>
   </div>
 
@@ -163,6 +178,18 @@
       return { itpLow, itpHigh, total: itpLow + itpHigh };
     }
 
+    function calcInsurance(s) {
+      const semester = s * 0.125;
+      const pensionBase = s + semester;
+      const bp1 = 52125;
+      const ins1Low = Math.min(pensionBase, bp1) * 0.00125;
+      const ins1High = pensionBase > bp1 ? (pensionBase - bp1) * 0.01142 : 0;
+      const bp2 = 49333;
+      const ins2Low = Math.min(pensionBase, bp2) * 0.0003;
+      const ins2High = pensionBase > bp2 ? (pensionBase - bp2) * 0.00108 : 0;
+      return ins1Low + ins1High + ins2Low + ins2High;
+    }
+
     function calcV1(s) {
       const semester = s * 0.125;
       const pensionBase = s + semester;
@@ -170,6 +197,7 @@
       const flex = pensionBase * 0.017;
       const total = s + semester + p.total + flex;
       const hourly = total / 167;
+      const ins = calcInsurance(s);
       set('c-salary', Math.round(s).toLocaleString('sv-SE'));
       set('c-pension', Math.round(p.total).toLocaleString('sv-SE'));
       set('c-semester', Math.round(semester).toLocaleString('sv-SE'));
@@ -182,6 +210,7 @@
       set('r-itp-high', p.itpHigh > 0 ? fmt(p.itpHigh) : '—');
       set('r-flex', fmt(flex));
       set('r-total', fmt(total));
+      set('c-insurance', Math.round(ins).toLocaleString('sv-SE'));
     }
 
     function calcV2(s) {
