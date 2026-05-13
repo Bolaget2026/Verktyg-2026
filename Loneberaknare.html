@@ -482,7 +482,7 @@
     const brutto      = manadslön + restid_lon;
     const semester    = brutto * SEMESTER;
     const aga_sats    = isPensionar ? AGA_PENSIONAR : AGA_ANSTALD;
-    const aga         = brutto * aga_sats;
+    const aga         = (brutto + semester) * aga_sats;
     const lonekostnad = brutto + semester + aga;
 
     let pensionskostnad = 0;
