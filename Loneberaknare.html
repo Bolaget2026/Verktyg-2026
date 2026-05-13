@@ -38,10 +38,35 @@
       justify-content: space-between;
       flex-shrink: 0;
     }
-
     .header-logo { color: #fff; font-size: 18px; font-weight: 600; letter-spacing: 0.02em; }
     .header-logo span { color: var(--accent); }
     .header-title { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* Tab switcher */
+    .tab-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      padding: 0 1.5rem;
+      gap: 0;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 0.85rem 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+      margin-bottom: -1px;
+    }
+
+    .tab-btn:hover { color: var(--teal); }
+    .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); font-weight: 600; }
 
     .main {
       flex: 1;
@@ -63,10 +88,7 @@
       color: var(--teal);
     }
 
-    .right-col {
-      position: sticky;
-      top: 1.5rem;
-    }
+    .right-col { position: sticky; top: 1.5rem; }
 
     .card {
       background: var(--surface);
@@ -184,7 +206,6 @@
     .tb-label { font-size: 0.68rem; color: rgba(255,255,255,0.55); margin-bottom: 0.2rem; }
     .tb-value { font-family: 'DM Serif Display', serif; font-size: 1.85rem; color: var(--accent); }
     .tb-sub { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-bottom: 0.85rem; }
-
     .tb-per-hour { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.7rem; }
     .tb-per-hour .tb-value { font-family: 'DM Sans', sans-serif; font-size: 1.15rem; font-weight: 600; color: #fff; }
 
@@ -204,7 +225,6 @@
       align-items: center;
       gap: 0.35rem;
     }
-
     .detail-toggle:hover { color: var(--teal); }
 
     .detail-table {
@@ -215,7 +235,6 @@
       border-radius: 10px;
       overflow: hidden;
     }
-
     .detail-table.open { display: block; }
 
     .detail-row {
@@ -226,9 +245,7 @@
       font-size: 0.85rem;
       border-bottom: 1px solid var(--border);
     }
-
     .detail-row:last-child { border-bottom: none; }
-
     .detail-row.section-header {
       background: #F5F6F8;
       font-weight: 600;
@@ -237,11 +254,20 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-
     .detail-row .label { color: var(--text); }
     .detail-row .val { font-weight: 500; color: var(--teal); font-variant-numeric: tabular-nums; }
     .detail-row.total .label { font-weight: 600; }
     .detail-row.total .val { font-weight: 700; color: var(--teal); }
+
+    .pension-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: #FFF8EC;
+      border: 1px solid #F5DFA0;
+      border-radius: 8px;
+      padding: 0.65rem 0.9rem;
+      margin-top: -0.25rem;
+    }
 
     @media (max-width: 750px) {
       .main { grid-template-columns: 1fr; }
@@ -257,11 +283,16 @@
   <div class="header-title">Lönekostnadsberäknare</div>
 </div>
 
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('anstalld')">Anställd</button>
+  <button class="tab-btn" onclick="switchTab('pensionar')">Pensionär</button>
+</div>
+
 <div class="main">
-
   <div class="left-col">
-    <h1 class="page-title">Vad kostar lönen bolaget?</h1>
+    <h1 class="page-title" id="page-title">Vad kostar lönen bolaget?</h1>
 
+    <!-- Kostnader -->
     <div class="card">
       <div class="card-title">Kostnader</div>
       <div class="fields-row">
@@ -303,6 +334,7 @@
       </div>
     </div>
 
+    <!-- Intäkter -->
     <div class="card">
       <div class="card-title">Intäkter</div>
       <div class="fields-row">
@@ -323,6 +355,12 @@
       </div>
     </div>
 
+    <!-- Pensionär-not -->
+    <div class="pension-note" id="pension-note" style="display:none;">
+      Pensionärer har reducerad arbetsgivaravgift (10,21%) och ingen ITP-pension.
+    </div>
+
+    <!-- Detaljer -->
     <div class="detail-section">
       <button class="detail-toggle" onclick="toggleDetail()">
         <span id="toggle-icon">▼</span><span id="toggle-label"> Visa beräkningsdetaljer</span>
@@ -331,19 +369,24 @@
         <div class="detail-row section-header"><span>Lönekostnader</span></div>
         <div class="detail-row"><span class="label">Bruttolön</span><span class="val" id="d_brutto">–</span></div>
         <div class="detail-row"><span class="label">Semesterersättning (12,5%)</span><span class="val" id="d_semester">–</span></div>
-        <div class="detail-row"><span class="label">Arbetsgivaravgifter (31,42%)</span><span class="val" id="d_aga">–</span></div>
+        <div class="detail-row"><span class="label" id="d_aga_label">Arbetsgivaravgifter (31,42%)</span><span class="val" id="d_aga">–</span></div>
         <div class="detail-row total"><span class="label">Total lönekostnad</span><span class="val" id="d_lonekostnad">–</span></div>
-        <div class="detail-row section-header"><span>Pensionskostnader (ITP 1)</span></div>
-        <div class="detail-row"><span class="label">Pension &lt;52 125 kr (4,5%)</span><span class="val" id="d_itp_low">–</span></div>
-        <div class="detail-row"><span class="label">Pension &gt;52 125 kr (30%)</span><span class="val" id="d_itp_high">–</span></div>
-        <div class="detail-row"><span class="label">Flexpension (1,7%)</span><span class="val" id="d_flex">–</span></div>
-        <div class="detail-row"><span class="label">Löneskatt (24,26%)</span><span class="val" id="d_loneskatt">–</span></div>
-        <div class="detail-row total"><span class="label">Total pensionskostnad</span><span class="val" id="d_pensionskostnad">–</span></div>
+
+        <div id="pension-detail-section">
+          <div class="detail-row section-header"><span>Pensionskostnader (ITP 1)</span></div>
+          <div class="detail-row"><span class="label">Pension &lt;52 125 kr (4,5%)</span><span class="val" id="d_itp_low">–</span></div>
+          <div class="detail-row"><span class="label">Pension &gt;52 125 kr (30%)</span><span class="val" id="d_itp_high">–</span></div>
+          <div class="detail-row"><span class="label">Flexpension (1,7%)</span><span class="val" id="d_flex">–</span></div>
+          <div class="detail-row"><span class="label">Löneskatt (24,26%)</span><span class="val" id="d_loneskatt">–</span></div>
+          <div class="detail-row total"><span class="label">Total pensionskostnad</span><span class="val" id="d_pensionskostnad">–</span></div>
+        </div>
+
         <div class="detail-row section-header"><span>Övriga kostnader</span></div>
         <div class="detail-row"><span class="label">Milersättning (25 kr/mil)</span><span class="val" id="d_mil">–</span></div>
         <div class="detail-row"><span class="label">Resor</span><span class="val" id="d_resor">–</span></div>
         <div class="detail-row"><span class="label">Boende</span><span class="val" id="d_boende">–</span></div>
         <div class="detail-row total"><span class="label">Månatlig totalkostnad</span><span class="val" id="d_totalkostnad">–</span></div>
+
         <div class="detail-row section-header"><span>Intäkter</span></div>
         <div class="detail-row"><span class="label">Fakturerade timmar (167 tim)</span><span class="val" id="d_fakt">–</span></div>
         <div class="detail-row"><span class="label">Restid fakturering</span><span class="val" id="d_restid_fakt">–</span></div>
@@ -352,6 +395,7 @@
     </div>
   </div>
 
+  <!-- Results -->
   <div class="right-col">
     <div class="results-card">
       <div class="results-title">Resultat</div>
@@ -359,7 +403,7 @@
         <div class="result-label">Total lönekostnad</div>
         <div class="result-value" id="r_lonekostnad">–</div>
       </div>
-      <div class="result-item">
+      <div class="result-item" id="r_pension_item">
         <div class="result-label">Total pensionskostnad</div>
         <div class="result-value" id="r_pensionskostnad">–</div>
       </div>
@@ -387,13 +431,13 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <script>
   const TIMMAR = 167;
   const SEMESTER = 0.125;
-  const AGA = 0.3142;
+  const AGA_ANSTALD = 0.3142;
+  const AGA_PENSIONAR = 0.1021;
   const ITP_GRANS = 52125;
   const ITP_LOW = 0.045;
   const ITP_HIGH = 0.30;
@@ -401,9 +445,32 @@
   const LONESKATT = 0.2426;
   const MILERSATTNING = 25;
 
+  let currentTab = 'anstald';
+
+  function switchTab(tab) {
+    currentTab = tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const isPensionar = tab === 'pensionar';
+    document.getElementById('pension-note').style.display = isPensionar ? 'block' : 'none';
+    document.getElementById('pension-detail-section').style.display = isPensionar ? 'none' : 'block';
+    document.getElementById('r_pension_item').style.display = isPensionar ? 'none' : 'block';
+    document.getElementById('d_aga_label').textContent = isPensionar
+      ? 'Arbetsgivaravgifter (10,21%)'
+      : 'Arbetsgivaravgifter (31,42%)';
+
+    // Reset default values
+    document.getElementById('manadslön').value = isPensionar ? 42000 : 52000;
+    document.getElementById('fakturera').value = isPensionar ? 850 : 750;
+
+    calc();
+  }
+
   function fmt(n) { return Math.round(n).toLocaleString('sv-SE') + ' kr'; }
 
   function calc() {
+    const isPensionar = currentTab === 'pensionar';
     const manadslön   = parseFloat(document.getElementById('manadslön').value) || 0;
     const restid_lon  = parseFloat(document.getElementById('restid_lon').value) || 0;
     const antal_mil   = parseFloat(document.getElementById('antal_mil').value) || 0;
@@ -412,20 +479,26 @@
     const fakturera   = parseFloat(document.getElementById('fakturera').value) || 0;
     const restid_fakt = parseFloat(document.getElementById('restid_fakt').value) || 0;
 
-    const brutto        = manadslön + restid_lon;
-    const semester      = brutto * SEMESTER;
-    const aga           = brutto * AGA;
-    const lonekostnad   = brutto + semester + aga;
+    const brutto      = manadslön + restid_lon;
+    const semester    = brutto * SEMESTER;
+    const aga_sats    = isPensionar ? AGA_PENSIONAR : AGA_ANSTALD;
+    const aga         = brutto * aga_sats;
+    const lonekostnad = brutto + semester + aga;
 
-    const pensionsunderlag = brutto * (1 + SEMESTER);
-    const itp_low_base  = Math.min(pensionsunderlag, ITP_GRANS);
-    const itp_high_base = Math.max(0, pensionsunderlag - ITP_GRANS);
-    const itp_low       = itp_low_base * ITP_LOW;
-    const itp_high      = itp_high_base * ITP_HIGH;
-    const flex          = pensionsunderlag * FLEX;
-    const pension_sum   = itp_low + itp_high + flex;
-    const loneskatt     = pension_sum * LONESKATT;
-    const pensionskostnad = pension_sum + loneskatt;
+    let pensionskostnad = 0;
+    let itp_low = 0, itp_high = 0, flex = 0, loneskatt = 0;
+
+    if (!isPensionar) {
+      const pensionsunderlag = brutto * (1 + SEMESTER);
+      const itp_low_base  = Math.min(pensionsunderlag, ITP_GRANS);
+      const itp_high_base = Math.max(0, pensionsunderlag - ITP_GRANS);
+      itp_low    = itp_low_base * ITP_LOW;
+      itp_high   = itp_high_base * ITP_HIGH;
+      flex       = pensionsunderlag * FLEX;
+      const pension_sum = itp_low + itp_high + flex;
+      loneskatt  = pension_sum * LONESKATT;
+      pensionskostnad = pension_sum + loneskatt;
+    }
 
     const mil_kostnad   = antal_mil * MILERSATTNING;
     const manadskostnad = lonekostnad + pensionskostnad + mil_kostnad + resor + boende;
