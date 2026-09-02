@@ -7,7 +7,7 @@
 // Körs med: node scripts/track-ads.mjs
 // Kräver inga externa paket – bara Node 18+ (globalt fetch).
 
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 
 const PAGE_SIZE = 100;
@@ -98,6 +98,7 @@ async function main() {
   const dataDir = path.resolve("data");
   const historyPath = path.join(dataDir, "history.json");
   const followupPath = path.join(dataDir, "followup.json");
+  await mkdir(dataDir, { recursive: true });
 
   const today = new Date();
   const todayIso = toIsoDate(today);
