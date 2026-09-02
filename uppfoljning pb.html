@@ -4,26 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Uppföljning – utgångna annonser</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f6f7f5;
+    --teal:#1A3C5E;
+    --gold:#E8A020;
+    --bg:#F5F6F8;
     --panel:#ffffff;
-    --ink:#1c2b26;
-    --ink-soft:#5b6b64;
-    --line:#dde3df;
-    --accent:#0f6b5c;
+    --ink:#1A1A1A;
+    --ink-soft:#6B7280;
+    --line:#E2E6EB;
+    --accent:#1A3C5E;
     --danger:#a4373a;
     --radius:10px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
   *{box-sizing:border-box;}
   body{ margin:0; background:var(--bg); color:var(--ink); line-height:1.4; }
-  .wrap{ max-width:1000px; margin:0 auto; padding:24px 20px 60px; }
+  .wrap{ max-width:1000px; margin:0 auto; padding:0 0 60px; }
+  .brand-header{
+    background:var(--teal);
+    padding:1rem 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:24px;
+  }
+  .brand-header .logo{ color:#fff; font-size:18px; font-weight:600; letter-spacing:0.02em; }
+  .brand-header .logo span{ color:var(--gold); }
+  .brand-header .tagline{
+    color:rgba(255,255,255,0.7); font-size:12px; font-weight:400;
+    letter-spacing:0.05em; text-transform:uppercase;
+  }
+  .content{ max-width:1000px; margin:0 auto; padding:0 20px; }
   header.page{
     display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px;
     margin-bottom:20px;
   }
-  header.page h1{ font-size:22px; font-weight:700; margin:0; letter-spacing:-0.01em; }
+  header.page h1{ font-family:'DM Serif Display', serif; font-size:24px; font-weight:400; margin:0; letter-spacing:-0.01em; }
   header.page .sub{ font-size:13px; color:var(--ink-soft); }
   .status-line{ font-size:12.5px; color:var(--ink-soft); }
   .panel{
@@ -53,6 +71,14 @@
 </head>
 <body>
 <div class="wrap">
+
+  <div class="brand-header">
+    <span class="logo">Care<span>On</span></span>
+    <span class="tagline">Verktygslådan</span>
+  </div>
+
+  <div class="content">
+
   <header class="page">
     <div>
       <h1>Uppföljning – utgångna annonser</h1>
@@ -69,6 +95,8 @@
     Byggs dagligen av ett GitHub Actions-jobb (se <code>scripts/track-ads.mjs</code>) utifrån Arbetsförmedlingens öppna API.
     Full historik över alla sedda annonser finns i <code>data/history.json</code>.
   </footer>
+
+  </div>
 </div>
 
 <script>
