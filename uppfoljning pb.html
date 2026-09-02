@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uppföljning – utgångna annonser</title>
+<style>
+  :root{
+    --bg:#f6f7f5;
+    --panel:#ffffff;
+    --ink:#1c2b26;
+    --ink-soft:#5b6b64;
+    --line:#dde3df;
+    --accent:#0f6b5c;
+    --danger:#a4373a;
+    --radius:10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--ink); line-height:1.4; }
+  .wrap{ max-width:1000px; margin:0 auto; padding:24px 20px 60px; }
+  header.page{
+    display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    margin-bottom:20px;
+  }
+  header.page h1{ font-size:22px; font-weight:700; margin:0; letter-spacing:-0.01em; }
+  header.page .sub{ font-size:13px; color:var(--ink-soft); }
+  .status-line{ font-size:12.5px; color:var(--ink-soft); }
+  .panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden;
+  }
+  table{ width:100%; border-collapse:collapse; }
+  thead th{
+    text-align:left; font-size:11.5px; font-weight:600; color:var(--ink-soft);
+    padding:10px 14px; border-bottom:1px solid var(--line); background:#fbfbfa;
+  }
+  tbody tr{ border-bottom:1px solid var(--line); }
+  tbody tr:last-child{ border-bottom:none; }
+  tbody tr:hover{ background:#fafcfb; }
+  td{ padding:12px 14px; font-size:13.5px; vertical-align:top; }
+  td.headline a{ color:var(--ink); font-weight:600; text-decoration:none; }
+  td.headline a:hover{ text-decoration:underline; }
+  td.headline .employer{ display:block; font-weight:400; color:var(--ink-soft); font-size:12.5px; margin-top:2px; }
+  .muted{ color:var(--ink-soft); font-size:12.5px; }
+  .days-badge{
+    display:inline-block; padding:2px 10px; border-radius:20px; font-size:12px; font-weight:700;
+    background:#fbeceb; color:var(--danger);
+  }
+  .empty-state{ text-align:center; padding:50px 20px; color:var(--ink-soft); font-size:14px; }
+  footer.note{ margin-top:16px; font-size:11.5px; color:var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="page">
+    <div>
+      <h1>Uppföljning – utgångna annonser</h1>
+      <div class="sub">Annonser vars sista ansökningsdag var 3–10 dagar sedan</div>
+    </div>
+    <div class="status-line" id="statusLine">Laddar …</div>
+  </header>
+
+  <div class="panel">
+    <div id="tableArea"><div class="empty-state">Laddar …</div></div>
+  </div>
+
+  <footer class="note">
+    Byggs dagligen av ett GitHub Actions-jobb (se <code>scripts/track-ads.mjs</code>) utifrån Arbetsförmedlingens öppna API.
+    Full historik över alla sedda annonser finns i <code>data/history.json</code>.
+  </footer>
+</div>
+
+<script>
+(function(){
+  function escapeHtml(str){
+    const d = document.createElement("div");
+    d.textContent = str || "";
+    return d.innerHTML;
+  }
+
+  async function load(){
+    try{
+      const res = await fetch("data/followup.json?_=" + Date.now());
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      render(data);
+    } catch(err){
+      document.getElementById("statusLine").textContent = "Kunde inte läsa data/followup.json";
+      document.getElementById("tableArea").innerHTML =
+        '<div class="empty-state">Ingen uppföljningsdata hittades ännu. Filen skapas första gången det dagliga jobbet körs.</div>';
+    }
+  }
+
+  function render(data){
+    const ads = data.ads || [];
+    const generated = data.generated_at ? new Date(data.generated_at) : null;
+    document.getElementById("statusLine").textContent = generated
+      ? "Uppdaterad " + generated.toLocaleDateString("sv-SE") + " " + generated.toLocaleTimeString("sv-SE", {hour:"2-digit", minute:"2-digit"})
+      : "";
+
+    if (ads.length === 0){
+      document.getElementById("tableArea").innerHTML =
+        '<div class="empty-state">Inga annonser att följa upp just nu.</div>';
+      return;
+    }
+
+    const rows = ads.map(ad => {
+      const deadline = ad.application_deadline ? new Date(ad.application_deadline).toLocaleDateString("sv-SE") : "–";
+      const mgrLines = [ad.manager_name, ad.manager_role, ad.manager_phone, ad.manager_email]
+        .filter(Boolean).map(escapeHtml).join("<br>") || '<span class="muted">–</span>';
+      const url = ad.webpage_url || "#";
+      return "<tr>" +
+        '<td><span class="days-badge">' + ad.days_since_expiry + " dagar</span></td>" +
+        '<td class="headline"><a href="' + url + '" target="_blank" rel="noopener">' + escapeHtml(ad.headline || "Utan rubrik") + "</a>" +
+        '<span class="employer">' + escapeHtml(ad.employer || "Okänd arbetsgivare") + "</span></td>" +
+        "<td>" + escapeHtml(ad.municipality) + "<br><span class=\"muted\">" + escapeHtml(ad.region) + "</span></td>" +
+        '<td class="muted">' + escapeHtml(ad.category) + "</td>" +
+        '<td class="muted">' + deadline + "</td>" +
+        "<td>" + mgrLines + "</td>" +
+      "</tr>";
+    }).join("");
+
+    document.getElementById("tableArea").innerHTML =
+      "<table><thead><tr>" +
+      "<th>Gick ut</th><th>Tjänst / arbetsgivare</th><th>Kommun / län</th><th>Kategori</th><th>Sista ansökan</th><th>Chef (kontakt)</th>" +
+      "</tr></thead><tbody>" + rows + "</tbody></table>";
+  }
+
+  load();
+})();
+</script>
+</body>
+</html>
