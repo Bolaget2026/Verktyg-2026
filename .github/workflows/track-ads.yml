@@ -19,7 +19,7 @@ jobs:
       - name: Sätt upp Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Kör uppföljningsskriptet
         run: node scripts/track-ads.mjs
