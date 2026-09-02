@@ -1,0 +1,33 @@
+name: Track ads (daily)
+
+on:
+  schedule:
+    # 06:00 svensk tid (UTC+1/+2) ≈ 05:00 UTC. Justera vid behov.
+    - cron: "0 5 * * *"
+  workflow_dispatch: {} # tillåter manuell körning från Actions-fliken
+
+permissions:
+  contents: write
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checka ut repot
+        uses: actions/checkout@v4
+
+      - name: Sätt upp Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Kör uppföljningsskriptet
+        run: node scripts/track-ads.mjs
+
+      - name: Committa och pusha ändringar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/history.json data/followup.json
+          git diff --cached --quiet && echo "Inga ändringar att committa." || git commit -m "Uppdatera annons-historik och uppföljningslista"
+          git push
