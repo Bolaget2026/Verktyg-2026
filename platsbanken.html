@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lediga jobb – Platsbanken</title>
+<style>
+  :root{
+    --bg:#f6f7f5;
+    --panel:#ffffff;
+    --ink:#1c2b26;
+    --ink-soft:#5b6b64;
+    --line:#dde3df;
+    --accent:#0f6b5c;
+    --accent-soft:#e4f2ee;
+    --norr:#3b6ea5;
+    --mitt:#0f6b5c;
+    --syd:#b5651d;
+    --danger:#a4373a;
+    --radius:10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.4;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:24px 20px 60px;
+  }
+  header.page{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:20px;
+  }
+  header.page h1{
+    font-size:22px;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  header.page .sub{
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .status-line{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:#9aa79f;
+    flex:none;
+  }
+  .dot.live{background:var(--accent);}
+  .dot.error{background:var(--danger);}
+
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:16px 18px;
+    margin-bottom:16px;
+  }
+
+  .controls-grid{
+    display:grid;
+    grid-template-columns: auto 1fr auto;
+    gap:16px 24px;
+    align-items:start;
+  }
+  @media (max-width: 860px){
+    .controls-grid{grid-template-columns:1fr;}
+  }
+
+  .field-label{
+    font-size:11.5px;
+    text-transform:none;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+    display:block;
+  }
+
+  .seg{
+    display:inline-flex;
+    border:1px solid var(--line);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .seg button{
+    border:none;
+    background:var(--panel);
+    padding:7px 14px;
+    font-size:13.5px;
+    cursor:pointer;
+    color:var(--ink);
+    border-right:1px solid var(--line);
+    font-weight:500;
+  }
+  .seg button:last-child{border-right:none;}
+  .seg button.active{
+    background:var(--accent);
+    color:white;
+  }
+
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    border:1px solid var(--line);
+    background:var(--panel);
+    border-radius:20px;
+    padding:6px 12px 6px 10px;
+    font-size:13px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .chip input{accent-color:var(--accent);}
+  .chip.checked{
+    background:var(--accent-soft);
+    border-color:var(--accent);
+  }
+
+  .row-right{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:flex-end;
+  }
+  @media (max-width: 860px){
+    .row-right{align-items:flex-start;}
+  }
+
+  select, input[type=text]{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:8px 10px;
+    font-size:13.5px;
+    background:var(--panel);
+    color:var(--ink);
+  }
+  input[type=text]{width:100%;}
+
+  .btn{
+    border:1px solid var(--accent);
+    background:var(--accent);
+    color:white;
+    border-radius:8px;
+    padding:8px 16px;
+    font-size:13.5px;
+    font-weight:600;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .btn:hover{opacity:0.92;}
+  .btn.secondary{
+    background:var(--panel);
+    color:var(--accent);
+  }
+  .btn:disabled{opacity:0.5;cursor:default;}
+
+  .search-row{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+  .search-row input{flex:1;}
+
+  .summary-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:12px;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .summary-bar strong{color:var(--ink);}
+
+  .region-count{
+    display:flex;
+    gap:14px;
+    font-size:13px;
+  }
+  .region-count span.tag{
+    display:inline-block;
+    width:8px;height:8px;
+    border-radius:2px;
+    margin-right:5px;
+  }
+
+  .lan-overview-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+  }
+  .lan-overview-header .btn.secondary{
+    padding:4px 12px;
+    font-size:12px;
+  }
+  .lan-row{
+    display:grid;
+    grid-template-columns: 150px 1fr 40px;
+    align-items:center;
+    gap:10px;
+    padding:5px 0;
+    cursor:pointer;
+    border-radius:6px;
+  }
+  .lan-row:hover{ background:#fafcfb; }
+  .lan-row.active-lan .lan-name{ font-weight:700; color:var(--accent); }
+  .lan-name{
+    font-size:13px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .lan-bar-track{
+    background:#eef1ef;
+    border-radius:4px;
+    height:14px;
+    overflow:hidden;
+    display:flex;
+  }
+  .lan-bar-seg{
+    height:100%;
+    display:block;
+  }
+  .lan-bar-seg:first-child{ border-radius:4px 0 0 4px; }
+  .lan-legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:10px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--line);
+  }
+  .lan-legend-item{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .lan-legend-swatch{
+    width:10px;height:10px;
+    border-radius:2px;
+    display:inline-block;
+  }
+  .cat-cell{
+    width:14px;
+    padding-left:14px !important;
+    padding-right:0 !important;
+  }
+  .cat-dot{
+    display:inline-block;
+    width:9px;height:9px;
+    border-radius:50%;
+  }
+  .lan-count{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    text-align:right;
+    font-variant-numeric: tabular-nums;
+  }
+  .lan-overview-empty{
+    font-size:13px;
+    color:var(--ink-soft);
+    padding:8px 0;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  thead th{
+    text-align:left;
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--ink-soft);
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+    background:#fbfbfa;
+  }
+  tbody tr{
+    border-bottom:1px solid var(--line);
+  }
+  tbody tr:last-child{border-bottom:none;}
+  tbody tr:hover{background:#fafcfb;}
+  td{
+    padding:12px 14px;
+    font-size:13.5px;
+    vertical-align:top;
+  }
+  td.headline a{
+    color:var(--ink);
+    font-weight:600;
+    text-decoration:none;
+  }
+  td.headline a:hover{text-decoration:underline;}
+  td.headline .employer{
+    display:block;
+    font-weight:400;
+    color:var(--ink-soft);
+    font-size:12.5px;
+    margin-top:2px;
+  }
+  .badge{
+    display:inline-block;
+    padding:2px 9px;
+    border-radius:20px;
+    font-size:11.5px;
+    font-weight:600;
+    color:white;
+  }
+  .badge.Norr{background:var(--norr);}
+  .badge.Mitt{background:var(--mitt);}
+  .badge.Syd{background:var(--syd);}
+  .badge.Okänd{background:#9aa79f;}
+
+  .muted{color:var(--ink-soft);font-size:12.5px;}
+
+  .empty-state{
+    text-align:center;
+    padding:50px 20px;
+    color:var(--ink-soft);
+    font-size:14px;
+  }
+  .error-box{
+    background:#fbeceb;
+    border:1px solid #e3b6b3;
+    color:var(--danger);
+    padding:14px 16px;
+    border-radius:var(--radius);
+    font-size:13.5px;
+    margin-bottom:16px;
+  }
+  .error-box a{color:var(--danger);}
+
+  footer.note{
+    margin-top:18px;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page">
+    <div>
+      <h1>Lediga jobb – Platsbanken</h1>
+      <div class="sub">Kurator · Socialsekreterare · Biståndsbedömare · Övrigt socialt arbete</div>
+    </div>
+    <div class="status-line" id="statusLine">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusText">Laddar …</span>
+    </div>
+  </header>
+
+  <div class="panel">
+    <div class="controls-grid">
+      <div>
+        <span class="field-label">Säljregion</span>
+        <div class="seg" id="regionSeg">
+          <button data-region="Alla" class="active">Alla</button>
+          <button data-region="Norr">Norr</button>
+          <button data-region="Mitt">Mitt</button>
+          <button data-region="Syd">Syd</button>
+        </div>
+      </div>
+
+      <div>
+        <span class="field-label">Yrkesområde</span>
+        <div class="chips" id="occChips"></div>
+      </div>
+
+      <div class="row-right">
+        <span class="field-label" style="align-self:flex-end;">Län</span>
+        <select id="lanSelect">
+          <option value="">Alla län</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="search-row">
+      <input type="text" id="freeText" placeholder="Fritextsök – t.ex. kommun, arbetsgivare eller ord i annonsen">
+      <button class="btn" id="refreshBtn">Uppdatera nu</button>
+      <select id="autoRefresh">
+        <option value="0">Auto: av</option>
+        <option value="5">Auto: 5 min</option>
+        <option value="15">Auto: 15 min</option>
+        <option value="30">Auto: 30 min</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="errorBox"></div>
+
+  <div class="panel" id="lanOverviewPanel">
+    <div class="lan-overview-header">
+      <span class="field-label" style="margin:0;">Länsfördelning</span>
+      <button class="btn secondary" id="toggleLanOverview" type="button">Dölj</button>
+    </div>
+    <div id="lanOverviewBody"></div>
+  </div>
+
+  <div class="summary-bar">
+    <div><strong id="resultCount">–</strong> <span id="resultLabel">annonser</span></div>
+    <div class="region-count" id="regionCounts"></div>
+  </div>
+
+  <div id="resultsArea">
+    <div class="empty-state">Laddar annonser …</div>
+  </div>
+
+  <footer class="note">
+    Data från Arbetsförmedlingens öppna API (JobSearch / Platsbanken), både offentliga och privata arbetsgivare.
+    Filtrerar på samma strukturerade yrkesgrupp som Platsbankens eget filter. Hämtar upp till 700 träffar för
+    Kurator/Socialsekreterare, 500 för Biståndsbedömare, 2000 för Övrigt socialt arbete. Sorterat på publiceringsdatum.
+    Län-listan fylls på med de län som förekommer i träffarna.
+  </footer>
+</div>
+
+<script>
+(function(){
+
+  // ---- Kommun -> säljregion (Norr/Mitt/Syd), källa: Niklas region-ark ----
+  const REGION_MAP = {"Alvesta": "Norr", "Arboga": "Norr", "Arjeplog": "Norr", "Arvidsjaur": "Norr", "Arvika": "Norr", "Askersund": "Norr", "Avesta": "Norr", "Berg": "Norr", "Bjurholm": "Norr", "Boden": "Norr", "Bollnäs": "Norr", "Borlänge": "Norr", "Bräcke": "Norr", "Degerfors": "Norr", "Dorotea": "Norr", "Eda": "Norr", "Enköping": "Norr", "Fagersta": "Norr", "Falun": "Norr", "Filipstad": "Norr", "Forshaga": "Norr", "Gagnef": "Norr", "Grums": "Norr", "Gällivare": "Norr", "Gävle": "Norr", "Hagfors": "Norr", "Hallsberg": "Norr", "Hallstahammar": "Norr", "Hammarö": "Norr", "Heby": "Norr", "Hedemora": "Norr", "Hofors": "Norr", "Hudiksvall": "Norr", "Håbo": "Norr", "Hällefors": "Norr", "Härjedalen": "Norr", "Härnösand": "Norr", "Karlskoga": "Norr", "Karlstad": "Norr", "Katrineholm": "Norr", "Kil": "Norr", "Knivsta": "Norr", "Kramfors": "Norr", "Kristinehamn": "Norr", "Krokom": "Norr", "Kumla": "Norr", "Kungsör": "Norr", "Köping": "Norr", "Laxå": "Norr", "Lekeberg": "Norr", "Leksand": "Norr", "Lindesberg": "Norr", "Ljusdal": "Norr", "Ljusnarsberg": "Norr", "Ludvika": "Norr", "Lycksele": "Norr", "Malung-Sälen": "Norr", "Malå": "Norr", "Mora": "Norr", "Munkfors": "Norr", "Nora": "Norr", "Norberg": "Norr", "Nordanstig": "Norr", "Nordmaling": "Norr", "Norsjö": "Norr", "Ockelbo": "Norr", "Orsa": "Norr", "Ovanåker": "Norr", "Ragunda": "Norr", "Robertsfors": "Norr", "Rättvik": "Norr", "Sala": "Norr", "Sandviken": "Norr", "Skellefteå": "Norr", "Skinnskatteberg": "Norr", "Smedjebacken": "Norr", "Sollefteå": "Norr", "Sorsele": "Norr", "Storfors": "Norr", "Storuman": "Norr", "Strömsund": "Norr", "Sundsvall": "Norr", "Sunne": "Norr", "Surahammar": "Norr", "Säffle": "Norr", "Säter": "Norr", "Söderhamn": "Norr", "Tierp": "Norr", "Timrå": "Norr", "Torsby": "Norr", "Umeå": "Norr", "Uppsala": "Norr", "Uppvidinge": "Norr", "Vansbro": "Norr", "Vilhelmina": "Norr", "Vindeln": "Norr", "Vännäs": "Norr", "Västerås": "Norr", "Ånge": "Norr", "Åre": "Norr", "Årjäng": "Norr", "Åsele": "Norr", "Älvdalen": "Norr", "Älvkarleby": "Norr", "Örebro": "Norr", "Örnsköldsvik": "Norr", "Östersund": "Norr", "Östhammar": "Norr", "Haparanda": "Norr", "Jokkmokk": "Norr", "Kalix": "Norr", "Kiruna": "Norr", "Luleå": "Norr", "Pajala": "Norr", "Piteå": "Norr", "Älvsbyn": "Norr", "Överkalix": "Norr", "Övertorneå": "Norr", "Ale": "Syd", "Alingsås": "Syd", "Bengtsfors": "Syd", "Bjuvs": "Syd", "Bollebygd": "Syd", "Borgholm": "Syd", "Borås": "Syd", "Bromölla": "Syd", "Burlöv": "Syd", "Båstad": "Syd", "Dals-Ed": "Syd", "Emmaboda": "Syd", "Eslöv": "Syd", "Essunga": "Syd", "Falkenberg": "Syd", "Falköping": "Syd", "Färgelanda": "Syd", "Grästorp": "Syd", "Gullspång": "Syd", "Göteborg": "Syd", "Götene": "Syd", "Halmstad": "Syd", "Helsingborg": "Syd", "Herrljunga": "Syd", "Hjo": "Syd", "Hultsfred": "Syd", "Hylte": "Syd", "Härryda": "Syd", "Hässleholm": "Syd", "Höganäs": "Syd", "Högsby": "Syd", "Hörby": "Syd", "Höör": "Syd", "Kalmar": "Syd", "Karlsborg": "Syd", "Karlshamn": "Syd", "Karlskrona": "Syd", "Klippan": "Syd", "Kristianstad": "Syd", "Kungsbacka": "Syd", "Kungälv": "Syd", "Kävlinge": "Syd", "Laholm": "Syd", "Landskrona": "Syd", "Lerum": "Syd", "Lessebo": "Syd", "Lidköping": "Syd", "Lilla Edet": "Syd", "Ljungby": "Syd", "Lomma": "Syd", "Lund": "Syd", "Lysekil": "Syd", "Malmö": "Syd", "Mariestad": "Syd", "Markaryd": "Syd", "Mark": "Syd", "Mellerud": "Syd", "Munkedal": "Syd", "Mölndal": "Syd", "Mönsterås": "Syd", "Mörbylånga": "Syd", "Nybro": "Syd", "Olofström": "Syd", "Osby": "Syd", "Orust": "Syd", "Oskarshamn": "Syd", "Partille": "Syd", "Perstorp": "Syd", "Ronneby": "Syd", "Simrishamn": "Syd", "Sjöbo": "Syd", "Skara": "Syd", "Skurup": "Syd", "Skövde": "Syd", "Sotenäs": "Syd", "Staffanstorp": "Syd", "Stenungsund": "Syd", "Strömstad": "Syd", "Svalöv": "Syd", "Svedala": "Syd", "Svenljunga": "Syd", "Sölvesborg": "Syd", "Tanum": "Syd", "Tibro": "Syd", "Tidaholm": "Syd", "Tingsryd": "Syd", "Tjörn": "Syd", "Tomelilla": "Syd", "Torsås": "Syd", "Tranemo": "Syd", "Trelleborg": "Syd", "Trollhättan": "Syd", "Töreboda": "Syd", "Uddevalla": "Syd", "Ulricehamn": "Syd", "Vara": "Syd", "Varberg": "Syd", "Vellinge": "Syd", "Vimmerby": "Syd", "Vårgårda": "Syd", "Vänersborg": "Syd", "Västervik": "Syd", "Växjö": "Syd", "Ystad": "Syd", "Åmål": "Syd", "Åstorp": "Syd", "Älmhult": "Syd", "Ängelholm": "Syd", "Öckerö": "Syd", "Örkelljunga": "Syd", "Östra Göinge": "Syd", "Aneby": "Mitt", "Botkyrka": "Mitt", "Boxholm": "Mitt", "Danderyd": "Mitt", "Ekerö": "Mitt", "Eksjö": "Mitt", "Eskilstuna": "Mitt", "Finspång": "Mitt", "Flen": "Mitt", "Gislaved": "Mitt", "Gnesta": "Mitt", "Gnosjö": "Mitt", "Habo": "Mitt", "Haninge": "Mitt", "Huddinge": "Mitt", "Järfälla": "Mitt", "Jönköping": "Mitt", "Kinda": "Mitt", "Kommunalaförbundet sjukvård och omsorg i Norrtälje (KSON)": "Mitt", "Lidingö": "Mitt", "Linköping": "Mitt", "Mjölby": "Mitt", "Motala": "Mitt", "Mullsjö": "Mitt", "Nacka": "Mitt", "Norrköping": "Mitt", "Norrtälje": "Mitt", "Nykvarn": "Mitt", "Nyköping": "Mitt", "Nynäshamn": "Mitt", "Nässjö": "Mitt", "Oxelösund": "Mitt", "Gotland": "Mitt", "Salem": "Mitt", "Sigtuna": "Mitt", "Socialförvaltningen Stockholms stad": "Mitt", "Socialjouren Stockholm": "Mitt", "Sollentuna": "Mitt", "Solna": "Mitt", "Stockholm": "Mitt", "Stockholms stad Bromma sdf": "Mitt", "Stockholms stad enheten för hemlösa": "Mitt", "Stockholms stad Enskede-Årsta-Vantör sdf": "Mitt", "Stockholms stad Farsta sdf": "Mitt", "Stockholms stad Hägersten-Älvsjö sdf": "Mitt", "Stockholms stad Hässelby-Vällingby sdf": "Mitt", "Stockholms stad Järva SDF": "Mitt", "Stockholms stad Kungsholmen sdf": "Mitt", "Stockholms stad Norra Innerstadens SDF": "Mitt", "Stockholms stad Skarpnäck sdf": "Mitt", "Stockholms stad Skärholmen sdf": "Mitt", "Stockholms stad Södermalm sdf": "Mitt", "Stockholms stad Östermalm sdf": "Mitt", "Strängnäs": "Mitt", "Sundbyberg": "Mitt", "Sävsjö": "Mitt", "Söderköping": "Mitt", "Södertälje": "Mitt", "Tranås": "Mitt", "Trosa": "Mitt", "Tyresö": "Mitt", "Täby": "Mitt", "Upplands Väsby": "Mitt", "Upplands-Bro": "Mitt", "Vadstena": "Mitt", "Vaggeryd": "Mitt", "Valdemarsvik": "Mitt", "Vallentuna": "Mitt", "Vaxholm": "Mitt", "Vetlanda": "Mitt", "Vingåker": "Mitt", "Värmdö": "Mitt", "Värnamo": "Mitt", "Ydre": "Mitt", "Åtvidaberg": "Mitt", "Ödeshög": "Mitt", "Österåker": "Mitt"};
+
+  // Stockholms stadsdelsförvaltningar: om annonsens arbetsgivare/rubrik nämner
+  // stadsdelen, tagga med den. Annars faller alla Stockholm-annonser tillbaka
+  // på den generiska "Stockholm"-posten (som redan finns i REGION_MAP).
+  const STOCKHOLM_SDF = [
+    "Bromma", "Enskede-Årsta-Vantör", "Farsta", "Hägersten-Älvsjö",
+    "Hässelby-Vällingby", "Järva", "Kungsholmen", "Norra Innerstaden",
+    "Skarpnäck", "Skärholmen", "Södermalm", "Östermalm"
+  ];
+
+  // Yrkeskategorier: bekräftade occupation-group concept-id, hämtade direkt ur
+  // skarpa annonser (Platsbankens eget filter använder samma fält).
+  const OCCUPATION_CONFIG = {
+    "Kurator":              { id: "dJXy_Rpq_a2u", maxPages: 7,  color: "#2f6fed" },
+    "Socialsekreterare":    { id: "pok1_ipJ_yzD", maxPages: 7,  color: "#e0a92e" },
+    "Biståndsbedömare":     { id: "5uP5_Ugw_aVE", maxPages: 5,  color: "#d1453b" },
+    "Övrigt socialt arbete":{ id: "n6iX_f2z_XfE", maxPages: 20, color: "#8a8f94" }
+  };
+  const OCCUPATION_LABELS = Object.keys(OCCUPATION_CONFIG);
+  const SEARCH_BASE = "https://jobsearch.api.jobtechdev.se/search";
+
+  let selectedOccupations = new Set(OCCUPATION_LABELS);
+  let selectedRegion = "Alla";
+  let selectedLan = "";
+  let freeText = "";
+  let autoTimer = null;
+  let lastHits = [];
+  let knownLan = new Set(); // län-namn vi sett i träffar hittills, för dropdownen
+  let lanOverviewCollapsed = false;
+
+  const $ = (sel) => document.querySelector(sel);
+
+  function setStatus(text, mode){
+    $("#statusText").textContent = text;
+    const dot = $("#statusDot");
+    dot.className = "dot" + (mode === "live" ? " live" : mode === "error" ? " error" : "");
+  }
+
+  function showError(msg){
+    $("#errorBox").innerHTML =
+      '<div class="error-box">' + msg +
+      ' Om felet kvarstår kan Arbetsförmedlingens API kräva en gratis nyckel – registrera på ' +
+      '<a href="https://apirequest.jobtechdev.se" target="_blank">apirequest.jobtechdev.se</a> och lägg till den i koden.</div>';
+  }
+  function clearError(){ $("#errorBox").innerHTML = ""; }
+
+  function renderOccChips(){
+    const container = $("#occChips");
+    container.innerHTML = "";
+    OCCUPATION_LABELS.forEach(label => {
+      const wrap = document.createElement("label");
+      wrap.className = "chip" + (selectedOccupations.has(label) ? " checked" : "");
+      wrap.innerHTML = '<input type="checkbox" ' + (selectedOccupations.has(label) ? "checked" : "") + '> ' + label;
+      wrap.querySelector("input").addEventListener("change", (e) => {
+        if (e.target.checked) selectedOccupations.add(label);
+        else selectedOccupations.delete(label);
+        wrap.classList.toggle("checked", e.target.checked);
+        loadResults();
+      });
+      container.appendChild(wrap);
+    });
+  }
+
+  function updateLanOptions(){
+    const sel = $("#lanSelect");
+    const current = sel.value;
+    const sorted = [...knownLan].sort((a, b) => a.localeCompare(b, "sv"));
+    sel.innerHTML = '<option value="">Alla län</option>' +
+      sorted.map(l => '<option value="' + escapeHtml(l) + '">' + escapeHtml(l) + '</option>').join("");
+    if (sorted.includes(current)) sel.value = current;
+  }
+
+  function normalizeKommun(name){
+    return (name || "").trim();
+  }
+
+  function regionForHit(hit){
+    const kommun = normalizeKommun(hit.workplace_address && hit.workplace_address.municipality);
+    if (!kommun) return "Okänd";
+    if (kommun === "Stockholm"){
+      const haystack = ((hit.employer && hit.employer.name) || "") + " " + (hit.headline || "") + " " +
+                        ((hit.workplace_address && hit.workplace_address.city) || "");
+      const sdfHit = STOCKHOLM_SDF.find(sdf => haystack.toLowerCase().includes(sdf.toLowerCase()));
+      if (sdfHit && REGION_MAP["Stockholms stad " + sdfHit + " sdf"]) {
+        return REGION_MAP["Stockholms stad " + sdfHit + " sdf"];
+      }
+      return REGION_MAP["Stockholm"] || "Okänd";
+    }
+    return REGION_MAP[kommun] || "Okänd";
+  }
+
+  const PAGE_SIZE = 100;
+
+  function buildSearchUrl(occupationId, offset){
+    const params = new URLSearchParams();
+    params.append("occupation-group", occupationId);
+    if (freeText.trim()) params.append("q", freeText.trim());
+    params.append("limit", String(PAGE_SIZE));
+    params.append("offset", String(offset));
+    return SEARCH_BASE + "?" + params.toString();
+  }
+
+  async function fetchAllForTerm(label){
+    const config = OCCUPATION_CONFIG[label];
+    const maxHits = config.maxPages * PAGE_SIZE;
+    let offset = 0;
+    let total = Infinity;
+    const hits = [];
+    while (offset < total && offset < maxHits){
+      const res = await fetch(buildSearchUrl(config.id, offset));
+      if (!res.ok) throw new Error("HTTP " + res.status + " (" + label + ")");
+      const data = await res.json();
+      total = (data.total && data.total.value) || 0;
+      const pageHits = data.hits || [];
+      hits.push(...pageHits);
+      if (pageHits.length === 0) break; // inga fler sidor
+      offset += PAGE_SIZE;
+    }
+    hits.forEach(hit => { hit._categoryLabel = label; });
+    return hits;
+  }
+
+  async function loadResults(){
+    if (selectedOccupations.size === 0){
+      $("#resultsArea").innerHTML = '<div class="empty-state">Bocka i minst en yrkeskategori.</div>';
+      $("#resultCount").textContent = "0";
+      $("#regionCounts").innerHTML = "";
+      return;
+    }
+    clearError();
+    setStatus("Hämtar annonser …");
+    try{
+      const hitLists = await Promise.all(
+        [...selectedOccupations].map(label => fetchAllForTerm(label))
+      );
+
+      const byId = new Map();
+      hitLists.forEach(hits => hits.forEach(hit => byId.set(hit.id, hit)));
+
+      // Bygg upp listan över kända län från alla träffar, så dropdownen fylls på
+      byId.forEach(hit => {
+        const lan = hit.workplace_address && hit.workplace_address.region;
+        if (lan) knownLan.add(lan);
+      });
+      updateLanOptions();
+
+      lastHits = [...byId.values()].sort((a, b) => {
+        const da = a.publication_date ? new Date(a.publication_date).getTime() : 0;
+        const db = b.publication_date ? new Date(b.publication_date).getTime() : 0;
+        return db - da;
+      });
+
+      renderResults();
+      const now = new Date();
+      setStatus("Uppdaterad " + now.toLocaleTimeString("sv-SE", {hour:"2-digit", minute:"2-digit"}), "live");
+    } catch(err){
+      setStatus("Kunde inte hämta data", "error");
+      showError("Anropet mot Platsbankens API misslyckades (" + err.message + ").");
+      $("#resultsArea").innerHTML = '<div class="empty-state">Inga annonser att visa just nu.</div>';
+      $("#resultCount").textContent = "0";
+      $("#regionCounts").innerHTML = "";
+    }
+  }
+
+  function renderLanOverview(regionFiltered){
+    const body = $("#lanOverviewBody");
+    $("#toggleLanOverview").textContent = lanOverviewCollapsed ? "Visa" : "Dölj";
+    if (lanOverviewCollapsed){
+      body.style.display = "none";
+      return;
+    }
+    body.style.display = "";
+
+    // counts[lan] = { total, byCategory: { label: n, ... } }
+    const counts = {};
+    regionFiltered.forEach(t => {
+      const lan = (t.hit.workplace_address && t.hit.workplace_address.region) || "Okänt län";
+      const cat = t.hit._categoryLabel || "Övrigt socialt arbete";
+      if (!counts[lan]) counts[lan] = { total: 0, byCategory: {} };
+      counts[lan].total += 1;
+      counts[lan].byCategory[cat] = (counts[lan].byCategory[cat] || 0) + 1;
+    });
+
+    const rows = Object.entries(counts).sort((a, b) => b[1].total - a[1].total);
+
+    if (rows.length === 0){
+      body.innerHTML = '<div class="lan-overview-empty">Inga träffar att fördela på län ännu.</div>';
+      return;
+    }
+
+    const legend = OCCUPATION_LABELS
+      .filter(label => selectedOccupations.has(label))
+      .map(label => '<span class="lan-legend-item"><span class="lan-legend-swatch" style="background:' +
+        OCCUPATION_CONFIG[label].color + ';"></span>' + escapeHtml(label) + '</span>')
+      .join("");
+
+    const max = rows[0][1].total;
+    const bars = rows.map(([lan, data]) => {
+      const totalPct = Math.max(4, Math.round((data.total / max) * 100));
+      const isActive = selectedLan === lan;
+      const segments = OCCUPATION_LABELS
+        .filter(label => data.byCategory[label] > 0)
+        .map(label => {
+          const share = (data.byCategory[label] / data.total) * totalPct;
+          return '<span class="lan-bar-seg" style="width:' + share + '%;background:' +
+            OCCUPATION_CONFIG[label].color + ';" title="' + escapeHtml(label) + ': ' + data.byCategory[label] + '"></span>';
+        }).join("");
+      return '<div class="lan-row' + (isActive ? " active-lan" : "") + '" data-lan="' + escapeHtml(lan) + '">' +
+        '<span class="lan-name">' + escapeHtml(lan) + '</span>' +
+        '<span class="lan-bar-track">' + segments + '</span>' +
+        '<span class="lan-count">' + data.total + '</span>' +
+      '</div>';
+    }).join("");
+
+    body.innerHTML = '<div class="lan-legend">' + legend + '</div>' + bars;
+
+    [...body.querySelectorAll(".lan-row")].forEach(row => {
+      row.addEventListener("click", () => {
+        const lan = row.dataset.lan;
+        selectedLan = (selectedLan === lan) ? "" : lan; // klick igen avmarkerar
+        $("#lanSelect").value = selectedLan;
+        renderResults();
+      });
+    });
+  }
+
+  $("#toggleLanOverview").addEventListener("click", () => {
+    lanOverviewCollapsed = !lanOverviewCollapsed;
+    renderResults();
+  });
+
+  function renderResults(){
+    const tagged = lastHits.map(hit => ({ hit, region: regionForHit(hit) }));
+    const regionFiltered = selectedRegion === "Alla" ? tagged : tagged.filter(t => t.region === selectedRegion);
+    let filtered = regionFiltered;
+    if (selectedLan){
+      filtered = filtered.filter(t => (t.hit.workplace_address && t.hit.workplace_address.region) === selectedLan);
+    }
+
+    renderLanOverview(regionFiltered);
+
+    $("#resultCount").textContent = filtered.length;
+    $("#resultLabel").textContent = filtered.length === 1 ? "annons" : "annonser";
+
+    const counts = { Norr:0, Mitt:0, Syd:0, "Okänd":0 };
+    tagged.forEach(t => { counts[t.region] = (counts[t.region]||0) + 1; });
+    $("#regionCounts").innerHTML = ["Norr","Mitt","Syd","Okänd"]
+      .filter(r => counts[r] > 0)
+      .map(r => '<span><span class="tag badge ' + r + '" style="display:inline-block;width:8px;height:8px;padding:0;border-radius:2px;"></span>' + r + ': ' + counts[r] + '</span>')
+      .join("");
+
+    if (filtered.length === 0){
+      $("#resultsArea").innerHTML = '<div class="empty-state">Inga annonser matchar valda filter.</div>';
+      return;
+    }
+
+    const rows = filtered.map(({hit, region}) => {
+      const kommun = normalizeKommun(hit.workplace_address && hit.workplace_address.municipality) || "–";
+      const employer = (hit.employer && hit.employer.name) || "Okänd arbetsgivare";
+      const pubDate = hit.publication_date ? new Date(hit.publication_date) : null;
+      const dateStr = pubDate ? pubDate.toLocaleDateString("sv-SE") : "–";
+      const deadline = hit.application_deadline ? new Date(hit.application_deadline).toLocaleDateString("sv-SE") : "–";
+      const url = hit.webpage_url || "#";
+      const category = hit._categoryLabel || "Övrigt socialt arbete";
+      const catColor = (OCCUPATION_CONFIG[category] && OCCUPATION_CONFIG[category].color) || "#8a8f94";
+      return '<tr>' +
+        '<td class="cat-cell"><span class="cat-dot" style="background:' + catColor + ';" title="' + escapeHtml(category) + '"></span></td>' +
+        '<td class="headline"><a href="' + url + '" target="_blank" rel="noopener">' + escapeHtml(hit.headline || "Utan rubrik") + '</a>' +
+        '<span class="employer">' + escapeHtml(employer) + '</span></td>' +
+        '<td>' + escapeHtml(kommun) + '<br><span class="badge ' + region + '">' + region + '</span></td>' +
+        '<td class="muted">' + dateStr + '</td>' +
+        '<td class="muted">' + deadline + '</td>' +
+      '</tr>';
+    }).join("");
+
+    $("#resultsArea").innerHTML =
+      '<table><thead><tr>' +
+      '<th></th><th>Tjänst / arbetsgivare</th><th>Kommun / region</th><th>Publicerad</th><th>Sista ansökan</th>' +
+      '</tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  function escapeHtml(str){
+    const d = document.createElement("div");
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function setupAutoRefresh(minutes){
+    if (autoTimer) clearInterval(autoTimer);
+    if (minutes > 0){
+      autoTimer = setInterval(loadResults, minutes * 60 * 1000);
+    }
+  }
+
+  // ---- Events ----
+  $("#regionSeg").addEventListener("click", (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+    selectedRegion = btn.dataset.region;
+    [...$("#regionSeg").children].forEach(b => b.classList.toggle("active", b === btn));
+    renderResults();
+  });
+
+  $("#lanSelect").addEventListener("change", (e) => {
+    selectedLan = e.target.value;
+    renderResults();
+  });
+
+  let searchDebounce = null;
+  $("#freeText").addEventListener("input", (e) => {
+    freeText = e.target.value;
+    clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(loadResults, 500);
+  });
+
+  $("#refreshBtn").addEventListener("click", loadResults);
+
+  $("#autoRefresh").addEventListener("change", (e) => {
+    setupAutoRefresh(parseInt(e.target.value, 10));
+  });
+
+  // ---- Init ----
+  (async function init(){
+    renderOccChips();
+    await loadResults();
+  })();
+
+})();
+</script>
+</body>
+</html>
