@@ -4,21 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lediga jobb – Platsbanken</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f6f7f5;
+    --teal:#1A3C5E;
+    --teal-mid:#2a5a8a;
+    --gold:#E8A020;
+    --bg:#F5F6F8;
     --panel:#ffffff;
-    --ink:#1c2b26;
-    --ink-soft:#5b6b64;
-    --line:#dde3df;
-    --accent:#0f6b5c;
-    --accent-soft:#e4f2ee;
-    --norr:#3b6ea5;
-    --mitt:#0f6b5c;
-    --syd:#b5651d;
+    --ink:#1A1A1A;
+    --ink-soft:#6B7280;
+    --line:#E2E6EB;
+    --accent:#1A3C5E;
+    --accent-soft:#eef2f6;
+    --norr:#2a5a8a;
+    --mitt:#1A3C5E;
+    --syd:#E8A020;
     --danger:#a4373a;
     --radius:10px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
   *{box-sizing:border-box;}
   body{
@@ -30,7 +34,34 @@
   .wrap{
     max-width:1180px;
     margin:0 auto;
-    padding:24px 20px 60px;
+    padding:0 0 60px;
+  }
+  .brand-header{
+    background:var(--teal);
+    padding:1rem 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:24px;
+  }
+  .brand-header .logo{
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .brand-header .logo span{ color:var(--gold); }
+  .brand-header .tagline{
+    color:rgba(255,255,255,0.7);
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+  .content{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 20px;
   }
   header.page{
     display:flex;
@@ -41,8 +72,9 @@
     margin-bottom:20px;
   }
   header.page h1{
-    font-size:22px;
-    font-weight:700;
+    font-family:'DM Serif Display', serif;
+    font-size:26px;
+    font-weight:400;
     margin:0;
     letter-spacing:-0.01em;
   }
@@ -304,6 +336,12 @@
     border-bottom:1px solid var(--line);
     background:#fbfbfa;
   }
+  th.sortable-th{
+    cursor:pointer;
+    user-select:none;
+    white-space:nowrap;
+  }
+  th.sortable-th:hover{ color:var(--ink); }
   tbody tr{
     border-bottom:1px solid var(--line);
   }
@@ -369,6 +407,13 @@
 <body>
 <div class="wrap">
 
+  <div class="brand-header">
+    <span class="logo">Care<span>On</span></span>
+    <span class="tagline">Verktygslådan</span>
+  </div>
+
+  <div class="content">
+
   <header class="page">
     <div>
       <h1>Lediga jobb – Platsbanken</h1>
@@ -379,6 +424,7 @@
       <span id="statusText">Laddar …</span>
     </div>
   </header>
+
 
   <div class="panel">
     <div class="controls-grid">
@@ -415,6 +461,10 @@
         <option value="30">Auto: 30 min</option>
       </select>
     </div>
+
+    <label class="chip" id="hideExpiredChip" style="margin-top:10px;">
+      <input type="checkbox" id="hideExpired"> Dölj passerat ansökningsdatum
+    </label>
   </div>
 
   <div id="errorBox"></div>
@@ -442,6 +492,8 @@
     Kurator/Socialsekreterare, 500 för Biståndsbedömare, 2000 för Övrigt socialt arbete. Sorterat på publiceringsdatum.
     Län-listan fylls på med de län som förekommer i träffarna.
   </footer>
+
+  </div>
 </div>
 
 <script>
@@ -474,10 +526,13 @@
   let selectedRegion = "Alla";
   let selectedLan = "";
   let freeText = "";
+  let hideExpired = false;
+  let sortField = "publication_date";
+  let sortDir = "desc";
   let autoTimer = null;
   let lastHits = [];
   let knownLan = new Set(); // län-namn vi sett i träffar hittills, för dropdownen
-  let lanOverviewCollapsed = false;
+  let lanOverviewCollapsed = true;
 
   const $ = (sel) => document.querySelector(sel);
 
@@ -519,6 +574,41 @@
     sel.innerHTML = '<option value="">Alla län</option>' +
       sorted.map(l => '<option value="' + escapeHtml(l) + '">' + escapeHtml(l) + '</option>').join("");
     if (sorted.includes(current)) sel.value = current;
+  }
+
+  // Fackliga nyckelord för att filtrera bort fackrepresentanter ur kontaktlistan.
+  // Heuristik: AF strukturerar inte kontakttyp konsekvent, så detta missar enstaka
+  // ovanliga formuleringar men fångar de vanligaste mönstren.
+  const UNION_KEYWORDS = [
+    "vision", "ssr", "saco", "kommunal", "fackförbundet", "fackliga",
+    "lärarförbundet", "vårdförbundet", "akademikerförbundet", "unionen",
+    "seko", "naturvetarna", "jusek", "akavia", "ingenjörer", "dik"
+  ];
+  const MANAGER_KEYWORDS = ["chef", "ledare", "ansvarig"];
+
+  function getManagerContact(hit){
+    const contacts = hit.application_contacts || [];
+    const isUnion = (c) => {
+      const text = ((c.contact_type || "") + " " + (c.name || "")).toLowerCase();
+      return UNION_KEYWORDS.some(k => text.includes(k));
+    };
+    const hasManagerHint = (c) => {
+      const text = ((c.contact_type || "") + " " + (c.name || "")).toLowerCase();
+      return MANAGER_KEYWORDS.some(k => text.includes(k));
+    };
+    const candidates = contacts.filter(c => !isUnion(c));
+    const chosen = candidates.find(hasManagerHint) || candidates[0] || null;
+    if (!chosen) return null;
+
+    let name = (chosen.name || "").trim();
+    let role = chosen.contact_type || "";
+    // Namn skrivs ibland "Förnamn Efternamn, roll" utan att contact_type är satt
+    const parts = name.split(",");
+    if (parts.length > 1 && !role){
+      role = parts.slice(1).join(",").trim();
+      name = parts[0].trim();
+    }
+    return { name: name || "–", role, phone: chosen.telephone || "", email: chosen.email || "" };
   }
 
   function normalizeKommun(name){
@@ -687,6 +777,19 @@
     if (selectedLan){
       filtered = filtered.filter(t => (t.hit.workplace_address && t.hit.workplace_address.region) === selectedLan);
     }
+    if (hideExpired){
+      const now = Date.now();
+      filtered = filtered.filter(t => {
+        if (!t.hit.application_deadline) return true; // okänt datum döljs inte
+        return new Date(t.hit.application_deadline).getTime() >= now;
+      });
+    }
+
+    filtered = filtered.slice().sort((a, b) => {
+      const da = a.hit[sortField] ? new Date(a.hit[sortField]).getTime() : 0;
+      const db = b.hit[sortField] ? new Date(b.hit[sortField]).getTime() : 0;
+      return sortDir === "asc" ? da - db : db - da;
+    });
 
     renderLanOverview(regionFiltered);
 
@@ -710,24 +813,51 @@
       const employer = (hit.employer && hit.employer.name) || "Okänd arbetsgivare";
       const pubDate = hit.publication_date ? new Date(hit.publication_date) : null;
       const dateStr = pubDate ? pubDate.toLocaleDateString("sv-SE") : "–";
-      const deadline = hit.application_deadline ? new Date(hit.application_deadline).toLocaleDateString("sv-SE") : "–";
+      const deadlineDate = hit.application_deadline ? new Date(hit.application_deadline) : null;
+      const deadline = deadlineDate ? deadlineDate.toLocaleDateString("sv-SE") : "–";
+      const isExpired = deadlineDate && deadlineDate.getTime() < Date.now();
       const url = hit.webpage_url || "#";
       const category = hit._categoryLabel || "Övrigt socialt arbete";
       const catColor = (OCCUPATION_CONFIG[category] && OCCUPATION_CONFIG[category].color) || "#8a8f94";
+      const mgr = getManagerContact(hit);
+      const mgrCell = mgr
+        ? escapeHtml(mgr.name) +
+          (mgr.role ? '<br><span class="muted">' + escapeHtml(mgr.role) + '</span>' : '') +
+          (mgr.phone ? '<br><span class="muted">' + escapeHtml(mgr.phone) + '</span>' : '') +
+          (mgr.email ? '<br><span class="muted">' + escapeHtml(mgr.email) + '</span>' : '')
+        : '<span class="muted">–</span>';
       return '<tr>' +
         '<td class="cat-cell"><span class="cat-dot" style="background:' + catColor + ';" title="' + escapeHtml(category) + '"></span></td>' +
         '<td class="headline"><a href="' + url + '" target="_blank" rel="noopener">' + escapeHtml(hit.headline || "Utan rubrik") + '</a>' +
         '<span class="employer">' + escapeHtml(employer) + '</span></td>' +
         '<td>' + escapeHtml(kommun) + '<br><span class="badge ' + region + '">' + region + '</span></td>' +
         '<td class="muted">' + dateStr + '</td>' +
-        '<td class="muted">' + deadline + '</td>' +
+        '<td class="muted"' + (isExpired ? ' style="color:var(--danger);"' : '') + '>' + deadline + (isExpired ? ' ⚠' : '') + '</td>' +
+        '<td>' + mgrCell + '</td>' +
       '</tr>';
     }).join("");
 
+    const sortArrow = (field) => sortField === field ? (sortDir === "asc" ? " ▲" : " ▼") : "";
     $("#resultsArea").innerHTML =
       '<table><thead><tr>' +
-      '<th></th><th>Tjänst / arbetsgivare</th><th>Kommun / region</th><th>Publicerad</th><th>Sista ansökan</th>' +
+      '<th></th><th>Tjänst / arbetsgivare</th><th>Kommun / region</th>' +
+      '<th class="sortable-th" data-sort="publication_date">Publicerad' + sortArrow("publication_date") + '</th>' +
+      '<th class="sortable-th" data-sort="application_deadline">Sista ansökan' + sortArrow("application_deadline") + '</th>' +
+      '<th>Chef (kontakt)</th>' +
       '</tr></thead><tbody>' + rows + '</tbody></table>';
+
+    [...document.querySelectorAll(".sortable-th")].forEach(th => {
+      th.addEventListener("click", () => {
+        const field = th.dataset.sort;
+        if (sortField === field){
+          sortDir = sortDir === "asc" ? "desc" : "asc";
+        } else {
+          sortField = field;
+          sortDir = "desc";
+        }
+        renderResults();
+      });
+    });
   }
 
   function escapeHtml(str){
@@ -754,6 +884,12 @@
 
   $("#lanSelect").addEventListener("change", (e) => {
     selectedLan = e.target.value;
+    renderResults();
+  });
+
+  $("#hideExpired").addEventListener("change", (e) => {
+    hideExpired = e.target.checked;
+    $("#hideExpiredChip").classList.toggle("checked", hideExpired);
     renderResults();
   });
 
