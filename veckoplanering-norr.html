@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veckoplanering – Region Norr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF7F1;
+    --panel:#ffffff;
+    --ink:#1A1A1A;
+    --ink-soft:#6B7280;
+    --line:#E9E4D8;
+    --primary:#1A3C5E;
+    --primary-mid:#2A5A8A;
+    --accent:#E8A020;
+    --accent-soft:#FBEACB;
+    --ok:#3E8E5A;
+    --ok-soft:#E7F3EA;
+    --radius:16px;
+    --dash-bg:#FCF3E1;
+    --dash-line:#F0DFB8;
+    font-family:'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--bg); color:var(--ink); line-height:1.4; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:32px 20px 60px; }
+
+  header.page{ margin-bottom:28px; }
+  .header-row{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .header-text{ flex:1; min-width:0; }
+  header.page h1{
+    font-family:'DM Serif Display', serif; font-size:30px; font-weight:400;
+    color:var(--primary); margin:0 0 4px; letter-spacing:-0.01em;
+  }
+  header.page .sub{ font-size:14px; color:var(--ink-soft); }
+  .accent-bar{ width:60px; height:5px; background:var(--accent); border-radius:3px; margin:10px 0 0; }
+  .header-photo{
+    width:96px; height:96px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    border:3px solid var(--accent); box-shadow:0 6px 18px rgba(26,60,94,.18);
+  }
+  @media (max-width:560px){ .header-photo{ width:64px; height:64px; } }
+
+  .panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px 20px; margin-bottom:16px; box-shadow:0 2px 10px rgba(26,60,94,.05);
+  }
+
+  .hours-row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .hours-row label{ font-size:13.5px; font-weight:700; color:var(--ink); }
+  .hours-row input[type=range]{ flex:1; min-width:200px; accent-color:var(--accent); }
+  .hours-badge{
+    font-size:15px; font-weight:800; background:var(--accent-soft); color:var(--primary);
+    padding:4px 14px; border-radius:20px; white-space:nowrap;
+  }
+  .hours-note{ font-size:12px; color:var(--ink-soft); margin-top:8px; }
+
+  .week-row{ display:flex; align-items:center; justify-content:space-between; margin-top:4px; flex-wrap:wrap; gap:8px; }
+  .week-label{ font-size:13px; color:var(--ink-soft); }
+  .reset-btn{
+    font-size:12.5px; font-weight:700; color:var(--ink-soft); background:none;
+    border:1px solid var(--line); border-radius:8px; padding:6px 12px; cursor:pointer;
+  }
+  .reset-btn:hover{ background:#f2ede1; }
+
+  .cards{ display:grid; grid-template-columns:1fr; gap:10px; }
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:14px 16px; box-shadow:0 2px 10px rgba(26,60,94,.05);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(26,60,94,.09); }
+  .card.compact-card{ padding:11px 14px; }
+  .layout{ display:grid; grid-template-columns:1fr 300px; gap:20px; align-items:start; }
+  @media (max-width:820px){ .layout{ grid-template-columns:1fr; } }
+  .main-col{ display:flex; flex-direction:column; gap:14px; }
+  .stock-row-grid{ display:grid; grid-template-columns:repeat(5, 1fr); gap:14px; }
+  .stock-row-grid .panel{ margin-bottom:0; }
+  @media (max-width:1050px){ .stock-row-grid{ grid-template-columns:repeat(3, 1fr); } }
+  @media (max-width:700px){ .stock-row-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width:420px){ .stock-row-grid{ grid-template-columns:1fr; } }
+  .sidebar{ display:flex; flex-direction:column; gap:14px; }
+
+  .card-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; }
+  .card-title-row{ display:flex; align-items:center; gap:7px; }
+  .card-title{ font-size:14.5px; font-weight:800; }
+  .info-btn{
+    width:18px; height:18px; border-radius:50%; border:1px solid var(--line); background:#fff;
+    color:var(--ink-soft); font-size:11px; font-weight:800; line-height:1; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; padding:0;
+  }
+  .info-btn:hover{ border-color:var(--accent); color:var(--accent); }
+  .card-def{ font-size:12.5px; color:var(--ink-soft); margin-top:6px; max-width:480px; display:none; }
+  .card-def.open{ display:block; }
+  .card-target{ font-size:13px; font-weight:700; color:var(--ink-soft); white-space:nowrap; }
+  .card-target b{ color:var(--ink); font-size:16px; }
+
+  .progress-track{
+    margin-top:9px; height:7px; background:#EFEAE0; border-radius:6px; overflow:hidden;
+  }
+  .progress-fill{ height:100%; background:var(--accent); border-radius:6px; transition:width .2s ease; }
+  .progress-fill.done{ background:var(--primary); }
+
+  .tally{ display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+  .tick{
+    width:30px; height:30px; border-radius:8px; border:2px solid var(--line);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    font-size:14px; font-weight:800; color:var(--ink-soft); background:#fff;
+    user-select:none; transition:transform .12s ease, background .12s ease, border-color .12s ease;
+  }
+  .tick:hover{ border-color:var(--accent); transform:scale(1.08); }
+  .tick.checked{ background:var(--primary); border-color:var(--primary); color:#fff; }
+  .tick.checked:hover{ transform:scale(1.08); }
+  .tick.sm{ width:20px; height:20px; border-radius:6px; font-size:10px; }
+  .tick.bonus{ border-style:dashed; font-weight:500; color:#B9BFC7; }
+  .tick.bonus.checked{ border-style:solid; font-weight:800; color:#fff; }
+
+  .card-status{ margin-top:8px; font-size:12px; color:var(--ink-soft); }
+  .card-status.done{ color:var(--primary); font-weight:700; }
+
+  .group-header{ margin-bottom:14px; }
+  .group-header .card-title{ font-size:16.5px; }
+  .group-header .card-def{ margin-top:4px; }
+  .compact-card .group-header{ margin-bottom:8px; }
+  .compact-card .group-header .card-title{ font-size:13.5px; }
+  .sub-block{ padding-top:2px; }
+  .sub-block.compact{ padding-top:0; }
+  .sub-block.compact .card-title{ font-size:13px; }
+  .sub-block.compact .card-target{ font-size:11.5px; }
+  .sub-block.compact .card-target b{ font-size:13px; }
+  .sub-block.compact .tally{ gap:5px; margin-top:8px; }
+  .sub-block.compact .progress-track{ margin-top:6px; height:6px; }
+  .sub-block.compact .card-status{ margin-top:6px; font-size:11px; }
+  .sub-divider{ height:1px; background:var(--line); margin:12px 0; }
+
+  .lead-panel{ border:1px solid var(--line); margin-bottom:0; padding:12px 14px; }
+  .lead-head .card-title{ font-size:12px; font-weight:700; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.03em; }
+  .lead-head .card-title-row{ gap:5px; }
+  .lead-panel .info-btn{ width:15px; height:15px; font-size:9px; }
+  .lead-panel .card-def{ max-width:none; margin-top:5px; }
+  .stat-big{ font-size:28px; font-weight:800; color:var(--ink); text-align:center; margin:4px 0 0; line-height:1; }
+  .stat-sub{ font-size:11px; color:var(--ink-soft); text-align:center; margin-top:4px; }
+  .lead-actions{ display:flex; gap:8px; margin-top:8px; }
+  .lead-btn{
+    flex:1; font-size:12px; font-weight:700; color:var(--primary); background:var(--accent-soft);
+    border:1px solid transparent; border-radius:8px; padding:6px 10px; cursor:pointer; white-space:nowrap;
+    transition:transform .12s ease, border-color .12s ease;
+  }
+  .lead-btn:hover{ border-color:var(--accent); transform:translateY(-1px); }
+  .lead-btn-remove{
+    font-size:12px; font-weight:700; color:var(--ink-soft); background:none;
+    border:1px solid var(--line); border-radius:8px; padding:6px 10px; cursor:pointer; white-space:nowrap;
+  }
+  .lead-btn-remove:hover{ background:#f2ede1; }
+  .lead-btn-remove:disabled{ opacity:.4; cursor:default; }
+
+  .counter-input{
+    font-size:22px; font-weight:800; color:var(--ink); text-align:center;
+    border:1px solid var(--line); border-radius:8px; padding:8px 10px;
+  }
+  .counter-input:focus{ outline:none; border-color:var(--accent); }
+
+  .stat-panel label{
+    font-size:13px; font-weight:700; color:var(--ink-soft); text-transform:uppercase;
+    letter-spacing:.03em; display:block; margin-bottom:8px;
+  }
+  .stat-panel .counter-input{ width:100%; }
+
+  .stock-row{ display:flex; align-items:center; gap:12px; margin-top:10px; }
+  .stock-row .counter-input{ width:64px; padding:6px 8px; }
+  .stock-target{ font-size:12.5px; color:var(--ink-soft); font-weight:700; }
+  .stock-target.ok{ color:var(--ok); }
+
+  .stock-row-grid .card-title{ font-size:11px; }
+  .stock-row-grid label{ font-size:11px; }
+  .stock-row-grid .counter-input{ font-size:17px; padding:6px 8px; background:#fff; }
+  .stock-row-grid .panel{
+    padding:12px 14px; min-height:78px; display:flex; flex-direction:column; justify-content:center;
+    background:var(--dash-bg); border-color:var(--dash-line);
+  }
+
+  footer.note{ margin-top:20px; font-size:11.5px; color:var(--ink-soft); text-align:center; }
+
+  .goals-summary{
+    padding:12px 14px; min-height:78px; margin-bottom:0; display:flex; flex-direction:column;
+    justify-content:center; position:relative; background:var(--dash-bg); border-color:var(--dash-line);
+  }
+  .goals-toggle{
+    width:100%; display:flex; justify-content:space-between; align-items:center;
+    background:var(--accent-soft); border:none; border-radius:10px; padding:10px 14px;
+    font-size:14px; font-weight:800; color:var(--primary); cursor:pointer;
+    transition:background .15s ease, transform .12s ease;
+  }
+  .goals-toggle:hover{ background:#F5DDAF; transform:translateY(-1px); }
+  .chevron{ transition:transform .2s ease; color:var(--ink-soft); font-size:13px; }
+  .chevron.open{ transform:rotate(180deg); }
+  .goals-list{
+    display:none; position:absolute; top:100%; left:0; right:0; margin-top:8px;
+    background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    padding:10px 14px; box-shadow:0 12px 28px rgba(0,0,0,.12); z-index:50;
+  }
+  .goals-list.open{ display:block; }
+  .goals-row{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:13px; padding:7px 0; border-bottom:1px solid var(--line);
+  }
+  .goals-row:last-child{ border-bottom:none; }
+  .goals-row b{ color:var(--ink); }
+
+  .toast{
+    position:fixed; bottom:32px; left:50%; transform:translateX(-50%) translateY(16px);
+    background:var(--ink); color:#fff; padding:12px 22px; border-radius:30px;
+    font-weight:800; font-size:14px; opacity:0; transition:opacity .25s ease, transform .25s ease;
+    pointer-events:none; z-index:1000; box-shadow:0 8px 24px rgba(0,0,0,.18); white-space:nowrap;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .toast.big{ font-size:18px; background:var(--ok); padding:16px 30px; }
+
+  .toast-center{
+    position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) scale(.85);
+    background:var(--primary); color:#fff; padding:26px 42px; border-radius:22px;
+    font-weight:800; font-size:26px; text-align:center; opacity:0;
+    transition:opacity .25s ease, transform .25s ease; pointer-events:none;
+    z-index:1001; box-shadow:0 20px 60px rgba(26,60,94,.35); max-width:80vw;
+  }
+  .toast-center.show{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+  .toast-center.milestone{ background:var(--accent); color:var(--primary); }
+  .toast-center.achieve{ background:linear-gradient(135deg, var(--primary), var(--accent)); color:#fff; }
+  .toast-center.basic{ background:var(--primary); }
+
+  .confetti-piece{
+    position:fixed; top:-24px; pointer-events:none; z-index:999;
+    animation:confetti-fall 1.7s ease-in forwards;
+  }
+  @keyframes confetti-fall{
+    0%{ transform:translateY(0) rotate(0deg); opacity:1; }
+    100%{ transform:translateY(100vh) rotate(360deg); opacity:0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page">
+    <div class="header-row">
+      <div class="header-text">
+        <h1 id="pageTitle">Nu kör vi! 🚀</h1>
+        <div class="sub">Utöka ditt nätverk, identifiera behov, hitta nya kandidater och bygg din region.</div>
+      </div>
+      <img class="header-photo" id="headerPhoto" src="https://images.unsplash.com/photo-1777227684984-209ff9b253ad?fm=jpg&q=60&w=400&auto=format&fit=crop" alt="Person som kämpat och lyckats nå sitt mål">
+    </div>
+  </header>
+
+  <div class="layout">
+    <div class="main-col">
+      <div class="stock-row-grid">
+        <div class="panel stat-panel">
+          <label for="regionHours">Antal timmar i regionen</label>
+          <input type="number" id="regionHours" class="counter-input" min="0" step="100" placeholder="t.ex. 3200">
+        </div>
+
+        <div class="panel stat-panel">
+          <label for="ambassadorCount">Antal ambassadörer</label>
+          <input type="number" id="ambassadorCount" class="counter-input" min="0" step="1" placeholder="t.ex. 12">
+        </div>
+
+        <div class="panel stat-panel">
+          <label for="linkedinNetwork">Nätverk på LinkedIn</label>
+          <input type="number" id="linkedinNetwork" class="counter-input" min="0" step="1" placeholder="t.ex. 850">
+        </div>
+
+        <div class="panel lead-panel">
+          <div class="lead-head">
+            <div class="card-title-row">
+              <div class="card-title">Rullande kandidater</div>
+              <button class="info-btn" data-toggle="def-stock-rullande" type="button">i</button>
+            </div>
+            <div class="card-def" id="def-stock-rullande">Kandidater i aktiv rekryterings-/searchprocess just nu. Skalas med timmar ute (10 vid 2000h → 5 vid 4000h).</div>
+          </div>
+          <div class="stock-row">
+            <input type="number" min="0" step="1" id="stock-rullande-input" class="counter-input" placeholder="0">
+          </div>
+        </div>
+
+        <div class="panel lead-panel">
+          <div class="lead-head">
+            <div class="card-title-row">
+              <div class="card-title">Heta kandidater</div>
+              <button class="info-btn" data-toggle="def-stock-heta" type="button">i</button>
+            </div>
+            <div class="card-def" id="def-stock-heta">Kandidater redo att matchas mot uppdrag just nu. Målet (10) skalas inte med timmar.</div>
+          </div>
+          <div class="stock-row">
+            <input type="number" min="0" step="1" id="stock-heta-input" class="counter-input" placeholder="0">
+          </div>
+        </div>
+      </div>
+
+      <div class="cards" id="cards"></div>
+
+      <div class="week-row">
+        <div class="week-label" id="weekLabel">Vecka –</div>
+        <button class="reset-btn" id="resetBtn">Nollställ veckan</button>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="panel goals-summary">
+        <button class="goals-toggle" id="goalsToggle" type="button">
+          <span>🎯 Veckans mål</span>
+          <span class="chevron" id="goalsChevron">▾</span>
+        </button>
+        <div class="goals-list" id="goalsList"></div>
+      </div>
+
+
+      <div class="panel lead-panel">
+        <div class="lead-head">
+          <div class="card-title-row">
+            <div class="card-title">Leads</div>
+            <button class="info-btn" data-toggle="def-leads" type="button">i</button>
+          </div>
+          <div class="card-def" id="def-leads">Ett kryss när en kontakt själv nämner ett faktiskt eller kommande behov – inte en gissning, inte ett artigt svar. Inget veckomål: leads uppstår sällan (ca 1 per 50 kontakter) och följs upp per månad, inte per vecka.</div>
+        </div>
+        <div class="stat-big" id="leadCount">0</div>
+        <div class="stat-sub" id="leadSub"></div>
+        <div class="lead-actions">
+          <button class="lead-btn" id="leadBtn">+ Nytt lead</button>
+          <button class="lead-btn-remove" id="leadRemoveBtn">− Ta bort</button>
+        </div>
+      </div>
+
+      <div class="panel lead-panel">
+        <div class="lead-head">
+          <div class="card-title-row">
+            <div class="card-title">Bokade möten</div>
+            <button class="info-btn" data-toggle="def-meetings" type="button">i</button>
+          </div>
+          <div class="card-def" id="def-meetings">Ett kryss när ett möte bokas in med en kund eller potentiell kund. Räknas när mötet bokas, oavsett om det redan genomförts. Inget veckomål – följs upp per månad.</div>
+        </div>
+        <div class="stat-big" id="meetingCount">0</div>
+        <div class="stat-sub" id="meetingSub"></div>
+        <div class="lead-actions">
+          <button class="lead-btn" id="meetingBtn">+ Nytt möte</button>
+          <button class="lead-btn-remove" id="meetingRemoveBtn">− Ta bort</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="note">Data sparas lokalt i denna webbläsare. Veckomålen nollställs automatiskt vid ny vecka. Leads- och mötesloggarna är löpande.</footer>
+</div>
+
+<script>
+  const REGION = { name:'Norr', person:'Camilla', slug:'norr', photoOffset:0 };
+
+  const ACTIVITIES = [
+    { id:'kontakt', name:'Nya kontakter – bygga nätverk', def:'Namngiven person/organisation du hör av dig till – mejl, telefon, Talent River, OTW eller Membrain. Svar krävs inte. Max 1 kontakt per person och vecka. Varje ruta = 5 kontakter.', v2000:40, v4000:20, unit:5, unitLabel:'kontakter', maxTicks:12 },
+    { id:'befintlig', name:'Befintliga kontakter – bearbeta mitt nätverk', def:'Kontakt med en person du haft minst ett tidigare samtal/möte med (uppföljning, avstämning av läge/behov, kandidat/info utifrån tidigare dialog, återkoppling). Gäller ej pågående uppdrag. Max 1 kryss per person och vecka. Kräver dokumentation i Membrain: senaste kontakt, vad ni vet, nästa steg, datum för nästa aktivitet — utan det, inget kryss.', v2000:5, v4000:5, unit:1, maxTicks:8 },
+    { id:'behov', name:'Identifierade behov', def:'Behov/lead upptäckt via extern signal – Platsbanken, Kolada, marknadsbevakning. Ingen kontakt krävs.', v2000:5, v4000:2, unit:1, maxTicks:8 },
+    { id:'kandidat', name:'Kandidatarbete', def:'Namngiven kandidat du agerar på under veckan – kontakt, hanterad ansökan, intervju, återaktivering, kvalificering (kompetens/geografi/tillgänglighet) eller uppföljning i pågående process. Ren sökträff utan agerande räknas inte. Max 1 kryss per kandidat och vecka.', v2000:10, v4000:5, unit:1, maxTicks:15 },
+    { id:'linkedin_interaktion', name:'LinkedIn Interaktion', def:'En skriven kommentar (kort fras räcker) på ett inlägg från en chef, beslutsfattare eller kandidat. En emoji eller symbol utan text räcker inte.', v2000:3, v4000:3, unit:1, group:'linkedin', maxTicks:15 },
+    { id:'linkedin_inlagg', name:'LinkedIn Eget inlägg', def:'Du publicerar ett eget inlägg på LinkedIn.', v2000:1, v4000:1, unit:1, group:'linkedin', maxTicks:5 }
+  ];
+
+  const GROUP_LABELS = {
+    linkedin: { title:'LinkedIn', def:'Syftar till relation och synlighet – inte passiv närvaro.' }
+  };
+
+  const STOCKS = [
+    { id:'rullande', name:'Rullande kandidater', def:'Kandidater i aktiv rekryterings-/searchprocess just nu.', v2000:10, v4000:5 },
+    { id:'heta', name:'Heta kandidater', def:'Kandidater redo att matchas mot uppdrag just nu. Målet skalas inte med timmar.', v2000:10, v4000:10 }
+  ];
+
+  const STORAGE_KEY = 'veckoplanering_' + REGION.slug + '_v1';
+  const LEADS_KEY = 'veckoplanering_' + REGION.slug + '_leads_v1';
+  const MEETINGS_KEY = 'veckoplanering_' + REGION.slug + '_meetings_v1';
+
+  function isoWeekKey(d){
+    const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    const dayNum = (date.getUTCDay() + 6) % 7;
+    date.setUTCDate(date.getUTCDate() - dayNum + 3);
+    const firstThursday = new Date(Date.UTC(date.getUTCFullYear(),0,4));
+    const week = 1 + Math.round(((date - firstThursday) / 86400000 - 3 + ((firstThursday.getUTCDay()+6)%7)) / 7);
+    return `${date.getUTCFullYear()}-v${week}`;
+  }
+
+  function targetFor(activity, hours){
+    const frac = (hours - 2000) / (4000 - 2000);
+    const raw = activity.v2000 + frac * (activity.v4000 - activity.v2000);
+    return Math.max(0, Math.round(raw));
+  }
+
+  function showToast(msg, big){
+    const el = document.createElement('div');
+    el.className = 'toast' + (big ? ' big' : '');
+    el.textContent = msg;
+    document.body.appendChild(el);
+    requestAnimationFrame(() => el.classList.add('show'));
+    const duration = big ? 1900 : 1300;
+    setTimeout(() => {
+      el.classList.remove('show');
+      setTimeout(() => el.remove(), 300);
+    }, duration);
+  }
+
+  function showCenterToast(msg, variant){
+    const el = document.createElement('div');
+    el.className = 'toast-center ' + (variant || '');
+    el.textContent = msg;
+    document.body.appendChild(el);
+    requestAnimationFrame(() => el.classList.add('show'));
+    setTimeout(() => {
+      el.classList.remove('show');
+      setTimeout(() => el.remove(), 300);
+    }, 2000);
+  }
+
+  function fireConfetti(){
+    const emojis = ['🎉','✨','🎊','⭐','🥳'];
+    for(let i=0; i<26; i++){
+      const piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      piece.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      piece.style.left = Math.random() * 100 + 'vw';
+      piece.style.fontSize = (16 + Math.random() * 16) + 'px';
+      piece.style.animationDelay = (Math.random() * 0.3) + 's';
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 2200);
+    }
+  }
+
+  function loadState(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    }catch(e){ return null; }
+  }
+
+  function saveState(state){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){}
+  }
+
+  let state = loadState();
+  const currentWeek = isoWeekKey(new Date());
+
+  if(!state || state.week !== currentWeek){
+    state = {
+      week: currentWeek,
+      hours: state ? state.hours : 3000,
+      progress: {}
+    };
+    ACTIVITIES.forEach(a => state.progress[a.id] = 0);
+    saveState(state);
+  }
+
+  function loadLog(key){
+    try{
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : [];
+    }catch(e){ return []; }
+  }
+
+  function saveLog(key, entries){
+    try{ localStorage.setItem(key, JSON.stringify(entries)); }catch(e){}
+  }
+
+  function setupLog(storageKey, buttonId, removeButtonId, countElId, subElId, singular, plural){
+    let entries = loadLog(storageKey);
+    const countEl = document.getElementById(countElId);
+    const subEl = document.getElementById(subElId);
+    const removeBtn = document.getElementById(removeButtonId);
+
+    function render(){
+      const now = new Date();
+      const thisMonthKey = now.getFullYear() + '-' + now.getMonth();
+      const thisMonthCount = entries.filter(ts => {
+        const d = new Date(ts);
+        return (d.getFullYear() + '-' + d.getMonth()) === thisMonthKey;
+      }).length;
+      const monthName = now.toLocaleDateString('sv-SE', { month:'long' });
+      countEl.textContent = thisMonthCount;
+      subEl.textContent = `${thisMonthCount === 1 ? singular : plural} i ${monthName} · ${entries.length} totalt`;
+      removeBtn.disabled = entries.length === 0;
+    }
+
+    document.getElementById(buttonId).addEventListener('click', () => {
+      entries.push(new Date().toISOString());
+      saveLog(storageKey, entries);
+      render();
+      fireConfetti();
+      showToast('Snyggt jobbat! 🎉', true);
+    });
+
+    removeBtn.addEventListener('click', () => {
+      if(entries.length === 0) return;
+      entries.pop();
+      saveLog(storageKey, entries);
+      render();
+    });
+
+    render();
+  }
+
+  setupLog(LEADS_KEY, 'leadBtn', 'leadRemoveBtn', 'leadCount', 'leadSub', 'lead', 'leads');
+  setupLog(MEETINGS_KEY, 'meetingBtn', 'meetingRemoveBtn', 'meetingCount', 'meetingSub', 'bokat möte', 'bokade möten');
+
+  document.querySelectorAll('.sidebar .info-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.dataset.toggle);
+      if(target) target.classList.toggle('open');
+    });
+  });
+
+  const weekLabel = document.getElementById('weekLabel');
+  const cardsEl = document.getElementById('cards');
+  const resetBtn = document.getElementById('resetBtn');
+  const regionHoursInput = document.getElementById('regionHours');
+
+  weekLabel.textContent = 'Vecka: ' + currentWeek.replace('-v', ', v.');
+
+  const weekNumMatch = currentWeek.match(/-v(\d+)$/);
+  const weekNum = weekNumMatch ? weekNumMatch[1] : '';
+  const pageTitle = document.getElementById('pageTitle');
+  if(pageTitle && weekNum) pageTitle.textContent = `Region ${REGION.name} Vecka ${weekNum} - Nu kör vi ${REGION.person}! 🚀`;
+
+  const HEADER_PHOTOS = [
+    { url:'https://images.unsplash.com/photo-1777227684984-209ff9b253ad?fm=jpg&q=60&w=400&auto=format&fit=crop', alt:'Person som kämpat och lyckats nå sitt mål' },
+    { url:'https://images.pexels.com/photos/3096550/pexels-photo-3096550.jpeg?cs=tinysrgb&dpr=1&w=400', alt:'Löpare som jublar i mål' },
+    { url:'https://images.unsplash.com/photo-1502126324834-38f8e02d7160?fm=jpg&q=60&w=400&auto=format&fit=crop', alt:'Person som klättrar mot toppen' }
+  ];
+  const headerPhoto = document.getElementById('headerPhoto');
+  if(headerPhoto && weekNum){
+    const photo = HEADER_PHOTOS[(parseInt(weekNum, 10) + REGION.photoOffset) % HEADER_PHOTOS.length];
+    headerPhoto.src = photo.url;
+    headerPhoto.alt = photo.alt;
+  }
+
+  function currentScaleHours(){
+    const raw = parseInt(regionHoursInput.value, 10);
+    if(isNaN(raw)) return 3000;
+    const clamped = Math.min(4000, Math.max(2000, raw));
+    return Math.round(clamped / 500) * 500;
+  }
+
+  function buildActivityBlock(activity){
+    const hours = currentScaleHours();
+    const unit = activity.unit || 1;
+    const target = targetFor(activity, hours);
+    const goalTicks = Math.round(target / unit);
+    const ticksTotal = activity.maxTicks ? Math.max(activity.maxTicks, goalTicks) : goalTicks;
+    const done = Math.min(state.progress[activity.id] || 0, ticksTotal);
+    const isDone = goalTicks > 0 && done >= goalTicks;
+    const compact = activity.group === 'linkedin';
+
+    let ticksHtml = '';
+    for(let i=0; i<ticksTotal; i++){
+      const isGoalTick = i < goalTicks;
+      ticksHtml += `<div class="tick ${compact ? 'sm' : ''} ${i < done ? 'checked' : ''} ${!isGoalTick ? 'bonus' : ''}" data-activity="${activity.id}" data-index="${i}">${i < done ? '✓' : (unit > 1 ? '+' + unit : '')}</div>`;
+    }
+
+    const targetLabel = unit > 1
+      ? `<b>${target}</b> ${activity.unitLabel || ''} <span style="font-weight:400;">(${goalTicks} rutor à ${unit})</span>`
+      : `<b>${target}</b>`;
+
+    return `
+      <div class="sub-block ${compact ? 'compact' : ''}">
+        <div class="card-top">
+          <div>
+            <div class="card-title-row">
+              <div class="card-title">${activity.name}</div>
+              <button class="info-btn" data-toggle="def-${activity.id}" type="button">i</button>
+            </div>
+            <div class="card-def" id="def-${activity.id}">${activity.def}</div>
+          </div>
+          <div class="card-target">Veckomål: ${targetLabel}</div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill ${isDone ? 'done' : ''}" style="width:${goalTicks ? Math.min(done/goalTicks*100,100) : 0}%"></div>
+        </div>
+        <div class="tally">${ticksHtml}</div>
+        <div class="card-status ${isDone ? 'done' : ''}">${isDone ? 'Klart för veckan ✓' + (done > goalTicks ? ' (+' + (done - goalTicks) + ' extra)' : '') : done + ' av ' + goalTicks + ' rutor gjorda'}</div>
+      </div>
+    `;
+  }
+
+  function render(){
+    cardsEl.innerHTML = '';
+
+    const rendered = new Set();
+
+    ACTIVITIES.forEach(activity => {
+      if(rendered.has(activity.id)) return;
+
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      if(activity.group){
+        const groupMembers = ACTIVITIES.filter(a => a.group === activity.group);
+        groupMembers.forEach(a => rendered.add(a.id));
+        const groupInfo = GROUP_LABELS[activity.group] || { title: activity.group, def:'' };
+        card.className = 'card compact-card';
+
+        card.innerHTML = `
+          <div class="group-header">
+            <div class="card-title-row">
+              <div class="card-title">${groupInfo.title}</div>
+              <button class="info-btn" data-toggle="def-group-${activity.group}" type="button">i</button>
+            </div>
+            <div class="card-def" id="def-group-${activity.group}">${groupInfo.def}</div>
+          </div>
+          ${groupMembers.map(buildActivityBlock).join('<div class="sub-divider"></div>')}
+        `;
+      } else {
+        rendered.add(activity.id);
+        card.innerHTML = buildActivityBlock(activity);
+      }
+
+      cardsEl.appendChild(card);
+    });
+
+    cardsEl.querySelectorAll('.info-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(btn.dataset.toggle);
+        if(target) target.classList.toggle('open');
+      });
+    });
+
+    cardsEl.querySelectorAll('.tick').forEach(tick => {
+      tick.addEventListener('click', () => {
+        const id = tick.dataset.activity;
+        const idx = parseInt(tick.dataset.index, 10);
+        const current = state.progress[id] || 0;
+        const checking = idx >= current;
+        const newVal = checking ? idx + 1 : idx;
+        // Klick på en redan bockad ruta tar bort den och allt efter; klick på nästa tomma bockar den
+        state.progress[id] = newVal;
+        saveState(state);
+
+        if(checking){
+          const activity = ACTIVITIES.find(a => a.id === id);
+          const unit = activity.unit || 1;
+          const target = targetFor(activity, currentScaleHours());
+          const goalTicks = Math.round(target / unit);
+          const half = Math.ceil(goalTicks / 2);
+
+          if(newVal >= goalTicks && current < goalTicks){
+            fireConfetti();
+            showCenterToast('Grym du är! 🏆', 'achieve');
+          } else if(goalTicks > 1 && half < goalTicks && newVal >= half && current < half){
+            showCenterToast('Strålande jobbat – snart där! ⭐', 'milestone');
+          } else {
+            showCenterToast('Bra jobbat!', 'basic');
+          }
+        }
+
+        render();
+      });
+    });
+  }
+
+  function updateGoalsSummary(){
+    const hours = currentScaleHours();
+    const rows = ACTIVITIES.map(activity => {
+      const unit = activity.unit || 1;
+      const target = targetFor(activity, hours);
+      const label = unit > 1
+        ? `${target} ${activity.unitLabel || ''} (${Math.round(target / unit)} rutor)`
+        : `${target}`;
+      return `<div class="goals-row"><span>${activity.name}</span><span><b>${label}</b></span></div>`;
+    }).join('');
+    const goalsList = document.getElementById('goalsList');
+    if(goalsList) goalsList.innerHTML = rows;
+  }
+
+  document.getElementById('goalsToggle').addEventListener('click', () => {
+    document.getElementById('goalsList').classList.toggle('open');
+    document.getElementById('goalsChevron').classList.toggle('open');
+  });
+
+  const REGION_HOURS_KEY = 'veckoplanering_' + REGION.slug + '_region_hours_v1';
+  const AMBASSADORS_KEY = 'veckoplanering_' + REGION.slug + '_ambassadors_v1';
+  const LINKEDIN_NETWORK_KEY = 'veckoplanering_' + REGION.slug + '_linkedin_network_v1';
+
+  const savedRegionHours = localStorage.getItem(REGION_HOURS_KEY);
+  if(savedRegionHours !== null) regionHoursInput.value = savedRegionHours;
+
+  function renderStocks(){
+    // Mål visas inte längre för kandidatlagren – funktionen finns kvar
+    // ifall målvisning behövs igen, men gör inget just nu.
+  }
+
+  function setupStock(stock){
+    const input = document.getElementById('stock-' + stock.id + '-input');
+    const key = 'veckoplanering_' + REGION.slug + '_stock_' + stock.id + '_v1';
+    const saved = localStorage.getItem(key);
+    if(saved !== null) input.value = saved;
+    input.addEventListener('input', () => {
+      try{ localStorage.setItem(key, input.value); }catch(e){}
+      renderStocks();
+    });
+  }
+
+  STOCKS.forEach(setupStock);
+  renderStocks();
+
+  regionHoursInput.addEventListener('input', () => {
+    try{ localStorage.setItem(REGION_HOURS_KEY, regionHoursInput.value); }catch(e){}
+    render();
+    renderStocks();
+    updateGoalsSummary();
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if(confirm('Nollställ alla avbockningar för veckan?')){
+      ACTIVITIES.forEach(a => state.progress[a.id] = 0);
+      saveState(state);
+      render();
+    }
+  });
+
+  render();
+  updateGoalsSummary();
+
+  function syncGoalsSummaryHeight(){
+    const grid = document.querySelector('.stock-row-grid');
+    const goals = document.querySelector('.goals-summary');
+    if(!grid || !goals) return;
+    const h = grid.getBoundingClientRect().height;
+    if(h > 0) goals.style.height = h + 'px';
+  }
+  syncGoalsSummaryHeight();
+  window.addEventListener('load', syncGoalsSummaryHeight);
+  window.addEventListener('resize', syncGoalsSummaryHeight);
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(syncGoalsSummaryHeight);
+  }
+
+  function setupStatInput(inputId, key){
+    const input = document.getElementById(inputId);
+    const saved = localStorage.getItem(key);
+    if(saved !== null) input.value = saved;
+    input.addEventListener('input', () => {
+      try{ localStorage.setItem(key, input.value); }catch(e){}
+    });
+  }
+
+  setupStatInput('ambassadorCount', AMBASSADORS_KEY);
+  setupStatInput('linkedinNetwork', LINKEDIN_NETWORK_KEY);
+</script>
+
+</body>
+</html>
