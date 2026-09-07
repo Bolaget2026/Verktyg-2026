@@ -358,6 +358,43 @@
 <script>
   const REGION = { name:'Norr', person:'Camilla', slug:'norr', photoOffset:0 };
 
+  const SYNC_URL = 'https://script.google.com/macros/s/AKfycbz48Pn_hALxlW1Qp-744SvEtUiSlONmkCvx2uHsNJXv6i46q6s5kVY1xPcZ_tMdA42u/exec';
+  const SYNC_SECRET = 'careon-veckoplan-2026-x7q';
+
+  function sendLog(typ, kategori, varde){
+    if(!SYNC_URL) return;
+    try{
+      fetch(SYNC_URL, {
+        method:'POST',
+        mode:'no-cors',
+        headers:{ 'Content-Type':'text/plain;charset=utf-8' },
+        body: JSON.stringify({
+          token: SYNC_SECRET,
+          entries: [{
+            datum: new Date().toISOString().slice(0,10),
+            vecka: currentWeek,
+            region: REGION.name,
+            typ: typ,
+            kategori: kategori,
+            varde: varde
+          }]
+        })
+      });
+    }catch(e){ /* historik är best-effort – ska aldrig störa appen */ }
+  }
+
+  function sendLogBatch(entries){
+    if(!SYNC_URL || !entries.length) return;
+    try{
+      fetch(SYNC_URL, {
+        method:'POST',
+        mode:'no-cors',
+        headers:{ 'Content-Type':'text/plain;charset=utf-8' },
+        body: JSON.stringify({ token: SYNC_SECRET, entries: entries })
+      });
+    }catch(e){ /* tyst fail */ }
+  }
+
   const ACTIVITIES = [
     { id:'kontakt', name:'Nya kontakter – bygga nätverk', def:'Namngiven person/organisation du hör av dig till – mejl, telefon, Talent River, OTW eller Membrain. Svar krävs inte. Max 1 kontakt per person och vecka. Varje ruta = 5 kontakter.', v2000:40, v4000:20, unit:5, unitLabel:'kontakter', maxTicks:12 },
     { id:'befintlig', name:'Befintliga kontakter – bearbeta mitt nätverk', def:'Kontakt med en person du haft minst ett tidigare samtal/möte med (uppföljning, avstämning av läge/behov, kandidat/info utifrån tidigare dialog, återkoppling). Gäller ej pågående uppdrag. Max 1 kryss per person och vecka. Kräver dokumentation i Membrain: senaste kontakt, vad ni vet, nästa steg, datum för nästa aktivitet — utan det, inget kryss.', v2000:5, v4000:5, unit:1, maxTicks:8 },
@@ -469,7 +506,7 @@
     try{ localStorage.setItem(key, JSON.stringify(entries)); }catch(e){}
   }
 
-  function setupLog(storageKey, buttonId, removeButtonId, countElId, subElId, singular, plural){
+  function setupLog(storageKey, buttonId, removeButtonId, countElId, subElId, singular, plural, kategori){
     let entries = loadLog(storageKey);
     const countEl = document.getElementById(countElId);
     const subEl = document.getElementById(subElId);
@@ -494,6 +531,7 @@
       render();
       fireConfetti();
       showToast('Snyggt jobbat! 🎉', true);
+      sendLog('logg', kategori, 1);
     });
 
     removeBtn.addEventListener('click', () => {
@@ -501,13 +539,14 @@
       entries.pop();
       saveLog(storageKey, entries);
       render();
+      sendLog('logg', kategori, -1);
     });
 
     render();
   }
 
-  setupLog(LEADS_KEY, 'leadBtn', 'leadRemoveBtn', 'leadCount', 'leadSub', 'lead', 'leads');
-  setupLog(MEETINGS_KEY, 'meetingBtn', 'meetingRemoveBtn', 'meetingCount', 'meetingSub', 'bokat möte', 'bokade möten');
+  setupLog(LEADS_KEY, 'leadBtn', 'leadRemoveBtn', 'leadCount', 'leadSub', 'lead', 'leads', 'lead');
+  setupLog(MEETINGS_KEY, 'meetingBtn', 'meetingRemoveBtn', 'meetingCount', 'meetingSub', 'bokat möte', 'bokade möten', 'mote');
 
   document.querySelectorAll('.sidebar .info-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -641,6 +680,9 @@
         state.progress[id] = newVal;
         saveState(state);
 
+        const delta = newVal - current;
+        if(delta !== 0) sendLog('kryss', id, delta);
+
         if(checking){
           const activity = ACTIVITIES.find(a => a.id === id);
           const unit = activity.unit || 1;
@@ -703,6 +745,9 @@
       try{ localStorage.setItem(key, input.value); }catch(e){}
       renderStocks();
     });
+    input.addEventListener('change', () => {
+      sendLog('lagerräknare', stock.id, parseInt(input.value, 10) || 0);
+    });
   }
 
   STOCKS.forEach(setupStock);
@@ -713,6 +758,9 @@
     render();
     renderStocks();
     updateGoalsSummary();
+  });
+  regionHoursInput.addEventListener('change', () => {
+    sendLog('lagerräknare', 'timmar_region', parseInt(regionHoursInput.value, 10) || 0);
   });
 
   resetBtn.addEventListener('click', () => {
@@ -740,17 +788,48 @@
     document.fonts.ready.then(syncGoalsSummaryHeight);
   }
 
-  function setupStatInput(inputId, key){
+  function setupStatInput(inputId, key, kategori){
     const input = document.getElementById(inputId);
     const saved = localStorage.getItem(key);
     if(saved !== null) input.value = saved;
     input.addEventListener('input', () => {
       try{ localStorage.setItem(key, input.value); }catch(e){}
     });
+    input.addEventListener('change', () => {
+      sendLog('lagerräknare', kategori, parseInt(input.value, 10) || 0);
+    });
   }
 
-  setupStatInput('ambassadorCount', AMBASSADORS_KEY);
-  setupStatInput('linkedinNetwork', LINKEDIN_NETWORK_KEY);
+  setupStatInput('ambassadorCount', AMBASSADORS_KEY, 'ambassadörer');
+  setupStatInput('linkedinNetwork', LINKEDIN_NETWORK_KEY, 'linkedin_natverk');
+
+  // Engångssynk: fångar data som redan fyllts i innan Sheets-kopplingen aktiverades
+  const SYNCED_FLAG_KEY = 'veckoplanering_' + REGION.slug + '_synced_once_v1';
+  if(SYNC_URL && !localStorage.getItem(SYNCED_FLAG_KEY)){
+    const todayStr = new Date().toISOString().slice(0,10);
+    const batch = [];
+    const addEntry = (kategori, varde) => {
+      if(varde && varde !== 0){
+        batch.push({ datum: todayStr, vecka: currentWeek, region: REGION.name, typ:'synk', kategori: kategori, varde: varde });
+      }
+    };
+
+    ACTIVITIES.forEach(a => addEntry(a.id, state.progress[a.id] || 0));
+
+    STOCKS.forEach(stock => {
+      const input = document.getElementById('stock-' + stock.id + '-input');
+      addEntry(stock.id, parseInt(input && input.value, 10) || 0);
+    });
+
+    addEntry('timmar_region', parseInt(regionHoursInput.value, 10) || 0);
+    addEntry('ambassadörer', parseInt(document.getElementById('ambassadorCount').value, 10) || 0);
+    addEntry('linkedin_natverk', parseInt(document.getElementById('linkedinNetwork').value, 10) || 0);
+    addEntry('lead', loadLog(LEADS_KEY).length);
+    addEntry('mote', loadLog(MEETINGS_KEY).length);
+
+    if(batch.length) sendLogBatch(batch);
+    try{ localStorage.setItem(SYNCED_FLAG_KEY, '1'); }catch(e){}
+  }
 </script>
 
 </body>
