@@ -1,6 +1,366 @@
 {
-  "generated_at": "2026-11-19T14:06:08.139Z",
+  "generated_at": "2026-11-20T13:48:44.144Z",
   "ads": [
+    {
+      "id": "31604374",
+      "headline": "Studentmedarbetare med fokus verksamhetsutveckling i äldreomsorgen",
+      "employer": "Linköpings kommun",
+      "municipality": "Linköping",
+      "region": "Östergötlands län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-16T08:34:49",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31604374",
+      "manager_name": "Charlotte Ejdehage",
+      "manager_role": "Verksamhetschef",
+      "manager_phone": "+4613263949",
+      "manager_email": "charlotte.ejdehage@linkoping.se",
+      "first_seen": "2026-10-16T09:28:48.763Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31604403",
+      "headline": "Studentmedarbetare inom utredning och uppföljning, inriktning barn och unga",
+      "employer": "Linköpings kommun",
+      "municipality": "Linköping",
+      "region": "Östergötlands län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-16T08:34:59",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31604403",
+      "manager_name": "Anne Bryggare",
+      "manager_role": "Enhetschef",
+      "manager_phone": "+4613262506",
+      "manager_email": "anne.bryggare@linkoping.se",
+      "first_seen": "2026-10-16T09:28:48.763Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31604426",
+      "headline": "Studentmedarbetare inom utredning och uppföljning, inriktning äldreomsorgen",
+      "employer": "Linköpings kommun",
+      "municipality": "Linköping",
+      "region": "Östergötlands län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-16T08:37:21",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31604426",
+      "manager_name": "Alma Sarenkapic Engström",
+      "manager_role": "Enhetschef",
+      "manager_phone": "+4613206920",
+      "manager_email": "alma.sarenkapic-engstrom@linkoping.se",
+      "first_seen": "2026-10-16T09:28:48.763Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31642134",
+      "headline": "Socialsekreterare Utredning vuxen",
+      "employer": "Enköpings kommun",
+      "municipality": "Enköping",
+      "region": "Uppsala län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-26T07:41:57",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31642134",
+      "manager_name": "Lotta Muschött",
+      "manager_role": "Enhetschef",
+      "manager_phone": "0171-625538",
+      "manager_email": null,
+      "first_seen": "2026-10-26T10:44:45.673Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31645452",
+      "headline": "Socionom? Hjälp människor att ta steg mot egen försörjning",
+      "employer": "Simrishamns kommun",
+      "municipality": "Simrishamn",
+      "region": "Skåne län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-26T14:15:09",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31645452",
+      "manager_name": "Helén   Arvidsson",
+      "manager_role": "Enhetschef",
+      "manager_phone": "+46414819428",
+      "manager_email": "helen.arvidsson@simrishamn.se",
+      "first_seen": "2026-10-27T10:11:32.675Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31646280",
+      "headline": "Familjebehandlare till Stöd- och behandlingsenheten",
+      "employer": "Alvesta kommun",
+      "municipality": "Alvesta",
+      "region": "Kronobergs län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-26T15:45:29",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31646280",
+      "manager_name": "Anna   Meyer",
+      "manager_role": "Enhetschef",
+      "manager_phone": "+4647215205",
+      "manager_email": "anna.meyer@alvesta.se",
+      "first_seen": "2026-10-27T10:11:32.675Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31646758",
+      "headline": "Skolkurator",
+      "employer": "MARIESTADS KOMMUN",
+      "municipality": "Mariestad",
+      "region": "Västra Götalands län",
+      "category": "Kurator",
+      "publication_date": "2026-10-26T16:45:05",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31646758",
+      "manager_name": "Malin   Burman",
+      "manager_role": "Barn- och elevhälsochef",
+      "manager_phone": "+46501755208",
+      "manager_email": "malin.burman@mariestad.se",
+      "first_seen": "2026-10-27T10:11:32.675Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31646946",
+      "headline": "Torsby kommun söker socialsekreterare inom ekonomiskt bistånd",
+      "employer": "Torsby kommun",
+      "municipality": "Torsby",
+      "region": "Värmlands län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-26T17:15:05",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31646946",
+      "manager_name": "Marie   Berg",
+      "manager_role": "arbetsmarknadschef",
+      "manager_phone": "+4656016026",
+      "manager_email": null,
+      "first_seen": "2026-10-27T10:11:32.675Z",
+      "last_seen": "2026-11-12T13:31:10.653Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31665354",
+      "headline": "Skolsocionom till Öppenvård Tidiga insatser",
+      "employer": "VÄXJÖ KOMMUN",
+      "municipality": "Växjö",
+      "region": "Kronobergs län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-30T10:30:18",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31665354",
+      "manager_name": "Magnus   Wibert",
+      "manager_role": "Enhetschef",
+      "manager_phone": "+4647043783",
+      "manager_email": "magnus.wibert@vaxjo.se",
+      "first_seen": "2026-10-30T11:10:03.636Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31665426",
+      "headline": "Socialrådgivare till Öppenvård Tidiga insatser",
+      "employer": "VÄXJÖ KOMMUN",
+      "municipality": "Växjö",
+      "region": "Kronobergs län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-10-30T10:40:06",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31665426",
+      "manager_name": "Magnus   Wibert",
+      "manager_role": "Enhetschef",
+      "manager_phone": "+4647043783",
+      "manager_email": "magnus.wibert@vaxjo.se",
+      "first_seen": "2026-10-30T11:10:03.636Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31669852",
+      "headline": "Ungdomsbehandlare till Ung Hisingen",
+      "employer": "GÖTEBORGS KOMMUN",
+      "municipality": "Göteborg",
+      "region": "Västra Götalands län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-11-02T00:00:51",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31669852",
+      "manager_name": "Robert Silva",
+      "manager_role": "tf enhetschef",
+      "manager_phone": "031-3652222",
+      "manager_email": "robert.silva@socialhisingen.goteborg.se",
+      "first_seen": "2026-11-02T13:04:34.402Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31673315",
+      "headline": "Socialsekreterare ekonomiskt bistånd",
+      "employer": "Söderköpings kommun",
+      "municipality": "Söderköping",
+      "region": "Östergötlands län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-11-02T13:25:17",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31673315",
+      "manager_name": "Fredrik Sjösten",
+      "manager_role": "Enhetschef",
+      "manager_phone": "+4612118678",
+      "manager_email": "fredrik.sjosten2@soderkoping.se",
+      "first_seen": "2026-11-02T13:04:34.402Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31673432",
+      "headline": "Personal till mobilt team BUP",
+      "employer": "VÄSTRA GÖTALANDSREGIONEN",
+      "municipality": "Kungälv",
+      "region": "Västra Götalands län",
+      "category": "Kurator",
+      "publication_date": "2026-11-02T13:35:47",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31673432",
+      "manager_name": "Johanna Forsell Ray",
+      "manager_role": "enhetschef",
+      "manager_phone": null,
+      "manager_email": "johanna.forsell.ray@vgregion.se",
+      "first_seen": "2026-11-02T13:04:34.402Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31675048",
+      "headline": "Familjehemssamordnare",
+      "employer": "Kommunförbundet Västernorrland",
+      "municipality": "Härnösand",
+      "region": "Västernorrlands län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-11-02T16:05:15",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31675048",
+      "manager_name": "Louise Zetterlund",
+      "manager_role": null,
+      "manager_phone": "0703600825",
+      "manager_email": "louise.zetterlund@kfvn.se",
+      "first_seen": "2026-11-03T12:36:07.428Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31675391",
+      "headline": "Familjebehandlare",
+      "employer": "Enköpings kommun",
+      "municipality": "Enköping",
+      "region": "Uppsala län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-11-02T16:43:19",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31675391",
+      "manager_name": "Marie Holmberg",
+      "manager_role": "Enhetschef",
+      "manager_phone": "0171627013",
+      "manager_email": null,
+      "first_seen": "2026-11-03T12:36:07.428Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31675660",
+      "headline": "Rekryterare för familjehemsvården Järva",
+      "employer": "Stockholms kommun",
+      "municipality": "Stockholm",
+      "region": "Stockholms län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-11-02T19:13:27",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31675660",
+      "manager_name": "Cecilia Grimelius",
+      "manager_role": null,
+      "manager_phone": "08-50801370",
+      "manager_email": "cecilia.grimelius@stockholm.se",
+      "first_seen": "2026-11-03T12:36:07.428Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31694616",
+      "headline": "Almia söker försörjningsstödshandläggare till Alvesta kommun",
+      "employer": "Almia AB",
+      "municipality": "Alvesta",
+      "region": "Kronobergs län",
+      "category": "Biståndsbedömare",
+      "publication_date": "2026-11-06T09:23:00",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31694616",
+      "manager_name": "Ida Forsslund",
+      "manager_role": "Konsultchef",
+      "manager_phone": "+46841025050",
+      "manager_email": "rekrytering@almia.se",
+      "first_seen": "2026-11-06T12:42:45.733Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31694618",
+      "headline": "Almia söker socialsekreterare till Alvesta kommun",
+      "employer": "Almia AB",
+      "municipality": "Alvesta",
+      "region": "Kronobergs län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-11-06T09:23:01",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31694618",
+      "manager_name": "Ida Forsslund",
+      "manager_role": "Konsultchef",
+      "manager_phone": "+46841025050",
+      "manager_email": "rekrytering@almia.se",
+      "first_seen": "2026-11-06T12:42:45.733Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31697527",
+      "headline": "Almia söker socialsekreterare till Gävle kommun",
+      "employer": "Almia AB",
+      "municipality": "Gävle",
+      "region": "Gävleborgs län",
+      "category": "Socialsekreterare",
+      "publication_date": "2026-11-06T14:28:06",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31697527",
+      "manager_name": "Ida Forsslund",
+      "manager_role": "Konsultchef",
+      "manager_phone": "+46841025050",
+      "manager_email": "rekrytering@almia.se",
+      "first_seen": "2026-11-07T11:29:53.729Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
+    {
+      "id": "31727249",
+      "headline": "Integration specialist (Stockholm)",
+      "employer": "Soros Consulting AB",
+      "municipality": "Stockholm",
+      "region": "Stockholms län",
+      "category": "Övrigt socialt arbete",
+      "publication_date": "2026-11-13T12:29:10",
+      "application_deadline": "2026-11-16T23:59:59",
+      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31727249",
+      "manager_name": null,
+      "manager_role": null,
+      "manager_phone": null,
+      "manager_email": null,
+      "first_seen": "2026-11-13T12:51:09.329Z",
+      "last_seen": "2026-11-16T13:20:35.390Z",
+      "days_since_expiry": 3
+    },
     {
       "id": "31568585",
       "headline": "Socialsekreterare Utredningsenhet barn",
@@ -17,7 +377,7 @@
       "manager_email": "erika.hug@gavle.se",
       "first_seen": "2026-10-08T11:45:51.312Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31570685",
@@ -35,7 +395,7 @@
       "manager_email": null,
       "first_seen": "2026-10-09T11:38:31.349Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31575723",
@@ -53,7 +413,7 @@
       "manager_email": null,
       "first_seen": "2026-10-09T11:38:31.349Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31576343",
@@ -71,7 +431,7 @@
       "manager_email": null,
       "first_seen": "2026-10-09T11:38:31.349Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31577881",
@@ -89,7 +449,7 @@
       "manager_email": "carina.jaredal@humana.se",
       "first_seen": "2026-10-10T10:56:24.232Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31602311",
@@ -107,7 +467,7 @@
       "manager_email": "maria.biemann@norrtalje.se",
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31602356",
@@ -125,7 +485,7 @@
       "manager_email": "tomas.landstrom@norrbotten.se",
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31605047",
@@ -143,7 +503,7 @@
       "manager_email": null,
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31605303",
@@ -161,7 +521,7 @@
       "manager_email": null,
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-10-25T09:33:53.727Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31605351",
@@ -179,7 +539,7 @@
       "manager_email": null,
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-10-25T09:33:53.727Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31605520",
@@ -197,7 +557,7 @@
       "manager_email": "Therese.Andersson@tierp.se",
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31607163",
@@ -215,7 +575,7 @@
       "manager_email": "jehona.behramaj@klarakompetens.se",
       "first_seen": "2026-10-17T08:59:45.691Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31611005",
@@ -233,7 +593,7 @@
       "manager_email": "tina.a.bystrom@ornskoldsvik.se",
       "first_seen": "2026-10-19T10:29:38.244Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31612682",
@@ -251,7 +611,7 @@
       "manager_email": null,
       "first_seen": "2026-10-19T10:29:38.244Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31614001",
@@ -269,7 +629,7 @@
       "manager_email": null,
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-05T12:55:03.031Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31615430",
@@ -287,7 +647,7 @@
       "manager_email": null,
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31615451",
@@ -305,7 +665,7 @@
       "manager_email": "mats.johansson2@eksjo.se",
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31617609",
@@ -323,7 +683,7 @@
       "manager_email": null,
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31619567",
@@ -341,7 +701,7 @@
       "manager_email": null,
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31620220",
@@ -359,7 +719,7 @@
       "manager_email": "ulrika.carlsson@hoganas.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31621734",
@@ -377,7 +737,7 @@
       "manager_email": "ananthi.flodin@toreboda.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31621745",
@@ -395,7 +755,7 @@
       "manager_email": "drenushe.pllana@toreboda.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31622868",
@@ -413,7 +773,7 @@
       "manager_email": "mathias.davidsson@varberg.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31623644",
@@ -431,7 +791,7 @@
       "manager_email": "helena.millberg@boras.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31623652",
@@ -449,7 +809,7 @@
       "manager_email": "helena.millberg@boras.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31625721",
@@ -467,7 +827,7 @@
       "manager_email": "Maria.Ihrevind@hoganas.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31632024",
@@ -485,7 +845,7 @@
       "manager_email": null,
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31633355",
@@ -503,7 +863,7 @@
       "manager_email": "karolina.rankka@osthammar.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31633392",
@@ -521,7 +881,7 @@
       "manager_email": null,
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31634516",
@@ -539,7 +899,7 @@
       "manager_email": "per.svensson@ljungby.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31634536",
@@ -557,7 +917,7 @@
       "manager_email": "carina.thoren@ystad.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31635123",
@@ -575,7 +935,7 @@
       "manager_email": "matilda.sanden@skara.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31635203",
@@ -593,7 +953,7 @@
       "manager_email": "evelina.larsson3@eskilstuna.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31636111",
@@ -611,7 +971,7 @@
       "manager_email": "marie.soderman2@taby.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31636433",
@@ -629,7 +989,7 @@
       "manager_email": "ewa.andersson@askersund.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31637375",
@@ -647,7 +1007,7 @@
       "manager_email": "anna.wallentin@sundbyberg.se",
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31637581",
@@ -665,7 +1025,7 @@
       "manager_email": "lisa.taheri@ockero.se",
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31638850",
@@ -683,7 +1043,7 @@
       "manager_email": null,
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31639034",
@@ -701,7 +1061,7 @@
       "manager_email": "mikael.sedvall@boras.se",
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31639300",
@@ -719,7 +1079,7 @@
       "manager_email": "ann-cathrin.borr@arvika.se",
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31641951",
@@ -737,7 +1097,7 @@
       "manager_email": "maria.stenlund@gavle.se",
       "first_seen": "2026-10-26T10:44:45.673Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31642398",
@@ -755,7 +1115,7 @@
       "manager_email": "emma.lind@soderhamn.se",
       "first_seen": "2026-10-26T10:44:45.673Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31642956",
@@ -773,7 +1133,7 @@
       "manager_email": null,
       "first_seen": "2026-10-26T10:44:45.673Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31645413",
@@ -791,7 +1151,7 @@
       "manager_email": "helen.boberg@boxholm.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31646096",
@@ -809,7 +1169,7 @@
       "manager_email": "frida.bernhardsson@haninge.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31646117",
@@ -827,7 +1187,7 @@
       "manager_email": "julia.sigvardsdotter@halmstad.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31646467",
@@ -845,7 +1205,7 @@
       "manager_email": "malin.strand@skovde.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31647290",
@@ -863,7 +1223,7 @@
       "manager_email": "sandra.lindgren@ostersund.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31647776",
@@ -881,7 +1241,7 @@
       "manager_email": "sofia.angervall@socialsydvast.goteborg.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31649495",
@@ -899,7 +1259,7 @@
       "manager_email": null,
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31649551",
@@ -917,7 +1277,7 @@
       "manager_email": null,
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31649630",
@@ -935,7 +1295,7 @@
       "manager_email": null,
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31651709",
@@ -953,7 +1313,7 @@
       "manager_email": "nina.jagekrans.krus@stockholm.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31651851",
@@ -971,7 +1331,7 @@
       "manager_email": "nina.jagekrans.krus@stockholm.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31652863",
@@ -989,7 +1349,7 @@
       "manager_email": "annette.alexandersson@lillaedet.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31652956",
@@ -1007,7 +1367,7 @@
       "manager_email": "anna.fredriksson@kalmar.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31653770",
@@ -1025,7 +1385,7 @@
       "manager_email": "jana.asplund@kumla.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31653851",
@@ -1043,7 +1403,7 @@
       "manager_email": "anna.gustavsson@ronneby.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31655079",
@@ -1061,7 +1421,7 @@
       "manager_email": null,
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31655166",
@@ -1079,7 +1439,7 @@
       "manager_email": "ulf.anderberg@halmstad.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31655546",
@@ -1097,7 +1457,7 @@
       "manager_email": "charlotta.ling@socialcentrum.goteborg.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31655841",
@@ -1115,7 +1475,7 @@
       "manager_email": null,
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31656089",
@@ -1133,7 +1493,7 @@
       "manager_email": "lesley.walsh.ytterholm@varberg.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31656478",
@@ -1151,7 +1511,7 @@
       "manager_email": "karin.nordenmalm@salem.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31656839",
@@ -1169,7 +1529,7 @@
       "manager_email": null,
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31656900",
@@ -1187,7 +1547,7 @@
       "manager_email": "anna.bakken_krentze@gavle.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31657706",
@@ -1205,7 +1565,7 @@
       "manager_email": null,
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31657902",
@@ -1223,7 +1583,7 @@
       "manager_email": "erik.stavvik@vgregion.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31658813",
@@ -1241,7 +1601,7 @@
       "manager_email": "eva-karin.olssonkallqvist@nora.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31659573",
@@ -1259,7 +1619,7 @@
       "manager_email": null,
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31660790",
@@ -1277,7 +1637,7 @@
       "manager_email": null,
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31661152",
@@ -1295,7 +1655,7 @@
       "manager_email": null,
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31662573",
@@ -1313,7 +1673,7 @@
       "manager_email": "ico.mojancevski@trelleborg.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31662997",
@@ -1331,7 +1691,7 @@
       "manager_email": null,
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31663041",
@@ -1349,7 +1709,7 @@
       "manager_email": "johan.blomqvist@socialnordost.goteborg.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31664105",
@@ -1367,7 +1727,7 @@
       "manager_email": "marie.brynbo@svalov.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31664940",
@@ -1385,7 +1745,7 @@
       "manager_email": "louise.carlstrom@stockholm.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31665740",
@@ -1403,7 +1763,7 @@
       "manager_email": null,
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31667540",
@@ -1421,7 +1781,7 @@
       "manager_email": null,
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31667586",
@@ -1439,7 +1799,7 @@
       "manager_email": "anna.lindmark-stedt@linkoping.se",
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31667630",
@@ -1457,7 +1817,7 @@
       "manager_email": "ulrika.berg@uppvidinge.se",
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31669033",
@@ -1475,7 +1835,7 @@
       "manager_email": "ibrahim.adan.issack@socialnordost.goteborg.se",
       "first_seen": "2026-11-01T11:39:47.702Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31670338",
@@ -1493,7 +1853,7 @@
       "manager_email": "ellen.skold.ulfsdotter@varnamo.se",
       "first_seen": "2026-11-02T13:04:34.402Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31670656",
@@ -1511,7 +1871,7 @@
       "manager_email": "hanna.leinhard@linkoping.se",
       "first_seen": "2026-11-02T13:04:34.402Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31670805",
@@ -1529,7 +1889,7 @@
       "manager_email": null,
       "first_seen": "2026-11-02T13:04:34.402Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31673807",
@@ -1547,7 +1907,7 @@
       "manager_email": "emelin.atas@salem.se",
       "first_seen": "2026-11-03T12:36:07.428Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31674014",
@@ -1565,7 +1925,7 @@
       "manager_email": "pia.teivik@linkoping.se",
       "first_seen": "2026-11-03T12:36:07.428Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31674525",
@@ -1583,7 +1943,7 @@
       "manager_email": "yasmina.petersson@varberg.se",
       "first_seen": "2026-11-03T12:36:07.428Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31681941",
@@ -1601,7 +1961,7 @@
       "manager_email": null,
       "first_seen": "2026-11-04T12:46:10.193Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31687840",
@@ -1619,7 +1979,7 @@
       "manager_email": "ewa.sicko-andersson@finspang.se",
       "first_seen": "2026-11-05T12:55:03.031Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31696800",
@@ -1637,7 +1997,7 @@
       "manager_email": "emma.lind@soderhamn.se",
       "first_seen": "2026-11-06T12:42:45.733Z",
       "last_seen": "2026-11-15T12:28:54.438Z",
-      "days_since_expiry": 3
+      "days_since_expiry": 4
     },
     {
       "id": "31526362",
@@ -1655,7 +2015,7 @@
       "manager_email": "rekrytering@optio.se",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-14T11:55:26.232Z",
-      "days_since_expiry": 4
+      "days_since_expiry": 5
     },
     {
       "id": "31598617",
@@ -1673,7 +2033,7 @@
       "manager_email": "catharina.riedmuller@po-skane.org",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 4
+      "days_since_expiry": 5
     },
     {
       "id": "31599187",
@@ -1691,7 +2051,7 @@
       "manager_email": null,
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-14T11:55:26.232Z",
-      "days_since_expiry": 4
+      "days_since_expiry": 5
     },
     {
       "id": "31601504",
@@ -1709,7 +2069,7 @@
       "manager_email": null,
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-10-25T09:33:53.727Z",
-      "days_since_expiry": 4
+      "days_since_expiry": 5
     },
     {
       "id": "31601876",
@@ -1727,7 +2087,7 @@
       "manager_email": null,
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-14T11:55:26.232Z",
-      "days_since_expiry": 4
+      "days_since_expiry": 5
     },
     {
       "id": "31619098",
@@ -1745,7 +2105,7 @@
       "manager_email": null,
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-14T11:55:26.232Z",
-      "days_since_expiry": 4
+      "days_since_expiry": 5
     },
     {
       "id": "31652948",
@@ -1763,7 +2123,7 @@
       "manager_email": null,
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-14T11:55:26.232Z",
-      "days_since_expiry": 4
+      "days_since_expiry": 5
     },
     {
       "id": "31592926",
@@ -1781,7 +2141,7 @@
       "manager_email": null,
       "first_seen": "2026-10-14T09:54:48.440Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31593848",
@@ -1799,7 +2159,7 @@
       "manager_email": "catharina.riedmuller@po-skane.org",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31598594",
@@ -1817,7 +2177,7 @@
       "manager_email": "Jeanette.engberg@osthammar.se",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31598722",
@@ -1835,7 +2195,7 @@
       "manager_email": "Ylva.Prahl@karlskrona.se",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31604660",
@@ -1853,7 +2213,7 @@
       "manager_email": "marija.kajhanidis@alingsas.se",
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31605645",
@@ -1871,7 +2231,7 @@
       "manager_email": "annelie.zorner@kriminalvarden.se",
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31607408",
@@ -1889,7 +2249,7 @@
       "manager_email": null,
       "first_seen": "2026-10-17T08:59:45.691Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31611675",
@@ -1907,7 +2267,7 @@
       "manager_email": null,
       "first_seen": "2026-10-19T10:29:38.244Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31617103",
@@ -1925,7 +2285,7 @@
       "manager_email": "henrik.thorstensson@mariestad.se",
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31623613",
@@ -1943,7 +2303,7 @@
       "manager_email": "ewa.andersson@askersund.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31626624",
@@ -1961,7 +2321,7 @@
       "manager_email": "camilla.andreassonberg@lysekil.se",
       "first_seen": "2026-10-22T09:49:48.442Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31627382",
@@ -1979,7 +2339,7 @@
       "manager_email": "charlotte.palmqvistlust@vaggeryd.se",
       "first_seen": "2026-10-22T09:49:48.442Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31631928",
@@ -1997,7 +2357,7 @@
       "manager_email": "ulrika.svensson@vaggeryd.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31634905",
@@ -2015,7 +2375,7 @@
       "manager_email": null,
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31636734",
@@ -2033,7 +2393,7 @@
       "manager_email": "nina.lundell@haninge.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31637215",
@@ -2051,7 +2411,7 @@
       "manager_email": null,
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31637678",
@@ -2069,7 +2429,7 @@
       "manager_email": "sandrine.kala@sigtuna.se",
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31640627",
@@ -2087,7 +2447,7 @@
       "manager_email": "josefin.whitmore@campusmanilla.se",
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31648952",
@@ -2105,7 +2465,7 @@
       "manager_email": "katarina.kasto@stockholm.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31656443",
@@ -2123,7 +2483,7 @@
       "manager_email": "lenita.birath@hallsberg.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31659871",
@@ -2141,7 +2501,7 @@
       "manager_email": "jennie.backman@kungsbacka.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31663808",
@@ -2159,7 +2519,7 @@
       "manager_email": "mica.bodic@kavlinge.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31664166",
@@ -2177,7 +2537,7 @@
       "manager_email": "Erika.Bergmark@regionvasterbotten.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31664381",
@@ -2195,7 +2555,7 @@
       "manager_email": "ela.bjelevac@eskilstuna.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31664715",
@@ -2213,7 +2573,7 @@
       "manager_email": "martina.poulsen@jonkoping.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31667089",
@@ -2231,7 +2591,7 @@
       "manager_email": null,
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31667979",
@@ -2249,7 +2609,7 @@
       "manager_email": "katarina.lajsic@socialnordost.goteborg.se",
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31668027",
@@ -2267,7 +2627,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31668087",
@@ -2285,7 +2645,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31678135",
@@ -2303,7 +2663,7 @@
       "manager_email": "rekrytering@almia.se",
       "first_seen": "2026-11-03T12:36:07.428Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31678161",
@@ -2321,7 +2681,7 @@
       "manager_email": "rekrytering@almia.se",
       "first_seen": "2026-11-03T12:36:07.428Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31706581",
@@ -2339,7 +2699,7 @@
       "manager_email": null,
       "first_seen": "2026-11-10T13:13:43.320Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31716851",
@@ -2357,7 +2717,7 @@
       "manager_email": null,
       "first_seen": "2026-11-12T13:31:10.653Z",
       "last_seen": "2026-11-13T12:51:09.329Z",
-      "days_since_expiry": 5
+      "days_since_expiry": 6
     },
     {
       "id": "31601237",
@@ -2375,7 +2735,7 @@
       "manager_email": "emma.abrahamsson@varnamo.se",
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31631967",
@@ -2393,7 +2753,7 @@
       "manager_email": null,
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31632327",
@@ -2411,7 +2771,7 @@
       "manager_email": "Mohamed.Ofle@kriminalvarden.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31633251",
@@ -2429,7 +2789,7 @@
       "manager_email": "aleksandra.simanovskaya@mala.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31633584",
@@ -2447,7 +2807,7 @@
       "manager_email": null,
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31634532",
@@ -2465,7 +2825,7 @@
       "manager_email": null,
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31637922",
@@ -2483,7 +2843,7 @@
       "manager_email": "christina.andersson@gavle.se",
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31647974",
@@ -2501,7 +2861,7 @@
       "manager_email": "anna.malm@stenungsund.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31658369",
@@ -2519,7 +2879,7 @@
       "manager_email": "sofia.johansson@stockholm.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31658393",
@@ -2537,7 +2897,7 @@
       "manager_email": null,
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31659081",
@@ -2555,7 +2915,7 @@
       "manager_email": "marie.hermansson@krokom.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31660367",
@@ -2573,7 +2933,7 @@
       "manager_email": "mikael.kvalevaag@malmo.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31661197",
@@ -2591,7 +2951,7 @@
       "manager_email": null,
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31661217",
@@ -2609,7 +2969,7 @@
       "manager_email": "Ann-Sofie.Akerlind@kiruna.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31662594",
@@ -2627,7 +2987,7 @@
       "manager_email": "thomas.augustsson@vaxjo.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31663889",
@@ -2645,7 +3005,7 @@
       "manager_email": "petter.augustsson@ronneby.se",
       "first_seen": "2026-10-30T11:10:03.636Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31679968",
@@ -2663,7 +3023,7 @@
       "manager_email": null,
       "first_seen": "2026-11-04T12:46:10.193Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31680030",
@@ -2681,7 +3041,7 @@
       "manager_email": null,
       "first_seen": "2026-11-04T12:46:10.193Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31688843",
@@ -2699,7 +3059,7 @@
       "manager_email": null,
       "first_seen": "2026-11-05T12:55:03.031Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31689522",
@@ -2717,7 +3077,7 @@
       "manager_email": null,
       "first_seen": "2026-11-05T12:55:03.031Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31698079",
@@ -2735,7 +3095,7 @@
       "manager_email": null,
       "first_seen": "2026-11-07T11:29:53.729Z",
       "last_seen": "2026-11-12T13:31:10.653Z",
-      "days_since_expiry": 6
+      "days_since_expiry": 7
     },
     {
       "id": "31483604",
@@ -2753,7 +3113,7 @@
       "manager_email": null,
       "first_seen": "2026-09-17T09:48:33.628Z",
       "last_seen": "2026-10-02T10:52:20.356Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31483653",
@@ -2771,7 +3131,7 @@
       "manager_email": null,
       "first_seen": "2026-09-17T09:48:33.628Z",
       "last_seen": "2026-10-02T10:52:20.356Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31483743",
@@ -2789,7 +3149,7 @@
       "manager_email": null,
       "first_seen": "2026-09-17T09:48:33.628Z",
       "last_seen": "2026-10-02T10:52:20.356Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31537253",
@@ -2807,7 +3167,7 @@
       "manager_email": null,
       "first_seen": "2026-10-01T11:20:55.127Z",
       "last_seen": "2026-10-14T09:54:48.440Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31593222",
@@ -2825,7 +3185,7 @@
       "manager_email": "anna.bjuggelius@skane.se",
       "first_seen": "2026-10-14T09:54:48.440Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31595150",
@@ -2843,7 +3203,7 @@
       "manager_email": null,
       "first_seen": "2026-10-14T09:54:48.440Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31597001",
@@ -2861,7 +3221,7 @@
       "manager_email": "marie.sjostedt@bromolla.se",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31597464",
@@ -2879,7 +3239,7 @@
       "manager_email": "emilie.friberg@regionstockholm.se",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31598357",
@@ -2897,7 +3257,7 @@
       "manager_email": null,
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31598918",
@@ -2915,7 +3275,7 @@
       "manager_email": "anne.hellstrom@varmdo.se",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31622827",
@@ -2933,7 +3293,7 @@
       "manager_email": null,
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31624146",
@@ -2951,7 +3311,7 @@
       "manager_email": "jens.backstrom@ronneby.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31624356",
@@ -2969,7 +3329,7 @@
       "manager_email": "jens.backstrom@ronneby.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31625395",
@@ -2987,7 +3347,7 @@
       "manager_email": "hanna.axeland@vetlanda.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31625436",
@@ -3005,7 +3365,7 @@
       "manager_email": "emma.emanuelsson@gislaved.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31626116",
@@ -3023,7 +3383,7 @@
       "manager_email": "caroline.bjerne@aneby.se",
       "first_seen": "2026-10-22T09:49:48.442Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31626129",
@@ -3041,7 +3401,7 @@
       "manager_email": "asa.lofkvist@aneby.se",
       "first_seen": "2026-10-22T09:49:48.442Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31626703",
@@ -3059,7 +3419,7 @@
       "manager_email": "elin.liljegren@ulricehamn.se",
       "first_seen": "2026-10-22T09:49:48.442Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31628630",
@@ -3077,7 +3437,7 @@
       "manager_email": "kristina.eriksson@sundbyberg.se",
       "first_seen": "2026-10-22T09:49:48.442Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31628783",
@@ -3095,7 +3455,7 @@
       "manager_email": "kristina.eriksson@sundbyberg.se",
       "first_seen": "2026-10-22T09:49:48.442Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31632004",
@@ -3113,7 +3473,7 @@
       "manager_email": null,
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31636993",
@@ -3131,7 +3491,7 @@
       "manager_email": "lars.grimby@socialnordost.goteborg.se",
       "first_seen": "2026-10-24T09:17:15.007Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31649734",
@@ -3149,7 +3509,7 @@
       "manager_email": null,
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31652229",
@@ -3167,7 +3527,7 @@
       "manager_email": null,
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31653069",
@@ -3185,7 +3545,7 @@
       "manager_email": "clara.dencker@stockholm.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31653881",
@@ -3203,7 +3563,7 @@
       "manager_email": null,
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31655242",
@@ -3221,7 +3581,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-10-29T11:17:10.095Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31655244",
@@ -3239,7 +3599,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-10-29T11:17:10.095Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31655291",
@@ -3257,7 +3617,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-02T13:04:34.402Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31655299",
@@ -3275,7 +3635,7 @@
       "manager_email": "linn.lundberg@sigtuna.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31655309",
@@ -3293,7 +3653,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31655680",
@@ -3311,7 +3671,7 @@
       "manager_email": "rebecca.jungermann@vasteras.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31655860",
@@ -3329,7 +3689,7 @@
       "manager_email": "lena.zetterstrom@stat-inst.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31656469",
@@ -3347,7 +3707,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31657379",
@@ -3365,7 +3725,7 @@
       "manager_email": "dennis.akerberg@kristinehamn.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31658692",
@@ -3383,7 +3743,7 @@
       "manager_email": "eva.m.aberg@regionvasterbotten.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31658711",
@@ -3401,7 +3761,7 @@
       "manager_email": "anna.wahlborg@stockholm.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31658742",
@@ -3419,7 +3779,7 @@
       "manager_email": "anna.wahlborg@stockholm.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31659816",
@@ -3437,7 +3797,7 @@
       "manager_email": "elvira.spang@solna.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31668075",
@@ -3455,7 +3815,7 @@
       "manager_email": null,
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31671233",
@@ -3473,7 +3833,7 @@
       "manager_email": null,
       "first_seen": "2026-11-02T13:04:34.402Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31675457",
@@ -3491,7 +3851,7 @@
       "manager_email": null,
       "first_seen": "2026-11-03T12:36:07.428Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31703185",
@@ -3509,7 +3869,7 @@
       "manager_email": null,
       "first_seen": "2026-11-09T13:36:15.136Z",
       "last_seen": "2026-11-11T12:24:57.812Z",
-      "days_since_expiry": 7
+      "days_since_expiry": 8
     },
     {
       "id": "31617689",
@@ -3527,7 +3887,7 @@
       "manager_email": null,
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31621818",
@@ -3545,7 +3905,7 @@
       "manager_email": "jessica.gjertz@norrtalje.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31632455",
@@ -3563,7 +3923,7 @@
       "manager_email": null,
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31646268",
@@ -3581,7 +3941,7 @@
       "manager_email": "jenny.knutsson@varberg.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31647688",
@@ -3599,7 +3959,7 @@
       "manager_email": "sara.j.gustafsson@linkoping.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31648070",
@@ -3617,7 +3977,7 @@
       "manager_email": null,
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31648563",
@@ -3635,7 +3995,7 @@
       "manager_email": "linn.wettemark@malmo.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31649060",
@@ -3653,7 +4013,7 @@
       "manager_email": "rikard.martinsson@karlstad.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31649133",
@@ -3671,7 +4031,7 @@
       "manager_email": "lisa.widbom@osby.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31649140",
@@ -3689,7 +4049,7 @@
       "manager_email": "lisa.widbom@osby.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31650207",
@@ -3707,7 +4067,7 @@
       "manager_email": "katarina.hild@stockholm.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31650878",
@@ -3725,7 +4085,7 @@
       "manager_email": "Anders.svensson4@stat-inst.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31651146",
@@ -3743,7 +4103,7 @@
       "manager_email": "ellinor.jullander@socialhisingen.goteborg.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31651994",
@@ -3761,7 +4121,7 @@
       "manager_email": "desiree.magnusson@stockholm.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31652390",
@@ -3779,7 +4139,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31652464",
@@ -3797,7 +4157,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31652466",
@@ -3815,7 +4175,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31657078",
@@ -3833,7 +4193,7 @@
       "manager_email": "charlotte.svenssondossantos@falkenberg.se",
       "first_seen": "2026-10-29T11:17:10.095Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31667099",
@@ -3851,7 +4211,7 @@
       "manager_email": "sanna.tolvers@motala.se",
       "first_seen": "2026-10-31T10:43:04.645Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31688790",
@@ -3869,7 +4229,7 @@
       "manager_email": null,
       "first_seen": "2026-11-05T12:55:03.031Z",
       "last_seen": "2026-11-10T13:13:43.320Z",
-      "days_since_expiry": 8
+      "days_since_expiry": 9
     },
     {
       "id": "31522990",
@@ -3887,7 +4247,7 @@
       "manager_email": null,
       "first_seen": "2026-10-10T10:56:24.232Z",
       "last_seen": "2026-10-28T10:57:21.033Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31580417",
@@ -3905,7 +4265,7 @@
       "manager_email": null,
       "first_seen": "2026-10-11T11:11:20.103Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31580432",
@@ -3923,7 +4283,7 @@
       "manager_email": null,
       "first_seen": "2026-10-11T11:11:20.103Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31584074",
@@ -3941,7 +4301,7 @@
       "manager_email": "birgitta.bergh@kungalv.se",
       "first_seen": "2026-10-12T12:44:48.823Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31597410",
@@ -3959,7 +4319,7 @@
       "manager_email": "lotta.hjelmpersson@tranas.se",
       "first_seen": "2026-10-15T09:35:48.965Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31602413",
@@ -3977,7 +4337,7 @@
       "manager_email": null,
       "first_seen": "2026-10-16T09:28:48.763Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31611011",
@@ -3995,7 +4355,7 @@
       "manager_email": "daniel.lindell@kriminalvarden.se",
       "first_seen": "2026-10-19T10:29:38.244Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31611986",
@@ -4013,7 +4373,7 @@
       "manager_email": "susann.grunewald@regionstockholm.se",
       "first_seen": "2026-10-19T10:29:38.244Z",
       "last_seen": "2026-10-19T10:29:38.244Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31614323",
@@ -4031,7 +4391,7 @@
       "manager_email": "charlotte.flink-oskarsson@vetlanda.se",
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31615478",
@@ -4049,7 +4409,7 @@
       "manager_email": "susan.b.bergqvistbangdal@landskrona.se",
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31617168",
@@ -4067,7 +4427,7 @@
       "manager_email": "susann.grunewald@regionstockholm.se",
       "first_seen": "2026-10-20T09:47:42.656Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31619757",
@@ -4085,7 +4445,7 @@
       "manager_email": "agneta.lindstedt@mariestad.se",
       "first_seen": "2026-10-21T09:48:44.182Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31635976",
@@ -4103,7 +4463,7 @@
       "manager_email": "rikard.albrektsson@stockholm.se",
       "first_seen": "2026-10-23T09:43:59.860Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31642506",
@@ -4121,7 +4481,7 @@
       "manager_email": "mia.wennberg@socialcentrum.goteborg.se",
       "first_seen": "2026-10-26T10:44:45.673Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31642849",
@@ -4139,7 +4499,7 @@
       "manager_email": null,
       "first_seen": "2026-10-26T10:44:45.673Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31644187",
@@ -4157,7 +4517,7 @@
       "manager_email": null,
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31644857",
@@ -4175,7 +4535,7 @@
       "manager_email": "elisabeth.hermansson@partille.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31645524",
@@ -4193,7 +4553,7 @@
       "manager_email": "emma.ekelund@stockholm.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31645571",
@@ -4211,7 +4571,7 @@
       "manager_email": "malin.rangstedt@sollentuna.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31645604",
@@ -4229,7 +4589,7 @@
       "manager_email": "emma.ekelund@stockholm.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31646071",
@@ -4247,7 +4607,7 @@
       "manager_email": "tuva.anderssonminell@haninge.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31646304",
@@ -4265,7 +4625,7 @@
       "manager_email": null,
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31646612",
@@ -4283,7 +4643,7 @@
       "manager_email": "angelica.lindstrom@stockholm.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31646725",
@@ -4301,7 +4661,7 @@
       "manager_email": "helen.tseggai-mebrahtu@jonkoping.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31646972",
@@ -4319,7 +4679,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31647021",
@@ -4337,7 +4697,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31647082",
@@ -4355,7 +4715,7 @@
       "manager_email": "damir.sabani@socionomera.se",
       "first_seen": "2026-10-27T10:11:32.675Z",
       "last_seen": "2026-11-02T13:04:34.402Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31651280",
@@ -4373,7 +4733,7 @@
       "manager_email": "maria.carrasco-svanberg@malmo.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31652599",
@@ -4391,7 +4751,7 @@
       "manager_email": "fahrudin.zaimovic@malmo.se",
       "first_seen": "2026-10-28T10:57:21.033Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
+      "days_since_expiry": 10
     },
     {
       "id": "31677379",
@@ -4409,978 +4769,6 @@
       "manager_email": null,
       "first_seen": "2026-11-03T12:36:07.428Z",
       "last_seen": "2026-11-09T13:36:15.136Z",
-      "days_since_expiry": 9
-    },
-    {
-      "id": "31556523",
-      "headline": "Förebyggande socialsekreterare till enheten Första linjens socialtjänst",
-      "employer": "Katrineholms kommun",
-      "municipality": "Katrineholm",
-      "region": "Södermanlands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-06T01:35:18",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31556523",
-      "manager_name": "Camilla   Haataja",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+4615057505",
-      "manager_email": "camilla.haataja@katrineholm.se",
-      "first_seen": "2026-10-06T11:46:25.703Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31560512",
-      "headline": "Familjehemssekreterare - Familjehemsenheten",
-      "employer": "Nyköpings kommun",
-      "municipality": "Nyköping",
-      "region": "Södermanlands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-06T14:55:10",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31560512",
-      "manager_name": "Lisa   Jonsson",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+46155248562",
-      "manager_email": null,
-      "first_seen": "2026-10-07T11:30:28.502Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31576413",
-      "headline": "Familjebehandlare på timmar till Hemnovias öppenvårdsverksamhet!",
-      "employer": "Hemnovia AB",
-      "municipality": "Haninge",
-      "region": "Stockholms län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-09T11:22:40",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31576413",
-      "manager_name": null,
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": null,
-      "first_seen": "2026-10-09T11:38:31.349Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31578109",
-      "headline": "Vikariat Personligt ombud, placering i Karlstad",
-      "employer": "Karlstads kommun",
-      "municipality": "Karlstad",
-      "region": "Värmlands län",
-      "category": "Övrigt socialt arbete",
-      "publication_date": "2026-10-09T14:25:14",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31578109",
-      "manager_name": "Jeanette Tillman",
-      "manager_role": null,
-      "manager_phone": "054-5405287",
-      "manager_email": null,
-      "first_seen": "2026-10-10T10:56:24.232Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31581776",
-      "headline": "Skolkurator",
-      "employer": "Karlsborgs kommun",
-      "municipality": "Karlsborg",
-      "region": "Västra Götalands län",
-      "category": "Kurator",
-      "publication_date": "2026-10-12T08:07:04",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31581776",
-      "manager_name": "Ann-Helene Kristoffersson",
-      "manager_role": null,
-      "manager_phone": "0505-17262",
-      "manager_email": null,
-      "first_seen": "2026-10-12T12:44:48.823Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31586316",
-      "headline": "Familjebehandlare - Sävja Familjeenhet",
-      "employer": "Uppsala kommun",
-      "municipality": "Uppsala",
-      "region": "Uppsala län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-12T16:35:05",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31586316",
-      "manager_name": "Hannes   Torhell",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+46187272352",
-      "manager_email": null,
-      "first_seen": "2026-10-13T12:27:00.351Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31588398",
-      "headline": "Biståndshandläggare till omsorg och funktionsstöd – vikariat!",
-      "employer": "Höganäs kommun",
-      "municipality": "Höganäs",
-      "region": "Skåne län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-13T10:05:09",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31588398",
-      "manager_name": "Anna-Carin   Paulsson",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+4642337132",
-      "manager_email": "anna-carin.paulsson@hoganas.se",
-      "first_seen": "2026-10-13T12:27:00.351Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31589487",
-      "headline": "Socialsekreterare inom ekonomiskt bistånd ",
-      "employer": "Hjo kommun",
-      "municipality": "Hjo",
-      "region": "Västra Götalands län",
-      "category": "Biståndsbedömare",
-      "publication_date": "2026-10-13T12:15:06",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31589487",
-      "manager_name": "Jessica   Bergman",
-      "manager_role": "Enhetschef AOF",
-      "manager_phone": "+4650335228",
-      "manager_email": "jessica.bergman@hjo.se",
-      "first_seen": "2026-10-13T12:27:00.351Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31589665",
-      "headline": "Socialsekreterare till Ekonomienheten",
-      "employer": "Sandvikens kommun",
-      "municipality": "Sandviken",
-      "region": "Gävleborgs län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-13T12:45:12",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31589665",
-      "manager_name": "Therese   Källberg",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+4626240354",
-      "manager_email": "therese.kallberg@sandviken.se",
-      "first_seen": "2026-10-13T12:27:00.351Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31592790",
-      "headline": "Behandlare Lyktan stödgrupper",
-      "employer": "Sandvikens kommun",
-      "municipality": "Sandviken",
-      "region": "Gävleborgs län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-14T01:35:19",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31592790",
-      "manager_name": "Johan   Sand",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+4626241731",
-      "manager_email": "johan.sand@sandviken.e",
-      "first_seen": "2026-10-14T09:54:48.440Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31602131",
-      "headline": "Biståndshandläggare vård- och omsorg",
-      "employer": "Bengtsfors kommun",
-      "municipality": "Bengtsfors",
-      "region": "Västra Götalands län",
-      "category": "Biståndsbedömare",
-      "publication_date": "2026-10-15T15:04:19",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31602131",
-      "manager_name": "Jenny Mabäcker",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+46531526600",
-      "manager_email": "jenny.mabacker@bengtsfors.se",
-      "first_seen": "2026-10-16T09:28:48.763Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31602566",
-      "headline": "Socialsekreterare till Placeringsenheten, Individ- och familjeomsorgen",
-      "employer": "Oskarshamns kommun",
-      "municipality": "Oskarshamn",
-      "region": "Kalmar län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-15T15:55:11",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31602566",
-      "manager_name": "Ana   Becovic",
-      "manager_role": "Enhetschef IFO",
-      "manager_phone": "+46103560000",
-      "manager_email": "ana.becovic@oskarshamn.se",
-      "first_seen": "2026-10-16T09:28:48.763Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31604858",
-      "headline": "Ställföreträdare till förvaltarenheten",
-      "employer": "Värnamo kommun",
-      "municipality": "Värnamo",
-      "region": "Jönköpings län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-16T09:35:20",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31604858",
-      "manager_name": "Pär Svensson",
-      "manager_role": "Förvaltningschef",
-      "manager_phone": "0370-377535",
-      "manager_email": "par.svensson@varnamo.se",
-      "first_seen": "2026-10-16T09:28:48.763Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31607036",
-      "headline": "LSS-handläggare",
-      "employer": "Landskrona kommun",
-      "municipality": "Landskrona",
-      "region": "Skåne län",
-      "category": "Biståndsbedömare",
-      "publication_date": "2026-10-16T13:20:08",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31607036",
-      "manager_name": "Susan   Bergqvist Bångdal",
-      "manager_role": "Enhetschef",
-      "manager_phone": null,
-      "manager_email": "susan.b.bergqvistbangdal@landskrona.se",
-      "first_seen": "2026-10-17T08:59:45.691Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31610087",
-      "headline": "Familjebehandlare och samordnare till Familjelotsen",
-      "employer": "Östersunds kommun",
-      "municipality": "Östersund",
-      "region": "Jämtlands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-17T19:11:02",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31610087",
-      "manager_name": "Sandra Lindgren",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+4663144164",
-      "manager_email": "sandra.lindgren@ostersund.se",
-      "first_seen": "2026-10-18T09:19:14.510Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31611125",
-      "headline": "Socialsekreterare till Barn och unga myndighet",
-      "employer": "Mölndals kommun",
-      "municipality": "Mölndal",
-      "region": "Västra Götalands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-19T01:35:25",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31611125",
-      "manager_name": "Anneli   Kumpula",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+46790609163",
-      "manager_email": "anneli.kumpula@molndal.se",
-      "first_seen": "2026-10-19T10:29:38.244Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31612314",
-      "headline": "Fältkurator till Ung fritid",
-      "employer": "Kumla kommun",
-      "municipality": "Kumla",
-      "region": "Örebro län",
-      "category": "Kurator",
-      "publication_date": "2026-10-19T10:00:12",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31612314",
-      "manager_name": "Tim   Greneby",
-      "manager_role": "Fritidschef",
-      "manager_phone": "+4619588681",
-      "manager_email": "tim.greneby@kumla.se",
-      "first_seen": "2026-10-19T10:29:38.244Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31612389",
-      "headline": "Socialsekreterare vikariat",
-      "employer": "Lerums kommun",
-      "municipality": "Lerum",
-      "region": "Västra Götalands län",
-      "category": "Biståndsbedömare",
-      "publication_date": "2026-10-19T10:10:06",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31612389",
-      "manager_name": "Ida   Pettersson",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+46302522099",
-      "manager_email": "ida.pettersson2@lerum.se",
-      "first_seen": "2026-10-19T10:29:38.244Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31613737",
-      "headline": "Biståndshandläggare till myndighetsfunktionen",
-      "employer": "Lunds kommun",
-      "municipality": "Lund",
-      "region": "Skåne län",
-      "category": "Biståndsbedömare",
-      "publication_date": "2026-10-19T12:37:17",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31613737",
-      "manager_name": "Sara-Maria Karlström",
-      "manager_role": "Enhetschef",
-      "manager_phone": "046-3598364",
-      "manager_email": "saramaria.karlstrom@lund.se",
-      "first_seen": "2026-10-20T09:47:42.656Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31614732",
-      "headline": "Socialsekreterare med fokus på uppföljning barn och unga ",
-      "employer": "Vaggeryds kommun",
-      "municipality": "Vaggeryd",
-      "region": "Jönköpings län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-19T14:40:09",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31614732",
-      "manager_name": "Facklig   representant nås via kommuns växel",
-      "manager_role": null,
-      "manager_phone": "+46370678000",
-      "manager_email": null,
-      "first_seen": "2026-10-20T09:47:42.656Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31615575",
-      "headline": "1:e socialsekreterare Barn och Unga, SF Sydväst",
-      "employer": "GÖTEBORGS KOMMUN",
-      "municipality": "Göteborg",
-      "region": "Västra Götalands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-19T16:06:40",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31615575",
-      "manager_name": "Rebecka Pfeil",
-      "manager_role": "Enhetschef",
-      "manager_phone": "031-3660278",
-      "manager_email": "rebecca.pfeil@socialsydvast.goteborg.se",
-      "first_seen": "2026-10-20T09:47:42.656Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31615899",
-      "headline": "Samordnare för enheten biståndsbedömning och LSS",
-      "employer": "Tibro kommun",
-      "municipality": "Tibro",
-      "region": "Västra Götalands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-19T16:50:18",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31615899",
-      "manager_name": "Emma   Nilsson",
-      "manager_role": "Enhetschef IFO",
-      "manager_phone": "+4650418569",
-      "manager_email": "emma.nilsson@tibro.se",
-      "first_seen": "2026-10-20T09:47:42.656Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31619375",
-      "headline": "Biståndshandläggare till enheten för äldre och bistånd",
-      "employer": "Östhammars kommun",
-      "municipality": "Östhammar",
-      "region": "Uppsala län",
-      "category": "Biståndsbedömare",
-      "publication_date": "2026-10-20T13:10:05",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31619375",
-      "manager_name": "Sandra   Eriksson",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+4617386816",
-      "manager_email": "sandra.eriksson.a@osthammar.se",
-      "first_seen": "2026-10-21T09:48:44.182Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31622822",
-      "headline": "Socialsekreterare med energi och engagemang för Hisingens barn och unga!",
-      "employer": "GÖTEBORGS KOMMUN",
-      "municipality": "Göteborg",
-      "region": "Västra Götalands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-21T00:01:08",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31622822",
-      "manager_name": "Britta Rosenberg",
-      "manager_role": "Enhetschef",
-      "manager_phone": "031-3667358",
-      "manager_email": "britta.rosenberg@socialhisingen.goteborg.se",
-      "first_seen": "2026-10-21T09:48:44.182Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31624649",
-      "headline": "Socialsekreterare mottagning vuxen och våldsteam",
-      "employer": "Ludvika kommun",
-      "municipality": "Ludvika",
-      "region": "Dalarnas län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-21T09:50:03",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31624649",
-      "manager_name": null,
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": null,
-      "first_seen": "2026-10-21T09:48:44.182Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31625885",
-      "headline": "1:e Socialsekreterare till Barn och unga 2 i Centrum",
-      "employer": "GÖTEBORGS KOMMUN",
-      "municipality": "Göteborg",
-      "region": "Västra Götalands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-21T11:24:45",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31625885",
-      "manager_name": "Anna Dedic Gidman",
-      "manager_role": "Enhetschef",
-      "manager_phone": "031-3659865",
-      "manager_email": "anna.dedic.gidman@socialcentrum.goteborg.se",
-      "first_seen": "2026-10-21T09:48:44.182Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31626800",
-      "headline": "Samordnare/Coach",
-      "employer": "Magelungen Utveckling AB",
-      "municipality": "Gävle",
-      "region": "Gävleborgs län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-21T13:27:38",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31626800",
-      "manager_name": null,
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": null,
-      "first_seen": "2026-10-22T09:49:48.442Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31627171",
-      "headline": "Kurator",
-      "employer": "REGION GOTLAND",
-      "municipality": "Gotland",
-      "region": "Gotlands län",
-      "category": "Kurator",
-      "publication_date": "2026-10-21T14:04:50",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31627171",
-      "manager_name": "Renée Adlertz",
-      "manager_role": "Enhetschef",
-      "manager_phone": "0498-268472",
-      "manager_email": "renee.adlertz@gotland.se",
-      "first_seen": "2026-10-22T09:49:48.442Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31628212",
-      "headline": "Skolsocionom",
-      "employer": "Haninge kommun",
-      "municipality": "Haninge",
-      "region": "Stockholms län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-21T15:50:57",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31628212",
-      "manager_name": null,
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": null,
-      "first_seen": "2026-10-22T09:49:48.442Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31629284",
-      "headline": "Socialsekreterare",
-      "employer": "Tingsryds kommun",
-      "municipality": "Tingsryd",
-      "region": "Kronobergs län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-21T21:40:06",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31629284",
-      "manager_name": "Ulrika   Jensen",
-      "manager_role": "Biträdande enhetschef",
-      "manager_phone": "+4647744320",
-      "manager_email": "Ulrika.Jensen@tingsryd.se",
-      "first_seen": "2026-10-22T09:49:48.442Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31629419",
-      "headline": "Socialsekreterare till arbetsmarknad- och försörjningsstödsenheten",
-      "employer": "Ale kommun",
-      "municipality": "Ale",
-      "region": "Västra Götalands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-22T00:00:15",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31629419",
-      "manager_name": "Anna Heinrich",
-      "manager_role": null,
-      "manager_phone": "46303703035",
-      "manager_email": "Anna.Heinrich@ale.se",
-      "first_seen": "2026-10-22T09:49:48.442Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31632098",
-      "headline": "Gruppledare till barn och unga med fokus på unga i risk för kriminalitet",
-      "employer": "Järfälla kommun",
-      "municipality": "Järfälla",
-      "region": "Stockholms län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-22T13:30:12",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31632098",
-      "manager_name": "Anna   Friberg",
-      "manager_role": "Enhetschef",
-      "manager_phone": null,
-      "manager_email": "Anna.Friberg@jarfalla.se",
-      "first_seen": "2026-10-23T09:43:59.860Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31632715",
-      "headline": "Familjebehandlare till Öppenvård barn 0-17 år",
-      "employer": "Haninge kommun",
-      "municipality": "Haninge",
-      "region": "Stockholms län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-22T14:37:09",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31632715",
-      "manager_name": "Azra Bonney",
-      "manager_role": "Enhetschef",
-      "manager_phone": "086068476",
-      "manager_email": "azra.bonney@haninge.se",
-      "first_seen": "2026-10-23T09:43:59.860Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31633717",
-      "headline": "Dedicare söker LSS handläggare i Östergötlands län",
-      "employer": "Dedicare AB (publ)",
-      "municipality": "Stockholm",
-      "region": "Stockholms län",
-      "category": "Biståndsbedömare",
-      "publication_date": "2026-10-22T16:34:09",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31633717",
-      "manager_name": "Hanna Rehnberg",
-      "manager_role": "Senior konsultchef",
-      "manager_phone": "+4646705487952",
-      "manager_email": "hanna.rehnberg@dedicare.se",
-      "first_seen": "2026-10-23T09:43:59.860Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31633942",
-      "headline": "1:e socialsekreterare till Barn och Unga, Socialförvaltningen Nordost",
-      "employer": "GÖTEBORGS KOMMUN",
-      "municipality": "Göteborg",
-      "region": "Västra Götalands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-22T17:12:22",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31633942",
-      "manager_name": "Monica Helander",
-      "manager_role": null,
-      "manager_phone": "031-3651140",
-      "manager_email": "monica.helander@socialnordost.goteborg.se",
-      "first_seen": "2026-10-23T09:43:59.860Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31634472",
-      "headline": "Socialsekreterare vuxen inom skadligt bruk och beroende ",
-      "employer": "Kalmar kommun",
-      "municipality": "Kalmar",
-      "region": "Kalmar län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-23T01:35:09",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31634472",
-      "manager_name": "Heidi   Köhler",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+46103522156",
-      "manager_email": "heidi.kohler@kalmar.se",
-      "first_seen": "2026-10-23T09:43:59.860Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31634504",
-      "headline": "Socialsekreterare till Barn och unga ",
-      "employer": "Järfälla kommun",
-      "municipality": "Järfälla",
-      "region": "Stockholms län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-23T01:35:16",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31634504",
-      "manager_name": "Sarah   Teodorsson",
-      "manager_role": "Enhetschef Barn och Unga",
-      "manager_phone": null,
-      "manager_email": "sarah.teodorsson@jarfalla.se",
-      "first_seen": "2026-10-23T09:43:59.860Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31635958",
-      "headline": "Socialsekreterare till TUR, Team för Unga i Riskzon",
-      "employer": "GÖTEBORGS KOMMUN",
-      "municipality": "Göteborg",
-      "region": "Västra Götalands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-23T10:23:20",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31635958",
-      "manager_name": "Elisabeth Hernqvist",
-      "manager_role": "Enhetschef",
-      "manager_phone": "031-3669802",
-      "manager_email": "elisabeth.hernqvist@socialhisingen.goteborg.se",
-      "first_seen": "2026-10-23T09:43:59.860Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31637590",
-      "headline": "Skolkurator  Gökstensskolan",
-      "employer": "Eskilstuna kommun",
-      "municipality": "Eskilstuna",
-      "region": "Södermanlands län",
-      "category": "Kurator",
-      "publication_date": "2026-10-23T13:30:08",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31637590",
-      "manager_name": "Annika   Snickars",
-      "manager_role": "Rekryteringskonsult",
-      "manager_phone": "+46167105014",
-      "manager_email": "annika.snickars@eskilstuna.se",
-      "first_seen": "2026-10-24T09:17:15.007Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31637647",
-      "headline": "Socialsekreterare/handläggare ekonomiskt bistånd samordning sjukersättning",
-      "employer": "Örebro kommun",
-      "municipality": "Örebro",
-      "region": "Örebro län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-23T13:36:30",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31637647",
-      "manager_name": "Ashraf  Ghotbi",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+4619215944",
-      "manager_email": null,
-      "first_seen": "2026-10-24T09:17:15.007Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31637787",
-      "headline": "Socialsekreterare/handläggare ekonomiskt bistånd felaktiga utbetalningar",
-      "employer": "Örebro kommun",
-      "municipality": "Örebro",
-      "region": "Örebro län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-23T13:51:46",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31637787",
-      "manager_name": "Ashraf  Ghotbi",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+4619215944",
-      "manager_email": null,
-      "first_seen": "2026-10-24T09:17:15.007Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31639227",
-      "headline": "Socialsekreterare till Försörjningsenheten Söderhamns Kommun",
-      "employer": "Söderhamns kommun",
-      "municipality": "Söderhamn",
-      "region": "Gävleborgs län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-23T15:43:36",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31639227",
-      "manager_name": "Veronica Nordlund Björn",
-      "manager_role": "Enhetschef",
-      "manager_phone": "027075000",
-      "manager_email": "veronica.nordlundbjorn@soderhamn.se",
-      "first_seen": "2026-10-24T09:17:15.007Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31639733",
-      "headline": "Integrationssekreterare",
-      "employer": "MARIESTADS KOMMUN",
-      "municipality": "Mariestad",
-      "region": "Västra Götalands län",
-      "category": "Övrigt socialt arbete",
-      "publication_date": "2026-10-23T16:30:14",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31639733",
-      "manager_name": "Jasminka   Masic",
-      "manager_role": "Enhetschef",
-      "manager_phone": "+46501756378",
-      "manager_email": "jasminka.masic@mariestad.se",
-      "first_seen": "2026-10-24T09:17:15.007Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31641897",
-      "headline": "Kurator till Berzeliusskolans Introduktionsprogram",
-      "employer": "Linköpings kommun",
-      "municipality": "Linköping",
-      "region": "Östergötlands län",
-      "category": "Kurator",
-      "publication_date": "2026-10-26T01:02:15",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31641897",
-      "manager_name": "Linda Eklund",
-      "manager_role": "Rektor Introduktionsprogrammet Berzeliusskolan",
-      "manager_phone": "+4613207432",
-      "manager_email": "linda.eklund@linkoping.se",
-      "first_seen": "2026-10-26T10:44:45.673Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31642475",
-      "headline": "Socialsekreterare/handläggare till Myndighet individstöd, Söderhamns kommun",
-      "employer": "Söderhamns kommun",
-      "municipality": "Söderhamn",
-      "region": "Gävleborgs län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-26T08:45:15",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31642475",
-      "manager_name": "Emma Lind",
-      "manager_role": "Enhetstchef",
-      "manager_phone": "070-2786721",
-      "manager_email": "emma.lind@soderhamn.se",
-      "first_seen": "2026-10-26T10:44:45.673Z",
-      "last_seen": "2026-11-05T12:55:03.031Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31646780",
-      "headline": "Socialsekreterare hos Polisen och Ungdomstjänst, Plattform Malmö",
-      "employer": "Malmö kommun",
-      "municipality": "Malmö",
-      "region": "Skåne län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-26T16:49:20",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31646780",
-      "manager_name": "Selma Music",
-      "manager_role": "Sektionschef",
-      "manager_phone": "+46721599207",
-      "manager_email": "selma.music@malmo.se",
-      "first_seen": "2026-10-27T10:11:32.675Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31652505",
-      "headline": "Socialsekreterare inom barn och unga söks för konsultuppdrag i Vetlanda",
-      "employer": "Benvia Bemanning AB",
-      "municipality": "Vetlanda",
-      "region": "Jönköpings län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-27T18:35:15",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31652505",
-      "manager_name": null,
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": null,
-      "first_seen": "2026-10-28T10:57:21.033Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31655401",
-      "headline": "Socialsekreterare inom våld i nära relationer  konsultuppdrag i Falun",
-      "employer": "Benvia Bemanning AB",
-      "municipality": "Falun",
-      "region": "Dalarnas län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-28T12:27:30",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31655401",
-      "manager_name": null,
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": null,
-      "first_seen": "2026-10-29T11:17:10.095Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31660970",
-      "headline": "Kvalitetsutvecklare med fokus på kvalitetsledningssystem och äldreomsorg",
-      "employer": "Järfälla kommun",
-      "municipality": "Järfälla",
-      "region": "Stockholms län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-29T12:55:09",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31660970",
-      "manager_name": "Anna   Lilja Qvarlander",
-      "manager_role": "Kvalitetschef",
-      "manager_phone": null,
-      "manager_email": "anna.lilja.qvarlander@jarfalla.se",
-      "first_seen": "2026-10-30T11:10:03.636Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31667049",
-      "headline": "Socialsekreterare LSS- och socialpsykiatri",
-      "employer": "Motala kommun",
-      "municipality": "Motala",
-      "region": "Östergötlands län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-10-30T14:05:05",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31667049",
-      "manager_name": "Sanna   Tolvers",
-      "manager_role": "Enhetschef",
-      "manager_phone": null,
-      "manager_email": "sanna.tolvers@motala.se",
-      "first_seen": "2026-10-31T10:43:04.645Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31674493",
-      "headline": "Socialsekreterare inom barn och unga uppdrag i Vetlanda ",
-      "employer": "VårdIX AB",
-      "municipality": "Vetlanda",
-      "region": "Jönköpings län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-11-02T15:11:43",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31674493",
-      "manager_name": "Sam Souid",
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": "sam@vardix.se",
-      "first_seen": "2026-11-03T12:36:07.428Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31680953",
-      "headline": "Viraliv söker erfaren socialsekreterare inom barn och familj",
-      "employer": "Viraliv AB",
-      "municipality": "Södertälje",
-      "region": "Stockholms län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-11-03T16:53:00",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31680953",
-      "manager_name": null,
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": null,
-      "first_seen": "2026-11-04T12:46:10.193Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31688929",
-      "headline": "Erfarna socialsekreterare inom barn och unga sökes till Alvesta",
-      "employer": "Bemannia AB (publ.)",
-      "municipality": "Alvesta",
-      "region": "Kronobergs län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-11-05T11:00:28",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31688929",
-      "manager_name": null,
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": null,
-      "first_seen": "2026-11-05T12:55:03.031Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
-      "days_since_expiry": 10
-    },
-    {
-      "id": "31693375",
-      "headline": "Socialsekreterare barn och unga – konsultuppdrag nära Växjö",
-      "employer": "Läkarakuten i Sverige AB",
-      "municipality": "Växjö",
-      "region": "Kronobergs län",
-      "category": "Socialsekreterare",
-      "publication_date": "2026-11-05T21:19:18",
-      "application_deadline": "2026-11-08T23:59:59",
-      "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/31693375",
-      "manager_name": "Mathilda Gussing",
-      "manager_role": null,
-      "manager_phone": null,
-      "manager_email": "info@lakarakuten.se",
-      "first_seen": "2026-11-06T12:42:45.733Z",
-      "last_seen": "2026-11-08T11:40:23.577Z",
       "days_since_expiry": 10
     }
   ]
